@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A49FBAC11FC477D300029B1F /* Homepage.m in Sources */ = {isa = PBXBuildFile; fileRef = A49FBAC01FC477D300029B1F /* Homepage.m */; };
 		A4EA64BF1FBB45A80062D67F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64BE1FBB45A80062D67F /* main.m */; };
 		A4EA64C21FBB45A80062D67F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64C11FBB45A80062D67F /* AppDelegate.m */; };
 		A4EA64C51FBB45A80062D67F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64C41FBB45A80062D67F /* ViewController.m */; };
@@ -15,6 +16,7 @@
 		A4EA64CD1FBB45A80062D67F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EA64CB1FBB45A80062D67F /* LaunchScreen.storyboard */; };
 		A4EA64D81FBB45A80062D67F /* Axon_EvolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64D71FBB45A80062D67F /* Axon_EvolutionTests.m */; };
 		A4EA64E31FBB45A80062D67F /* Axon_EvolutionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64E21FBB45A80062D67F /* Axon_EvolutionUITests.m */; };
+		A4EA64F21FC322B10062D67F /* ScoreTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64F11FC322B10062D67F /* ScoreTracker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A49FBABF1FC477D300029B1F /* Homepage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Homepage.h; path = ../Homepage.h; sourceTree = "<group>"; };
+		A49FBAC01FC477D300029B1F /* Homepage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Homepage.m; path = ../Homepage.m; sourceTree = "<group>"; };
 		A4EA64BA1FBB45A80062D67F /* Axon Evolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Axon Evolution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4EA64BE1FBB45A80062D67F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4EA64C01FBB45A80062D67F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		A4EA64DE1FBB45A80062D67F /* Axon EvolutionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Axon EvolutionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4EA64E21FBB45A80062D67F /* Axon_EvolutionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Axon_EvolutionUITests.m; sourceTree = "<group>"; };
 		A4EA64E41FBB45A80062D67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4EA64F01FC322B10062D67F /* ScoreTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreTracker.h; sourceTree = SOURCE_ROOT; };
+		A4EA64F11FC322B10062D67F /* ScoreTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTracker.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +107,14 @@
 		A4EA64BC1FBB45A80062D67F /* Axon Evolution */ = {
 			isa = PBXGroup;
 			children = (
+				A49FBABF1FC477D300029B1F /* Homepage.h */,
+				A49FBAC01FC477D300029B1F /* Homepage.m */,
 				A4EA64C01FBB45A80062D67F /* AppDelegate.h */,
 				A4EA64C11FBB45A80062D67F /* AppDelegate.m */,
 				A4EA64C31FBB45A80062D67F /* ViewController.h */,
 				A4EA64C41FBB45A80062D67F /* ViewController.m */,
+				A4EA64F01FC322B10062D67F /* ScoreTracker.h */,
+				A4EA64F11FC322B10062D67F /* ScoreTracker.m */,
 				A4EA64C61FBB45A80062D67F /* Main.storyboard */,
 				A4EA64C91FBB45A80062D67F /* Assets.xcassets */,
 				A4EA64CB1FBB45A80062D67F /* LaunchScreen.storyboard */,
@@ -274,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4EA64C51FBB45A80062D67F /* ViewController.m in Sources */,
+				A4EA64F21FC322B10062D67F /* ScoreTracker.m in Sources */,
+				A49FBAC11FC477D300029B1F /* Homepage.m in Sources */,
 				A4EA64C21FBB45A80062D67F /* AppDelegate.m in Sources */,
 				A4EA64BF1FBB45A80062D67F /* main.m in Sources */,
 			);
@@ -507,6 +519,7 @@
 				A4EA64E91FBB45A80062D67F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4EA64EA1FBB45A80062D67F /* Build configuration list for PBXNativeTarget "Axon EvolutionTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +528,7 @@
 				A4EA64EC1FBB45A80062D67F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4EA64ED1FBB45A80062D67F /* Build configuration list for PBXNativeTarget "Axon EvolutionUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +537,7 @@
 				A4EA64EF1FBB45A80062D67F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
