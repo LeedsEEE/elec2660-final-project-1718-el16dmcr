@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OpticalConundrumData.h"
 
 @interface OpticalConundrumController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *shownColourWord;
+@property (weak, nonatomic) IBOutlet UILabel *shownColourWordLabel;
+
 
 - (IBAction)topRightButtonPressed:(UIButton *)sender;
 - (IBAction)bottomRightButtonPressed:(UIButton *)sender;

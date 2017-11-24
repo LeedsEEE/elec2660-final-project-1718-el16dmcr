@@ -14,10 +14,11 @@
 
 @implementation OpticalConundrumController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad: (NSString *) shownFontColour {
+    // All the initial setup for this screen when it loads
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
-    // Do any additional setup after loading the view.
+    self.navigationItem.hidesBackButton = YES;   // Hides the back button that is there by default, i want to make my own
+    self.shownColourWordLabel.text = shownFontColour;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,18 +35,60 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)topRightButton:(UIButton *)sender {
+-(void) colourDefiner: (int) randomOne: (UIColor *) shownFontColor {
+    if ( randomOne == 1) {
+        UIColor *Colour = [UIColor yellowColor];
+    }
+    else if ( randomOne == 2) {
+        UIColor *shownFontColour = [UIColor blueColor];
+    }
+    else if ( randomOne == 3) {
+        UIColor *shownFontColour = [UIColor redColor];
+    }
+    else if ( randomOne == 4) {
+        UIColor *shownFontColour = [UIColor greenColor];
+    }
+    else if ( randomOne == 5) {
+        UIColor *shownFontColour = [UIColor purpleColor];
+    }
+    else if ( randomOne == 6) {
+        UIColor *shownFontColour = [UIColor brownColor];
+    }
+    else if ( randomOne == 7) {
+        UIColor *shownFontColour = [UIColor orangeColor];
+    }
+    else if ( randomOne == 8) {
+        UIColor *shownFontColour = [UIColor cyanColor];
+    }
+}
+-(void) wordDefiner: (int) randomTwo: (NSString *) shownColourWord {
+    if ( randomTwo == 1) {
+        shownColourWord = @"yellow";
+    }
+    else if ( randomTwo == 2) {
+        shownColourWord = @"blue";
+    }
+    else if ( randomTwo == 3) {
+        shownColourWord = @"red";
+    }
+    else if ( randomTwo == 4) {
+        shownColourWord = @"green";
+    }
+    else if ( randomTwo == 5) {
+        shownColourWord = @"purple";
+    }
+    else if ( randomTwo == 6) {
+        shownColourWord = @"brown";
+    }
+    else if ( randomTwo == 7) {
+        shownColourWord = @"orange";
+    }
+    else if ( randomTwo == 8) {
+        shownColourWord = @"cyan";
+    }
 }
 
-- (IBAction)bottomRightButton:(UIButton *)sender {
-}
 
-- (IBAction)topLeftButton:(UIButton *)sender {
-}
-
-- (IBAction)bottomLeftButton:(UIButton *)sender {
-}
 
 - (IBAction)topRightButtonPressed:(UIButton *)sender {
 }

@@ -93,7 +93,7 @@
                     <connections>
                         <outlet property="bottomLeftButton" destination="DNL-1g-t5X" id="5Px-Kz-PkD"/>
                         <outlet property="bottomRightButton" destination="Pvr-1Y-Nbb" id="GOX-2z-gp0"/>
-                        <outlet property="shownColourWord" destination="eMc-Ok-P92" id="ZoL-iz-EHn"/>
+                        <outlet property="shownColourWordLabel" destination="eMc-Ok-P92" id="aj7-bH-TDo"/>
                         <outlet property="topLeftButton" destination="1mP-Y0-AEp" id="Prh-AO-txX"/>
                         <outlet property="topRightButton" destination="Vq9-Gl-iQ8" id="a0i-Zc-es2"/>
                     </connections>

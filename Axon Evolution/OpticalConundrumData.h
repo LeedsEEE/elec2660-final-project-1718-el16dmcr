@@ -11,10 +11,12 @@
 @interface OpticalConundrumData : NSObject
 
 @property (nonatomic, strong) NSString *shownColourWord;
-@property int shownFontColour;
+@property int randomeOne;
+@property int randomTwo;
 @property int pointsPlus;
 @property int pointsMinus;
 @property int startPoints;
+@property int correctAnswer;
 
 
 @end
