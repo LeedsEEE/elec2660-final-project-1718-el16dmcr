@@ -9,7 +9,7 @@
 #import "Homepage.h"
 
 @implementation Homepage
-// Function to make customizing olour easier
+// Function to make customizing colour easier
 UIColor* RGB(float r, float g, float b)
 {
     return [UIColor colorWithRed:r/255.0f
