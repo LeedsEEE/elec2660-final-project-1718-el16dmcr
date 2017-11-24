@@ -7,6 +7,7 @@
 //
 
 #import "OpticalConundrumController.h"
+#import "OpticalConundrumData.h"
 
 @interface OpticalConundrumController ()
 
@@ -19,6 +20,9 @@
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;   // Hides the back button that is there by default, i want to make my own
     self.shownColourWordLabel.text = shownFontColour;
+    OpticalConundrumData *OpticalConundrumData
+    [OpticalConundrumData randomFontColourChosen];
+    [OpticalConundrumData randomWordColourChosen];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,30 +65,38 @@
         UIColor *shownFontColour = [UIColor cyanColor];
     }
 }
--(void) wordDefiner: (int) randomTwo: (NSString *) shownColourWord {
+-(void) wordDefiner: (int) randomTwo: (NSString *) shownColourWord: (UIColor *) correctColour {
     if ( randomTwo == 1) {
         shownColourWord = @"yellow";
+        correctColour = [UIColor yellowColor];
     }
     else if ( randomTwo == 2) {
         shownColourWord = @"blue";
+        correctColour = [UIColor blueColor];
     }
     else if ( randomTwo == 3) {
         shownColourWord = @"red";
+        correctColour = [UIColor redColor];
     }
     else if ( randomTwo == 4) {
         shownColourWord = @"green";
+        correctColour = [UIColor greenColor];
     }
     else if ( randomTwo == 5) {
         shownColourWord = @"purple";
+        correctColour = [UIColor purpleColor];
     }
     else if ( randomTwo == 6) {
         shownColourWord = @"brown";
+        correctColour = [UIColor brownColor];
     }
     else if ( randomTwo == 7) {
         shownColourWord = @"orange";
+        correctColour = [UIColor orangeColor];
     }
     else if ( randomTwo == 8) {
         shownColourWord = @"cyan";
+        correctColour = [UIColor cyanColor];
     }
 }
 
