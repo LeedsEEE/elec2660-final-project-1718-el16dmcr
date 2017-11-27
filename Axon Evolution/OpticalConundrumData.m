@@ -11,13 +11,5 @@
 
 @implementation OpticalConundrumData
 
--(int) randomFontColourChosen {
-    int randomOne = arc4random_uniform(8);
-    return(randomOne);
-}
--(int) randomWordColourChosen  {
-    int randomTwo = arc4random_uniform(8);
-    return(randomTwo);
-}
 
 @end

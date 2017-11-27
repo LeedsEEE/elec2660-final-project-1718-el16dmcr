@@ -24,5 +24,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *topLeftButton;
 @property (weak, nonatomic) IBOutlet UIButton *bottomLeftButton;
 
-
+@property (nonatomic, strong) NSString *shownColourWord;
+@property (nonatomic, strong) UIColor *shownFontColour;
+@property (nonatomic, strong) UIColor *correctColour;
+@property (nonatomic, strong) UIColor *wrongColour;
+@property int randomOne;
+@property int randomTwo;
+@property int randomThree;
+@property int a;
+@property int b;
+@property int c;
+@property int d;
 @end

@@ -15,9 +15,6 @@
 @property int pointsPlus;
 @property int pointsMinus;
 @property int startPoints;
-@property int correctAnswer;
 
--(int) randomFontColourChosen;
--(int) randomWordColourChosen;
 
 @end
