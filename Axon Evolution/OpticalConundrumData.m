@@ -11,6 +11,14 @@
 
 @implementation OpticalConundrumData
 
+
+-(id)init{
+    self = [super init];
+    self.startPoints = 1000;
+    self.pointsPlus = 50;
+    self.pointsMinus = 50;
+    return self;
+}
 -(int)getInitialScore {
     self.currentScore = self.startPoints;
     return self.currentScore;

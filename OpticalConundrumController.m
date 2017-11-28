@@ -49,9 +49,9 @@
     
     NSLog(@"%@",self.shownColourWord);
     
-    self.timeTick = 1000;
+    self.timeTick = 100;
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
-    self.timerLabel.text = @"1000";
+    self.timerLabel.text = @"100";
     self.timerLabel.backgroundColor = [UIColor blackColor];
     self.timerLabel.textColor = [UIColor whiteColor];
     
@@ -282,10 +282,14 @@
 - (IBAction)topRightButtonPressed:(UIButton *)sender {
     if (self.randomThree == 1){
         NSLog(@"Correct");
+        [self.opticalConundrumData correctSelection];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.opticalConundrumData.currentScore];
         [self anyButtonPressed];
     }
     else  {
         NSLog(@"wrong");
+        [self.opticalConundrumData wrongSelection];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.opticalConundrumData.currentScore];
         [self anyButtonPressed];
     }
 }
@@ -293,10 +297,14 @@
 - (IBAction)bottomRightButtonPressed:(UIButton *)sender {
     if (self.randomThree == 3){
         NSLog(@"Correct");
+        [self.opticalConundrumData correctSelection];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.opticalConundrumData.currentScore];
         [self anyButtonPressed];
     }
     else  {
         NSLog(@"wrong");
+        [self.opticalConundrumData wrongSelection];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.opticalConundrumData.currentScore];
         [self anyButtonPressed];
     }
 }
@@ -304,10 +312,14 @@
 - (IBAction)topLeftButtonPressed:(UIButton *)sender {
     if (self.randomThree == 0){
         NSLog(@"Correct");
+        [self.opticalConundrumData correctSelection];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.opticalConundrumData.currentScore];
         [self anyButtonPressed];
     }
     else  {
         NSLog(@"wrong");
+        [self.opticalConundrumData wrongSelection];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.opticalConundrumData.currentScore];
         [self anyButtonPressed];
     }
 }
@@ -315,10 +327,14 @@
 - (IBAction)bottomLeftButtonPressed:(UIButton *)sender {
     if (self.randomThree == 2){
         NSLog(@"Correct");
+        [self.opticalConundrumData correctSelection];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.opticalConundrumData.currentScore];
         [self anyButtonPressed];
     }
     else  {
         NSLog(@"wrong");
+        [self.opticalConundrumData wrongSelection];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.opticalConundrumData.currentScore];
         [self anyButtonPressed];
     }
 }
