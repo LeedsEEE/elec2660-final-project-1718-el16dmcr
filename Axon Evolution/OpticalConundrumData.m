@@ -11,9 +11,9 @@
 
 @implementation OpticalConundrumData
 
--(int)getInitialScore:(int)currentScore :(int)startPoints {
+//-(int)getInitialScore:(int)currentScore :(int)startPoints {
     
-}
+//}
 
 
 @end

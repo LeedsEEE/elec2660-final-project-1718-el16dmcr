@@ -15,7 +15,7 @@
 
 @implementation OpticalConundrumController
 
-int timeTick = 10;
+
 
 // All the initial setup for this screen when it loads
 - (void)viewDidLoad {
@@ -24,6 +24,8 @@ int timeTick = 10;
     [self randomWordColourChosen]; //initial word chosen
     [self randomFontColourChosen];  //initial font colour chosen
     [self randomCorrectButtonChosen];
+    [self randomThirdButtonChosen];
+    [self randomFourthButtonChosen];
     [self correctButtonSelector];
     [self colourDefiner];
     [self wordDefiner];
@@ -33,12 +35,20 @@ int timeTick = 10;
     self.topRightButton.backgroundColor = self.correctColour;
     NSLog(@"%@",self.shownColourWord);
     
+    self.timeTick = 1000;
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
-    self.timerLabel.text = @"10";
+    self.timerLabel.text = @"1000";
     self.timerLabel.backgroundColor = [UIColor blackColor];
     self.timerLabel.textColor = [UIColor whiteColor];
-    
-    
+    self.colourArray = [[NSMutableArray alloc] init];
+    self.colourArray = [NSMutableArray arrayWithObjects: [UIColor greenColor],
+                                                         [UIColor blueColor],
+                                                         [UIColor redColor],
+                                                         [UIColor magentaColor],
+                                                         [UIColor blackColor],
+                                                         [UIColor cyanColor],
+                                                         [UIColor orangeColor],
+                                                         [UIColor brownColor], nil];
     
 }
 
@@ -46,6 +56,7 @@ int timeTick = 10;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
@@ -57,17 +68,17 @@ int timeTick = 10;
 }
 */
 -(void)tick{
-    if ( timeTick == 0){
-        timeTick--;
-        NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", timeTick];
+    if ( self.timeTick == 0){
+        self.timeTick--;
+        NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", self.timeTick];
         self.timerLabel.text = timeRemaining;
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
         [self presentViewController:vc animated:YES completion:nil];
     }
     else {
-    timeTick--;
-    NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", timeTick];
+    self.timeTick--;
+    NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", self.timeTick];
     self.timerLabel.text = timeRemaining;
     }
 }
@@ -80,85 +91,74 @@ int timeTick = 10;
 }
 // Generates randomly the font colour that will be chosen
 -(int) randomFontColourChosen {
-    self.randomOne = arc4random_uniform(7);
+    self.randomOne = arc4random_uniform(6);
     return(self.randomOne);
 }// Generates the button that will have the right answer
 -(int) randomCorrectButtonChosen {
     self.randomThree = arc4random_uniform(3);
     return self.randomThree;
 }
-// Function that holds the colour of the font being displayed
--(UIColor *) colourDefiner {
-    if ( self.randomOne == 0) {
-        self.shownFontColour = [UIColor yellowColor];
-        self.wrongColour = [UIColor yellowColor];
-    }
-    else if ( self.randomOne == 1) {
-        self.shownFontColour = [UIColor blueColor];
-        self.wrongColour = [UIColor blueColor];
-    }
-    else if ( self.randomOne == 2) {
-        self.shownFontColour = [UIColor redColor];
-        self.wrongColour = [UIColor redColor];
-    }
-    else if ( self.randomOne == 3) {
-        self.shownFontColour = [UIColor greenColor];
-        self.wrongColour = [UIColor greenColor];
-    }
-    else if ( self.randomOne == 4) {
-        self.shownFontColour = [UIColor purpleColor];
-        self.wrongColour = [UIColor purpleColor];
-    }
-    else if ( self.randomOne == 5) {
-        self.shownFontColour = [UIColor brownColor];
-        self.wrongColour = [UIColor brownColor];
-    }
-    else if ( self.randomOne == 6) {
-        self.shownFontColour = [UIColor orangeColor];
-        self.wrongColour = [UIColor orangeColor];
-    }
-    else if ( self.randomOne == 7) {
-        self.shownFontColour = [UIColor cyanColor];
-        self.wrongColour = [UIColor cyanColor];
-    }
-    return self.shownFontColour;
+-(int) randomThirdButtonChosen {
+    self.randomFour = arc4random_uniform(5);
+    return self.randomFour;
 }
-// Function that holds what word is currently displayed in the game
+-(int) randomFourthButtonChosen {
+    self.randomFour = arc4random_uniform(4);
+    return self.randomFour;
+}
+
+// Function that generates the colour word being shown
 -(NSString *) wordDefiner {
-    if ( self.randomTwo == 0) {
-        self.shownColourWord = @"yellow";
-        self.correctColour = [UIColor yellowColor];
-    }
-    else if ( self.randomTwo == 1) {
-        self.shownColourWord = @"blue";
-        self.correctColour = [UIColor blueColor];
-    }
-    else if ( self.randomTwo == 2) {
-        self.shownColourWord = @"red";
-        self.correctColour = [UIColor redColor];
-    }
-    else if ( self.randomTwo == 3) {
+    
+    self.correctColour = [self.colourArray objectAtIndex:self.randomTwo];
+    [self.colourArray removeObjectAtIndex:self.randomTwo];
+    
+    if (self.randomTwo == 0) {
         self.shownColourWord = @"green";
-        self.correctColour = [UIColor greenColor];
     }
-    else if ( self.randomTwo == 4) {
-        self.shownColourWord = @"purple";
-        self.correctColour = [UIColor purpleColor];
+    else if (self.randomTwo == 1) {
+        self.shownColourWord = @"blue";
     }
-    else if ( self.randomTwo == 5) {
-        self.shownColourWord = @"brown";
-        self.correctColour = [UIColor brownColor];
+    else if (self.randomTwo == 2) {
+        self.shownColourWord = @"red";
     }
-    else if ( self.randomTwo == 6) {
-        self.shownColourWord = @"orange";
-        self.correctColour = [UIColor orangeColor];
+    else if (self.randomTwo == 3) {
+        self.shownColourWord = @"magenta";
     }
-    else if ( self.randomTwo == 7) {
+    else if (self.randomTwo == 4) {
+        self.shownColourWord = @"black";
+    }
+    else if (self.randomTwo == 5) {
         self.shownColourWord = @"cyan";
-        self.correctColour = [UIColor cyanColor];
     }
+    else if (self.randomTwo == 6) {
+        self.shownColourWord = @"orange";
+    }
+    else if (self.randomTwo == 7) {
+        self.shownColourWord = @"brown";
+    }
+    
     return self.shownColourWord;
 }
+// Function that generates the font colour being shown
+-(UIColor *) colourDefiner {
+    
+    self.shownFontColour = [self.colourArray objectAtIndex:self.randomOne];
+    [self.colourArray removeObjectAtIndex:self.randomOne];
+    self.wrongColour = self.shownFontColour;
+    self.otherColour1 = [self.colourArray objectAtIndex:self.randomFour];
+    [self.colourArray removeObjectAtIndex:self.randomFour];
+    self.otherColour2 = [self.colourArray objectAtIndex:self.randomFive];
+    [self.colourArray removeObjectAtIndex:self.randomFive];
+    
+    
+    return self.shownFontColour;
+    return self.otherColour1;
+    return self.otherColour2;
+    return self.wrongColour;
+}
+
+// Function that selects the correct button
 -(void) correctButtonSelector {
     if (self.randomThree == 0){
         

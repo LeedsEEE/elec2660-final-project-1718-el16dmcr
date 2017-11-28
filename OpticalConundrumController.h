@@ -30,11 +30,16 @@
 @property (nonatomic, strong) UIColor *shownFontColour;
 @property (nonatomic, strong) UIColor *correctColour;
 @property (nonatomic, strong) UIColor *wrongColour;
+@property (nonatomic, strong) UIColor *otherColour1;
+@property (nonatomic, strong) UIColor *otherColour2;
 @property int randomOne;
 @property int randomTwo;
 @property int randomThree;
+@property int randomFour;
+@property int randomFive;
 
 @property NSTimer* timer;
 @property UILabel *progress;
 @property int timeTick;
+@property NSMutableArray *colourArray;
 @end
