@@ -12,6 +12,8 @@
 @interface OpticalConundrumController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *shownColourWordLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 
 - (IBAction)topRightButtonPressed:(UIButton *)sender;
@@ -31,8 +33,8 @@
 @property int randomOne;
 @property int randomTwo;
 @property int randomThree;
-@property int a;
-@property int b;
-@property int c;
-@property int d;
+
+@property NSTimer* timer;
+@property UILabel *progress;
+@property int timeTick;
 @end

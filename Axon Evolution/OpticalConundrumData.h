@@ -15,6 +15,9 @@
 @property int pointsPlus;
 @property int pointsMinus;
 @property int startPoints;
+@property int currentScore;
+
+-(int) getInitialScore: (int)currentScore: (int)startPoints;
 
 
 @end

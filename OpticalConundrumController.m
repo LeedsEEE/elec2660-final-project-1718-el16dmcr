@@ -15,6 +15,8 @@
 
 @implementation OpticalConundrumController
 
+int timeTick = 10;
+
 // All the initial setup for this screen when it loads
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +32,11 @@
     //self.shownColourWordLabel.backgroundColor = [UIColor blackColor];
     self.topRightButton.backgroundColor = self.correctColour;
     NSLog(@"%@",self.shownColourWord);
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
+    self.timerLabel.text = @"10";
+    self.timerLabel.backgroundColor = [UIColor blackColor];
+    self.timerLabel.textColor = [UIColor whiteColor];
     
     
     
@@ -49,6 +56,23 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)tick{
+    if ( timeTick == 0){
+        timeTick--;
+        NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", timeTick];
+        self.timerLabel.text = timeRemaining;
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else {
+    timeTick--;
+    NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", timeTick];
+    self.timerLabel.text = timeRemaining;
+    }
+}
+
+
 // Generates randomly the colour word that will be chosen
 -(int) randomWordColourChosen  {
     self.randomTwo = arc4random_uniform(7);
@@ -58,12 +82,12 @@
 -(int) randomFontColourChosen {
     self.randomOne = arc4random_uniform(7);
     return(self.randomOne);
-}
+}// Generates the button that will have the right answer
 -(int) randomCorrectButtonChosen {
     self.randomThree = arc4random_uniform(3);
     return self.randomThree;
 }
-// Function that holds the colour of the font beign displayed
+// Function that holds the colour of the font being displayed
 -(UIColor *) colourDefiner {
     if ( self.randomOne == 0) {
         self.shownFontColour = [UIColor yellowColor];
@@ -135,12 +159,9 @@
     }
     return self.shownColourWord;
 }
--(int) correctButtonSelector {
+-(void) correctButtonSelector {
     if (self.randomThree == 0){
-        /*self.a = 1;
-        self.b = 0;
-        self.c = 0;
-        self.d = 0; */
+        
         self.topLeftButton.backgroundColor = self.correctColour;
         int secondStage = arc4random_uniform(2);
         if (secondStage == 0){
@@ -161,10 +182,7 @@
         
     }
     else if (self.randomThree == 1){
-       /* self.a = 0;
-        self.b = 1;
-        self.c = 0;
-        self.d = 0;*/
+       
         self.topRightButton.backgroundColor = self.correctColour;
         int secondStage = arc4random_uniform(2);
         if (secondStage == 0){
@@ -185,10 +203,7 @@
     }
     }
     else if (self.randomThree == 2){
-       /* self.a = 0;
-        self.b = 0;
-        self.c = 1;
-        self.d = 0;*/
+       
         self.bottomLeftButton.backgroundColor = self.correctColour;
         int secondStage = arc4random_uniform(2);
         if (secondStage == 0){
@@ -208,10 +223,7 @@
     }
     }
     else if (self.randomThree == 3){
-        /*self.a = 0;
-        self.b = 0;
-        self.c = 0;
-        self.d = 1;*/
+        
         self.bottomRightButton.backgroundColor = self.correctColour;
         int secondStage = arc4random_uniform(2);
         if (secondStage == 0){
@@ -230,7 +242,7 @@
             self.topLeftButton.backgroundColor = [UIColor lightGrayColor];
     }
     }
-    return (self.a,self.b,self.c,self.d);
+    
 }
 
 

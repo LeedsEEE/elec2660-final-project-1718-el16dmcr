@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageDisplay" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pvg-cq-ExX"/>
                         <viewControllerLayoutGuide type="bottom" id="iCN-tX-LY8"/>
@@ -38,7 +38,7 @@
         <!--Optical Conundrum Controller-->
         <scene sceneID="3MP-v0-DqQ">
             <objects>
-                <viewController id="E26-77-eE9" customClass="OpticalConundrumController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OpticalConundrum" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E26-77-eE9" customClass="OpticalConundrumController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WYo-wD-uEa"/>
                         <viewControllerLayoutGuide type="bottom" id="vRq-aG-T4q"/>
@@ -86,6 +86,20 @@
                                     <action selector="topLeftButtonPressed:" destination="E26-77-eE9" eventType="touchUpInside" id="qh1-se-nkT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="994-8a-Zzh">
+                                <frame key="frameInset" minX="166" minY="523" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srH-4w-JX8">
+                                <frame key="frameInset" minX="120" minY="592" width="134" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -93,20 +107,21 @@
                     <connections>
                         <outlet property="bottomLeftButton" destination="DNL-1g-t5X" id="5Px-Kz-PkD"/>
                         <outlet property="bottomRightButton" destination="Pvr-1Y-Nbb" id="GOX-2z-gp0"/>
+                        <outlet property="scoreLabel" destination="994-8a-Zzh" id="Y77-3u-EiL"/>
                         <outlet property="shownColourWordLabel" destination="eMc-Ok-P92" id="aj7-bH-TDo"/>
+                        <outlet property="timerLabel" destination="srH-4w-JX8" id="2zO-pg-WsX"/>
                         <outlet property="topLeftButton" destination="1mP-Y0-AEp" id="Prh-AO-txX"/>
                         <outlet property="topRightButton" destination="Vq9-Gl-iQ8" id="a0i-Zc-es2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FE8-QJ-d1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="426" y="-543"/>
+            <point key="canvasLocation" x="424.80000000000001" y="-543.77811094452773"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s61-xF-XNl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yln-aT-Ytq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="QeR-VO-hRD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomePage" id="QeR-VO-hRD" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UBZ-hM-DOn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -115,6 +130,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hcs-ln-hSx"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yln-aT-Ytq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1305" y="-66"/>
         </scene>
