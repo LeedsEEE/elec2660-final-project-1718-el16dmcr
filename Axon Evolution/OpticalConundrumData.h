@@ -17,7 +17,8 @@
 @property int startPoints;
 @property int currentScore;
 
--(int) getInitialScore: (int)currentScore: (int)startPoints;
-
+-(int) getInitialScore;
+-(int) wrongSelection;
+-(int) correctSelection;
 
 @end

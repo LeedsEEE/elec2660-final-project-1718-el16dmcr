@@ -7,7 +7,6 @@
 //
 
 #import "OpticalConundrumController.h"
-#import "OpticalConundrumData.h"
 
 @interface OpticalConundrumController ()
 
@@ -20,19 +19,34 @@
 // All the initial setup for this screen when it loads
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.opticalConundrumData = [[OpticalConundrumData alloc] init];
+    
     self.navigationItem.hidesBackButton = YES;   // Hides the back button that is there by default, I want to make my own
+    self.tempArray = [[NSMutableArray alloc] init];
+    self.colourArray = [[NSMutableArray alloc] init];
+    self.colourArray = [NSMutableArray arrayWithObjects: [UIColor greenColor],
+                        [UIColor blueColor],
+                        [UIColor redColor],
+                        [UIColor magentaColor],
+                        [UIColor blackColor],
+                        [UIColor cyanColor],
+                        [UIColor orangeColor],
+                        [UIColor brownColor], nil];
+    
     [self randomWordColourChosen]; //initial word chosen
     [self randomFontColourChosen];  //initial font colour chosen
     [self randomCorrectButtonChosen];
     [self randomThirdButtonChosen];
     [self randomFourthButtonChosen];
-    [self correctButtonSelector];
-    [self colourDefiner];
     [self wordDefiner];
+    [self colourDefiner];
+    [self correctButtonSelector];
     self.shownColourWordLabel.text = self.shownColourWord;
-    self.shownColourWordLabel.textColor = self.shownFontColour;
-    //self.shownColourWordLabel.backgroundColor = [UIColor blackColor];
-    self.topRightButton.backgroundColor = self.correctColour;
+    self.shownColourWordLabel.textColor = self.wrongColour;
+    self.scoreLabel.text = [NSString stringWithFormat: @"Score : %d",self.opticalConundrumData.startPoints];
+    [self.opticalConundrumData getInitialScore]; ///IMPORTANT
+    //NSString *text = [NSString stringWithFormat:@"%d", self.opticalConundrumData.startPoints];
+    
     NSLog(@"%@",self.shownColourWord);
     
     self.timeTick = 1000;
@@ -40,15 +54,7 @@
     self.timerLabel.text = @"1000";
     self.timerLabel.backgroundColor = [UIColor blackColor];
     self.timerLabel.textColor = [UIColor whiteColor];
-    self.colourArray = [[NSMutableArray alloc] init];
-    self.colourArray = [NSMutableArray arrayWithObjects: [UIColor greenColor],
-                                                         [UIColor blueColor],
-                                                         [UIColor redColor],
-                                                         [UIColor magentaColor],
-                                                         [UIColor blackColor],
-                                                         [UIColor cyanColor],
-                                                         [UIColor orangeColor],
-                                                         [UIColor brownColor], nil];
+    
     
 }
 
@@ -103,54 +109,70 @@
     return self.randomFour;
 }
 -(int) randomFourthButtonChosen {
-    self.randomFour = arc4random_uniform(4);
-    return self.randomFour;
+    self.randomFive = arc4random_uniform(4);
+    return self.randomFive;
 }
 
 // Function that generates the colour word being shown
 -(NSString *) wordDefiner {
     
-    self.correctColour = [self.colourArray objectAtIndex:self.randomTwo];
-    [self.colourArray removeObjectAtIndex:self.randomTwo];
     
-    if (self.randomTwo == 0) {
-        self.shownColourWord = @"green";
-    }
-    else if (self.randomTwo == 1) {
-        self.shownColourWord = @"blue";
-    }
-    else if (self.randomTwo == 2) {
-        self.shownColourWord = @"red";
-    }
-    else if (self.randomTwo == 3) {
-        self.shownColourWord = @"magenta";
-    }
-    else if (self.randomTwo == 4) {
-        self.shownColourWord = @"black";
-    }
-    else if (self.randomTwo == 5) {
-        self.shownColourWord = @"cyan";
-    }
-    else if (self.randomTwo == 6) {
-        self.shownColourWord = @"orange";
-    }
-    else if (self.randomTwo == 7) {
-        self.shownColourWord = @"brown";
-    }
+        /*[self.tempArray addObject: [UIColor blackColor]];
+        [self.tempArray addObject: [UIColor blackColor]];
+        [self.tempArray addObject: [UIColor blackColor]];
+        [self.tempArray addObject: [UIColor blackColor]]; */
+        self.tempArray = [[NSMutableArray alloc] initWithCapacity:self.colourArray.count];
+        /*for (id element in self.colourArray) {
+            [self.tempArray addObject:[element mutableCopy]];
+        }*/
+        for (NSInteger index = 0; index < 8; index++) {
+            [self.tempArray addObject:[self.colourArray objectAtIndex:index]];
+        }
+        
+        self.correctColour = [self.tempArray objectAtIndex:self.randomTwo];
+        NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
+        [self.tempArray removeObjectAtIndex:self.randomTwo];
+        
+        
+        if (self.randomTwo == 0) {
+            self.shownColourWord = @"green";
+        }
+        else if (self.randomTwo == 1) {
+            self.shownColourWord = @"blue";
+        }
+        else if (self.randomTwo == 2) {
+            self.shownColourWord = @"red";
+        }
+        else if (self.randomTwo == 3) {
+            self.shownColourWord = @"magenta";
+        }
+        else if (self.randomTwo == 4) {
+            self.shownColourWord = @"black";
+        }
+        else if (self.randomTwo == 5) {
+            self.shownColourWord = @"cyan";
+        }
+        else if (self.randomTwo == 6) {
+            self.shownColourWord = @"orange";
+        }
+        else if (self.randomTwo == 7) {
+            self.shownColourWord = @"brown";
+        }
     
     return self.shownColourWord;
 }
 // Function that generates the font colour being shown
 -(UIColor *) colourDefiner {
-    
-    self.shownFontColour = [self.colourArray objectAtIndex:self.randomOne];
-    [self.colourArray removeObjectAtIndex:self.randomOne];
+    NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
+    self.shownFontColour = [self.tempArray objectAtIndex:self.randomOne];
+    [self.tempArray removeObjectAtIndex:self.randomOne];
     self.wrongColour = self.shownFontColour;
-    self.otherColour1 = [self.colourArray objectAtIndex:self.randomFour];
-    [self.colourArray removeObjectAtIndex:self.randomFour];
-    self.otherColour2 = [self.colourArray objectAtIndex:self.randomFive];
-    [self.colourArray removeObjectAtIndex:self.randomFive];
-    
+    NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
+    self.otherColour1 = [self.tempArray objectAtIndex:self.randomFour];
+    [self.tempArray removeObjectAtIndex:self.randomFour];
+    NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
+    self.otherColour2 = [self.tempArray objectAtIndex:self.randomFive];
+    [self.tempArray removeObjectAtIndex:self.randomFive];
     
     return self.shownFontColour;
     return self.otherColour1;
@@ -166,18 +188,18 @@
         int secondStage = arc4random_uniform(2);
         if (secondStage == 0){
             self.topRightButton.backgroundColor = self.wrongColour;
-            self.bottomRightButton.backgroundColor = [UIColor magentaColor];
-            self.bottomLeftButton.backgroundColor = [UIColor lightGrayColor];
+            self.bottomRightButton.backgroundColor = self.otherColour1;
+            self.bottomLeftButton.backgroundColor = self.otherColour2;
         }
         else if (secondStage ==1){
             self.bottomRightButton.backgroundColor = self.wrongColour;
-            self.topRightButton.backgroundColor = [UIColor magentaColor];
-            self.bottomLeftButton.backgroundColor = [UIColor lightGrayColor];
+            self.topRightButton.backgroundColor = self.otherColour1;
+            self.bottomLeftButton.backgroundColor = self.otherColour2;
         }
         else {
             self.bottomLeftButton.backgroundColor = self.wrongColour;
-            self.topRightButton.backgroundColor = [UIColor magentaColor];
-            self.bottomRightButton.backgroundColor = [UIColor lightGrayColor];
+            self.topRightButton.backgroundColor = self.otherColour1;
+            self.bottomRightButton.backgroundColor = self.otherColour2;
         }
         
     }
@@ -187,20 +209,19 @@
         int secondStage = arc4random_uniform(2);
         if (secondStage == 0){
             self.topLeftButton.backgroundColor = self.wrongColour;
-            self.bottomRightButton.backgroundColor = [UIColor magentaColor];
-            self.bottomLeftButton.backgroundColor = [UIColor lightGrayColor];
+            self.bottomRightButton.backgroundColor = self.otherColour1;
+            self.bottomLeftButton.backgroundColor = self.otherColour2;
         }
         else if (secondStage ==1){
             self.bottomRightButton.backgroundColor = self.wrongColour;
-            self.topLeftButton.backgroundColor = [UIColor magentaColor];
-            self.bottomLeftButton.backgroundColor = [UIColor lightGrayColor];
+            self.topLeftButton.backgroundColor = self.otherColour1;
+            self.bottomLeftButton.backgroundColor = self.otherColour2;
         }
         else {
             self.bottomLeftButton.backgroundColor = self.wrongColour;
-            self.topLeftButton.backgroundColor = [UIColor magentaColor];
-            self.bottomRightButton.backgroundColor = [UIColor lightGrayColor];
-        
-    }
+            self.topLeftButton.backgroundColor = self.otherColour1;
+            self.bottomRightButton.backgroundColor = self.otherColour2;
+        }
     }
     else if (self.randomThree == 2){
        
@@ -208,19 +229,19 @@
         int secondStage = arc4random_uniform(2);
         if (secondStage == 0){
             self.topRightButton.backgroundColor = self.wrongColour;
-            self.bottomRightButton.backgroundColor = [UIColor magentaColor];
-            self.topLeftButton.backgroundColor = [UIColor lightGrayColor];
+            self.bottomRightButton.backgroundColor = self.otherColour1;
+            self.topLeftButton.backgroundColor = self.otherColour2;
         }
         else if (secondStage ==1){
             self.bottomRightButton.backgroundColor = self.wrongColour;
-            self.topRightButton.backgroundColor = [UIColor magentaColor];
-            self.topLeftButton.backgroundColor = [UIColor lightGrayColor];
+            self.topRightButton.backgroundColor = self.otherColour1;
+            self.topLeftButton.backgroundColor = self.otherColour2;
         }
         else {
             self.topLeftButton.backgroundColor = self.wrongColour;
-            self.topRightButton.backgroundColor = [UIColor magentaColor];
-            self.bottomRightButton.backgroundColor = [UIColor lightGrayColor];
-    }
+            self.topRightButton.backgroundColor = self.otherColour1;
+            self.bottomRightButton.backgroundColor = self.otherColour2;
+        }
     }
     else if (self.randomThree == 3){
         
@@ -228,125 +249,77 @@
         int secondStage = arc4random_uniform(2);
         if (secondStage == 0){
             self.topRightButton.backgroundColor = self.wrongColour;
-            self.topLeftButton.backgroundColor = [UIColor magentaColor];
-            self.bottomLeftButton.backgroundColor = [UIColor lightGrayColor];
+            self.topLeftButton.backgroundColor = self.otherColour1;
+            self.bottomLeftButton.backgroundColor = self.otherColour2;
         }
         else if (secondStage ==1){
             self.topLeftButton.backgroundColor = self.wrongColour;
-            self.topRightButton.backgroundColor = [UIColor magentaColor];
-            self.bottomLeftButton.backgroundColor = [UIColor lightGrayColor];
+            self.topRightButton.backgroundColor = self.otherColour1;
+            self.bottomLeftButton.backgroundColor = self.otherColour2;
         }
         else {
             self.bottomLeftButton.backgroundColor = self.wrongColour;
-            self.topRightButton.backgroundColor = [UIColor magentaColor];
-            self.topLeftButton.backgroundColor = [UIColor lightGrayColor];
-    }
+            self.topRightButton.backgroundColor = self.otherColour1;
+            self.topLeftButton.backgroundColor = self.otherColour2;
+        }
     }
     
+}
+-(void) anyButtonPressed {
+    [self randomWordColourChosen]; //initial word chosen
+    [self randomFontColourChosen];  //initial font colour chosen
+    [self randomCorrectButtonChosen];
+    [self randomThirdButtonChosen];
+    [self randomFourthButtonChosen];
+    [self wordDefiner];
+    [self colourDefiner];
+    [self correctButtonSelector];
+    self.shownColourWordLabel.text = self.shownColourWord;
+    self.shownColourWordLabel.textColor = self.wrongColour;
 }
 
 
 - (IBAction)topRightButtonPressed:(UIButton *)sender {
     if (self.randomThree == 1){
         NSLog(@"Correct");
-        [self randomWordColourChosen];
-        [self randomFontColourChosen];
-        [self randomCorrectButtonChosen];
-        [self colourDefiner];
-        [self wordDefiner];
-        [self correctButtonSelector];
-        self.shownColourWordLabel.text = self.shownColourWord;
-        self.shownColourWordLabel.textColor = self.shownFontColour;
-        
+        [self anyButtonPressed];
     }
     else  {
         NSLog(@"wrong");
-        [self randomWordColourChosen];
-        [self randomFontColourChosen];
-        [self randomCorrectButtonChosen];
-        [self colourDefiner];
-        [self wordDefiner];
-        [self correctButtonSelector];
-        self.shownColourWordLabel.text = self.shownColourWord;
-        self.shownColourWordLabel.textColor = self.shownFontColour;
+        [self anyButtonPressed];
     }
 }
 
 - (IBAction)bottomRightButtonPressed:(UIButton *)sender {
     if (self.randomThree == 3){
         NSLog(@"Correct");
-        [self randomWordColourChosen];
-        [self randomFontColourChosen];
-        [self randomCorrectButtonChosen];
-        [self colourDefiner];
-        [self wordDefiner];
-        [self correctButtonSelector];
-        self.shownColourWordLabel.text = self.shownColourWord;
-        self.shownColourWordLabel.textColor = self.shownFontColour;
-        
+        [self anyButtonPressed];
     }
     else  {
         NSLog(@"wrong");
-        [self randomWordColourChosen];
-        [self randomFontColourChosen];
-        [self randomCorrectButtonChosen];
-        [self colourDefiner];
-        [self wordDefiner];
-        [self correctButtonSelector];
-        self.shownColourWordLabel.text = self.shownColourWord;
-        self.shownColourWordLabel.textColor = self.shownFontColour;
+        [self anyButtonPressed];
     }
 }
 
 - (IBAction)topLeftButtonPressed:(UIButton *)sender {
     if (self.randomThree == 0){
         NSLog(@"Correct");
-        [self randomWordColourChosen];
-        [self randomFontColourChosen];
-        [self randomCorrectButtonChosen];
-        [self colourDefiner];
-        [self wordDefiner];
-        [self correctButtonSelector];
-        self.shownColourWordLabel.text = self.shownColourWord;
-        self.shownColourWordLabel.textColor = self.shownFontColour;
-        
+        [self anyButtonPressed];
     }
     else  {
         NSLog(@"wrong");
-        [self randomWordColourChosen];
-        [self randomFontColourChosen];
-        [self randomCorrectButtonChosen];
-        [self colourDefiner];
-        [self wordDefiner];
-        [self correctButtonSelector];
-        self.shownColourWordLabel.text = self.shownColourWord;
-        self.shownColourWordLabel.textColor = self.shownFontColour;
+        [self anyButtonPressed];
     }
 }
 
 - (IBAction)bottomLeftButtonPressed:(UIButton *)sender {
     if (self.randomThree == 2){
         NSLog(@"Correct");
-        [self randomWordColourChosen];
-        [self randomFontColourChosen];
-        [self randomCorrectButtonChosen];
-        [self colourDefiner];
-        [self wordDefiner];
-        [self correctButtonSelector];
-        self.shownColourWordLabel.text = self.shownColourWord;
-        self.shownColourWordLabel.textColor = self.shownFontColour;
-        
+        [self anyButtonPressed];
     }
     else  {
         NSLog(@"wrong");
-        [self randomWordColourChosen];
-        [self randomFontColourChosen];
-        [self randomCorrectButtonChosen];
-        [self colourDefiner];
-        [self wordDefiner];
-        [self correctButtonSelector];
-        self.shownColourWordLabel.text = self.shownColourWord;
-        self.shownColourWordLabel.textColor = self.shownFontColour;
+        [self anyButtonPressed];
     }
 }
 

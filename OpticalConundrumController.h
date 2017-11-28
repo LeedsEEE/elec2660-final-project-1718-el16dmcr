@@ -38,8 +38,11 @@
 @property int randomFour;
 @property int randomFive;
 
+@property OpticalConundrumData* opticalConundrumData;
+
 @property NSTimer* timer;
 @property UILabel *progress;
 @property int timeTick;
 @property NSMutableArray *colourArray;
+@property NSMutableArray *tempArray;
 @end
