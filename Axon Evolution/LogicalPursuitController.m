@@ -71,7 +71,9 @@
 -(void)shapeClicked{
     NSLog(@"shape clicked");
 }
-
+-(NSMutableArray)generatePattern{
+    for(self.logicalPursuitData.roundCounter )
+}
 
 - (IBAction)mainMenuButtonPressed:(UIButton *)sender {
 }

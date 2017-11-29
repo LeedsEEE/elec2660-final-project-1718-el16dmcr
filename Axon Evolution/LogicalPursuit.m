@@ -40,6 +40,7 @@
     self = [super init];
     self.startLives = 3;
     self.pointsPlus = 50;
+    self.roundCounter = 5;
     return self;
 }
 
