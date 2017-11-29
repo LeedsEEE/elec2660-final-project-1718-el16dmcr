@@ -10,4 +10,14 @@
 
 @interface LogicalPursuit : NSObject
 
+
+
+@property int currentLives;
+@property int startLives;
+@property NSMutableArray *latestPattern;
+@property NSMutableArray *userInputtedPattern;
+@property int pointsPlus;
+@property int randomOne;
+@property int roundCounter;
+
 @end

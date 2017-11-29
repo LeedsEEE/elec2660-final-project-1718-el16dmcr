@@ -10,4 +10,18 @@
 
 @interface LogicalPursuitController : ViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *redCircleImage;
+@property (weak, nonatomic) IBOutlet UIImageView *pinkInvertedSquareImage;
+@property (weak, nonatomic) IBOutlet UIImageView *blueRhombusImage;
+@property (weak, nonatomic) IBOutlet UIImageView *cyanSquareImage;
+@property (weak, nonatomic) IBOutlet UIImageView *purpleDiamondImage;
+@property (weak, nonatomic) IBOutlet UIImageView *greenTriangleImage;
+
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *livesRemainingLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *mainMenuButton;
+- (IBAction)mainMenuButtonPressed:(UIButton *)sender;
+
+
 @end

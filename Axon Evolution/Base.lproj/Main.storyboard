@@ -93,6 +93,10 @@
                                 <frame key="frameInset" minX="122" minY="617" width="131" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back to Main Menu"/>
+                                <connections>
+                                    <action selector="mainMenuButtonPressed:" destination="Gh2-RI-P0q" eventType="touchUpInside" id="xTB-5S-LfX"/>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="zxR-2A-VPN"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbt-uC-hRE">
                                 <frame key="frameInset" minX="56" minY="432" width="108" height="109"/>
@@ -102,6 +106,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="bIi-sR-52f"/>
+                    <connections>
+                        <outlet property="blueRhombusImage" destination="xA1-Vc-1ln" id="3Zc-q9-ids"/>
+                        <outlet property="cyanSquareImage" destination="kbt-uC-hRE" id="icS-Xp-QOB"/>
+                        <outlet property="greenTriangleImage" destination="q3b-yR-Hg1" id="oj3-3P-2aJ"/>
+                        <outlet property="livesRemainingLabel" destination="BGG-3C-yXd" id="BgT-mE-5Bv"/>
+                        <outlet property="mainMenuButton" destination="BYz-1G-4pz" id="hXk-wT-G25"/>
+                        <outlet property="pinkInvertedSquareImage" destination="EsK-ED-u5i" id="dAR-Xg-Q1t"/>
+                        <outlet property="purpleDiamondImage" destination="kc0-94-Om9" id="Sla-ND-E5a"/>
+                        <outlet property="redCircleImage" destination="8P6-O2-WZA" id="6tr-ZE-FAB"/>
+                        <outlet property="scoreLabel" destination="pVZ-Dk-Xl8" id="xRB-1J-Xja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4CB-Mq-tZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -207,4 +222,7 @@
             <point key="canvasLocation" x="-1305" y="-66"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zxR-2A-VPN"/>
+    </inferredMetricsTieBreakers>
 </document>
