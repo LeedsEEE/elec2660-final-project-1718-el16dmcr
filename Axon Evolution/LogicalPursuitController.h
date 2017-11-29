@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *livesRemainingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *whenToPlayLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *mainMenuButton;
 - (IBAction)mainMenuButtonPressed:(UIButton *)sender;

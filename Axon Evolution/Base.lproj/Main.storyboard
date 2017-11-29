@@ -102,6 +102,13 @@
                                 <frame key="frameInset" minX="56" minY="432" width="108" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16h-xl-ecC">
+                                <frame key="frameInset" minX="146" minY="323" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -116,6 +123,7 @@
                         <outlet property="purpleDiamondImage" destination="kc0-94-Om9" id="Sla-ND-E5a"/>
                         <outlet property="redCircleImage" destination="8P6-O2-WZA" id="6tr-ZE-FAB"/>
                         <outlet property="scoreLabel" destination="pVZ-Dk-Xl8" id="xRB-1J-Xja"/>
+                        <outlet property="whenToPlayLabel" destination="16h-xl-ecC" id="yut-Nc-ZOV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4CB-Mq-tZc" userLabel="First Responder" sceneMemberID="firstResponder"/>

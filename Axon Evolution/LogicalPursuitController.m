@@ -50,6 +50,9 @@
     [self.cyanSquareImage addGestureRecognizer:cyanSquareTapped];
     [self.purpleDiamondImage addGestureRecognizer:purpleDiamondTapped];
     [self.greenTriangleImage addGestureRecognizer:greenTriangleTapped];
+    
+    [self generatePattern];
+    [self flashPattern];
      
     // Do any additional setup after loading the view.
 }
