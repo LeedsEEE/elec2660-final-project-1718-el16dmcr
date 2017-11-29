@@ -71,8 +71,38 @@
 -(void)shapeClicked{
     NSLog(@"shape clicked");
 }
--(NSMutableArray)generatePattern{
-    for(self.logicalPursuitData.roundCounter )
+-(NSMutableArray *)generatePattern{
+    for(int i = 0; i<self.logicalPursuitData.roundCounter; i++){
+        [self.logicalPursuitData pickNextShape];
+        [self.logicalPursuitData.latestPattern addObject:[NSNumber numberWithInt:self.logicalPursuitData.randomOne]];
+        
+    }
+    return self.logicalPursuitData.latestPattern;
+}
+
+
+-(void)flashPattern {
+    for(int i = 0; i<self.logicalPursuitData.roundCounter; i++) {
+        [self.logicalPursuitData shapeSelector];
+        if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqual: @"circle"]){
+            NSLog(@"light up red circle");
+        }
+        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqual: @"invertedSquare"]){
+            NSLog(@"light up pink inverted square");
+        }
+        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqual: @"rhombus"]){
+            NSLog(@"light up blue rhombus");
+        }
+        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqual: @"square"]){
+            NSLog(@"light up cyan square");
+        }
+        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqual: @"diamond"]){
+            NSLog(@"light up purple diamond");
+        }
+        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqual: @"triangle"]){
+            NSLog(@"light up green triangle");
+        }
+    }
 }
 
 - (IBAction)mainMenuButtonPressed:(UIButton *)sender {

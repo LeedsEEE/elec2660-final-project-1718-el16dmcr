@@ -24,6 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *mainMenuButton;
 - (IBAction)mainMenuButtonPressed:(UIButton *)sender;
 
-@property LogicalPursuit* logicalPursuitController;
+@property LogicalPursuit* logicalPursuitData;
 
 @end

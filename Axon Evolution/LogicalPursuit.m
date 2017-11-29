@@ -10,7 +10,27 @@
 
 @implementation LogicalPursuit
 
-
+-(NSString *)shapeSelector{
+    if (self.randomOne == 0){
+        self.shape = @"circle";
+    }
+    else if (self.randomOne == 1){
+        self.shape = @"invertedSquare";
+    }
+    else if (self.randomOne == 1){
+        self.shape = @"rhombus";
+    }
+    else if (self.randomOne == 1){
+        self.shape = @"square";
+    }
+    else if (self.randomOne == 1){
+        self.shape = @"diamond";
+    }
+    else if (self.randomOne == 1){
+        self.shape = @"triangle";
+    }
+    return self.shape;
+}
 -(int)pickNextShape{
     self.randomOne = arc4random_uniform(5);
     return self.randomOne;
