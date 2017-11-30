@@ -22,7 +22,7 @@
     
     self.navigationItem.hidesBackButton = YES;
     [self.view setUserInteractionEnabled:NO];
-    [self reset];
+    //[self reset];
     //[self.logicalPursuitData init];
     
     [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOffImage"]]; //Needs to be set
@@ -285,8 +285,9 @@
     self.tempCounter = 0;
     self.tempCounter2 = 0;
     
-    
-    
+    for (int i = 0; i < self.logicalPursuitData.roundCounter; i++) {
+        [self.logicalPursuitData.latestPattern removeObjectAtIndex:i];
+    }
     return self.tempCounter;
     return self.tempCounter2;
 }
