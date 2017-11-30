@@ -21,9 +21,9 @@
     self.logicalPursuitData = [[LogicalPursuit alloc] init];  // need this so it knows what ive set variables as in other classes
     
     self.navigationItem.hidesBackButton = YES;
-    
+    [self.view setUserInteractionEnabled:NO];
+    [self reset];
     //[self.logicalPursuitData init];
-    
     
     [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOffImage"]]; //Needs to be set
     [self.redCircleImage setUserInteractionEnabled:YES];
@@ -38,17 +38,17 @@
     [self.greenTriangleImage setImage:[UIImage imageNamed:@"greenTriangleOffImage"]]; //Needs to be set
     [self.greenTriangleImage setUserInteractionEnabled:YES];
     
-    UITapGestureRecognizer *redCircleTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shapeClicked)];
+    UITapGestureRecognizer *redCircleTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(circleClicked)];
     [redCircleTapped setNumberOfTapsRequired:1];
-    UITapGestureRecognizer *pinkInvertedSquareTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shapeClicked)];
+    UITapGestureRecognizer *pinkInvertedSquareTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(invertedSquareClicked)];
     [pinkInvertedSquareTapped setNumberOfTapsRequired:1];
-    UITapGestureRecognizer *blueRhombusTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shapeClicked)];
+    UITapGestureRecognizer *blueRhombusTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rhombusClicked)];
     [blueRhombusTapped setNumberOfTapsRequired:1];
-    UITapGestureRecognizer *cyanSquareTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shapeClicked)];
+    UITapGestureRecognizer *cyanSquareTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(squareClicked)];
     [cyanSquareTapped setNumberOfTapsRequired:1];
-    UITapGestureRecognizer *purpleDiamondTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shapeClicked)];
+    UITapGestureRecognizer *purpleDiamondTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(diamondClicked)];
     [purpleDiamondTapped setNumberOfTapsRequired:1];
-    UITapGestureRecognizer *greenTriangleTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shapeClicked)];
+    UITapGestureRecognizer *greenTriangleTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(triangleClicked)];
     [greenTriangleTapped setNumberOfTapsRequired:1];
     [self.redCircleImage addGestureRecognizer:redCircleTapped];
     [self.pinkInvertedSquareImage addGestureRecognizer:pinkInvertedSquareTapped];
@@ -88,41 +88,105 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)circleClicked{
+    NSLog(@"circle clicked");
+    if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"circle"]){
+        NSLog(@"correct");
+    }
+    else {
+        NSLog(@"WRONG");
+    }
+    self.tempCounter2++;
+}
+-(void)invertedSquareClicked{
+    NSLog(@"inverted square clicked");
+    if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"invertedSquare"]){
+        NSLog(@"correct");
+    }
+    else {
+        NSLog(@"WRONG");
+    }
+    self.tempCounter2++;
+}
+-(void)rhombusClicked{
+    NSLog(@"rhombus clicked");
+    if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"rhombus"]){
+        NSLog(@"correct");
+    }
+    else {
+        NSLog(@"WRONG");
+    }
+    self.tempCounter2++;
+}
+-(void)squareClicked{
+    NSLog(@"square clicked");
+    if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"square"]){
+        NSLog(@"correct");
+    }
+    else {
+        NSLog(@"WRONG");
+    }
+    self.tempCounter2++;
+}
+-(void)diamondClicked{
+    NSLog(@"diamond clicked");
+    if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"diamond"]){
+        NSLog(@"correct");
+    }
+    else {
+        NSLog(@"WRONG");
+    }
+    self.tempCounter2++;
+}
+-(void)triangleClicked{
+    NSLog(@"triangle clicked");
+    if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"triangle"]){
+        NSLog(@"correct");
+    }
+    else {
+        NSLog(@"WRONG");
+    }
+    self.tempCounter2++;
+}
 
 -(void)lightCircle{
     [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOnImage"]];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
     self.tempCounter ++;
     //[NSThread sleepForTimeInterval:2.0f];
     
 }
 -(void)lightInvertedSquare{
     [self.pinkInvertedSquareImage setImage:[UIImage imageNamed:@"pinkInvertedSquareOnImage"]];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
     self.tempCounter ++;
     
 }
 -(void)lightRhombus{
     [self.blueRhombusImage setImage:[UIImage imageNamed:@"blueRhombusOnImage"]];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
     self.tempCounter ++;
     
 }
 -(void)lightSquare{
     [self.cyanSquareImage setImage:[UIImage imageNamed:@"cyanSquareOnImage"]];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
     self.tempCounter ++;
     
 }
 -(void)lightDiamond{
     [self.purpleDiamondImage setImage:[UIImage imageNamed:@"purpleDiamondOnImage"]];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
     self.tempCounter ++;
     
 }
 -(void)lightTriangle{
     [self.greenTriangleImage setImage:[UIImage imageNamed:@"greenTriangleOnImage"]];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
     self.tempCounter ++;
     
 }
--(void)shapeClicked{
-    NSLog(@"shape clicked");
-}
+
 -(int)reset{
     self.tempCounter = 0;
     self.tempCounter2 = 0;
@@ -133,6 +197,9 @@
 -(void)generatePattern{
     
     if(self.tempCounter < self.logicalPursuitData.roundCounter){
+        
+        
+        [self.view setUserInteractionEnabled:NO];
         
         NSLog(@"roundCounter is %d",self.logicalPursuitData.roundCounter);
         NSLog(@"roundCounter is %d",self.tempCounter);
@@ -159,6 +226,9 @@
         [self.purpleDiamondImage setImage:[UIImage imageNamed:@"purpleDiamondOffImage"]]; //Needs to be set
         [self.greenTriangleImage setImage:[UIImage imageNamed:@"greenTriangleOffImage"]]; //Needs to be set
         NSLog(@"pattern has been flashed");
+        [self.view setUserInteractionEnabled:YES];
+        self.whenToPlayLabel.text = (@"Play Now");
+        
     }
     
     
@@ -166,10 +236,6 @@
 
 
 -(void)flashPattern {
-    //for(int i = 0; i<self.logicalPursuitData.roundCounter; i++) {
-        
-        
-    
         
             NSLog(@"shape from the index is: %@", [self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]);
             
@@ -213,7 +279,7 @@
         }
         
             
-   // }
+   
 }
 
 - (IBAction)mainMenuButtonPressed:(UIButton *)sender {
