@@ -286,7 +286,7 @@
     self.tempCounter2 = 0;
     
     for (int i = 0; i < self.logicalPursuitData.roundCounter; i++) {
-        [self.logicalPursuitData.latestPattern removeObjectAtIndex:i];
+        [self.logicalPursuitData.latestPattern removeLastObject];
     }
     return self.tempCounter;
     return self.tempCounter2;

@@ -34,6 +34,14 @@
                                     <segue destination="Gh2-RI-P0q" kind="push" id="v5x-im-EGs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrP-Q8-8hz">
+                                <frame key="frameInset" minX="61" minY="486" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="NZz-SP-7gC" kind="push" id="uKa-XM-JTv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -42,6 +50,134 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-372" y="-66.11694152923539"/>
+        </scene>
+        <!--Flip Retention Controller-->
+        <scene sceneID="IUd-lV-Kgu">
+            <objects>
+                <viewController id="NZz-SP-7gC" customClass="FlipRetentionController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wYh-Gm-GIl"/>
+                        <viewControllerLayoutGuide type="bottom" id="J5Z-PY-w6n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pXc-4i-xnJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score : XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPp-d5-F1Y">
+                                <frame key="frameInset" minX="16" minY="20" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssx-ad-HD9">
+                                <frame key="frameInset" minX="317" minY="28" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AX5-lq-raT">
+                                <frame key="frameInset" minX="122" minY="617" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back to Main Menu"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="zIH-Sf-eZz"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Db-QS-mUK">
+                                <frame key="frameInset" minX="10" minY="157" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XP2-y5-xad">
+                                <frame key="frameInset" minX="98" minY="157" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBg-PS-cMo">
+                                <frame key="frameInset" minX="187" minY="157" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mGy-dS-sMh">
+                                <frame key="frameInset" minX="275" minY="157" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEs-bN-I7L">
+                                <frame key="frameInset" minX="10" minY="245" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b0b-Qq-m3B">
+                                <frame key="frameInset" minX="98" minY="245" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rcV-N5-FIk">
+                                <frame key="frameInset" minX="187" minY="245" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IkY-K9-HhE">
+                                <frame key="frameInset" minX="275" minY="245" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8N-Cj-hgy">
+                                <frame key="frameInset" minX="10" minY="331" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEK-BE-oGL">
+                                <frame key="frameInset" minX="98" minY="331" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDU-RC-LDX">
+                                <frame key="frameInset" minX="187" minY="331" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nfa-xi-IqO">
+                                <frame key="frameInset" minX="275" minY="331" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M3m-zq-onA">
+                                <frame key="frameInset" minX="10" minY="419" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hES-Up-z3o">
+                                <frame key="frameInset" minX="98" minY="419" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-BI-Hf3">
+                                <frame key="frameInset" minX="187" minY="419" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqA-Ee-5Sd">
+                                <frame key="frameInset" minX="275" minY="419" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vTT-Bp-Ee2"/>
+                    <connections>
+                        <outlet property="a11Image" destination="2Db-QS-mUK" id="uYw-hS-8Nl"/>
+                        <outlet property="a12Image" destination="XP2-y5-xad" id="CHA-iG-PNc"/>
+                        <outlet property="a13Image" destination="gBg-PS-cMo" id="Ls3-bf-n7y"/>
+                        <outlet property="a14Image" destination="mGy-dS-sMh" id="7rH-AO-q19"/>
+                        <outlet property="a21Image" destination="aEs-bN-I7L" id="x17-CO-wwB"/>
+                        <outlet property="a22Image" destination="b0b-Qq-m3B" id="udI-Tt-UnY"/>
+                        <outlet property="a23Image" destination="rcV-N5-FIk" id="up2-wo-wer"/>
+                        <outlet property="a24Image" destination="IkY-K9-HhE" id="AFQ-Qx-HbT"/>
+                        <outlet property="a31Image" destination="B8N-Cj-hgy" id="nDS-YK-FlR"/>
+                        <outlet property="a32Image" destination="MEK-BE-oGL" id="RjS-Ay-5A5"/>
+                        <outlet property="a33Image" destination="oDU-RC-LDX" id="3el-M7-Wbm"/>
+                        <outlet property="a34Image" destination="Nfa-xi-IqO" id="Qqk-T4-mqa"/>
+                        <outlet property="a41Image" destination="M3m-zq-onA" id="AXc-Ln-2uQ"/>
+                        <outlet property="a42Image" destination="hES-Up-z3o" id="SDe-Ba-g1D"/>
+                        <outlet property="a43Image" destination="Rie-BI-Hf3" id="6zk-Ai-r7J"/>
+                        <outlet property="a44Image" destination="xqA-Ee-5Sd" id="geL-rL-XgE"/>
+                        <outlet property="mainMenuButton" destination="AX5-lq-raT" id="V0T-fr-WZ1"/>
+                        <outlet property="scoreLabel" destination="iPp-d5-F1Y" id="KFe-hu-frS"/>
+                        <outlet property="timerLabel" destination="ssx-ad-HD9" id="vcE-FX-MKd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="24S-eZ-mnk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-343.19999999999999" y="615.74212893553226"/>
         </scene>
         <!--Logical Pursuit Controller-->
         <scene sceneID="jPm-az-crH">
@@ -128,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4CB-Mq-tZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="437.60000000000002" y="164.16791604197903"/>
+            <point key="canvasLocation" x="-343" y="-890"/>
         </scene>
         <!--Optical Conundrum Controller-->
         <scene sceneID="3MP-v0-DqQ">
@@ -196,9 +332,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRw-eO-7TT">
-                                <frame key="frameInset" minX="164" minY="573" width="46" height="30"/>
+                                <frame key="frameInset" minX="122" minY="573" width="131" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Back to Main Menu"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="push" id="djY-cq-rxu"/>
                                 </connections>
@@ -219,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FE8-QJ-d1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424.80000000000001" y="-543.77811094452773"/>
+            <point key="canvasLocation" x="726" y="-66"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s61-xF-XNl">
@@ -239,6 +375,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zxR-2A-VPN"/>
+        <segue reference="zIH-Sf-eZz"/>
     </inferredMetricsTieBreakers>
 </document>
