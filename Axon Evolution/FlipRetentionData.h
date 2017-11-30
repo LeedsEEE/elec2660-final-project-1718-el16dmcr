@@ -10,4 +10,15 @@
 
 @interface FlipRetentionData : NSObject
 
+@property int pointsPlus;
+@property int pointsMinus;
+@property int startPoints;
+@property int firstPicture;
+@property int secondPicture;
+@property int randomOne;
+@property int randomTwo;
+
+-(BOOL)picturesMatch;
+-(int)GameTwoScoreCumulative;
+
 @end

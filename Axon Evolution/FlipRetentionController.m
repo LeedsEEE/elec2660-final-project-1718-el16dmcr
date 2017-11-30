@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.a11Image setImage:[UIImage imageNamed:@"redCircleOffImage"]]; //Needs to be set
+    [self.a11Image setUserInteractionEnabled:YES];
 }
 
 - (void)didReceiveMemoryWarning {

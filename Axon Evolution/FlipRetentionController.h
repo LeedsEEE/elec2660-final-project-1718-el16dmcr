@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FlipRetentionData.h"
 
 @interface FlipRetentionController : ViewController
 
@@ -37,6 +38,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *mainMenuButton;
 
 
-
+@property FlipRetentionData *flipRetentionData;
 
 @end
