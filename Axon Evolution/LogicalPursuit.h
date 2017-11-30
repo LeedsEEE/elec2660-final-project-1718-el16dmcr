@@ -20,9 +20,10 @@
 @property int randomOne;
 @property int roundCounter;
 @property NSString *shape;
+@property int currentPoints;
 
 
-
+-(int)calculatePoints;
 -(int)pickNextShape;
 -(int)roundCounterPlus;
 -(int)setStartLives;

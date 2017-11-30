@@ -62,11 +62,16 @@
         return NO;
     }
 }
+-(int)calculatePoints{
+    self.currentPoints = self.currentPoints + self.pointsPlus;
+    return self.currentPoints;
+}
 -(id)init{
     self = [super init];
     self.startLives = 3;
     self.pointsPlus = 50;
     self.roundCounter = 5;
+    self.currentPoints = 0;
     self.latestPattern = [[NSMutableArray alloc] init];
     return self;
 }

@@ -61,7 +61,7 @@
     
     NSLog(@"counter is %d", self.logicalPursuitData.roundCounter);
     NSLog(@"lives are %d", self.logicalPursuitData.currentLives);
-    
+    self.scoreLabel.text = @"0";
     
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
     //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(flashPattern) userInfo:nil repeats:NO];
@@ -92,19 +92,26 @@
     NSLog(@"circle clicked");
     if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"circle"]){
         NSLog(@"correct");
+        [self.logicalPursuitData calculatePoints];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
     }
     else {
         NSLog(@"WRONG");
+        [self.logicalPursuitData removeLive];
     }
     self.tempCounter2++;
+    
 }
 -(void)invertedSquareClicked{
     NSLog(@"inverted square clicked");
     if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"invertedSquare"]){
         NSLog(@"correct");
+        [self.logicalPursuitData calculatePoints];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
     }
     else {
         NSLog(@"WRONG");
+        [self.logicalPursuitData removeLive];
     }
     self.tempCounter2++;
 }
@@ -112,9 +119,12 @@
     NSLog(@"rhombus clicked");
     if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"rhombus"]){
         NSLog(@"correct");
+        [self.logicalPursuitData calculatePoints];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
     }
     else {
         NSLog(@"WRONG");
+        [self.logicalPursuitData removeLive];
     }
     self.tempCounter2++;
 }
@@ -122,9 +132,12 @@
     NSLog(@"square clicked");
     if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"square"]){
         NSLog(@"correct");
+        [self.logicalPursuitData calculatePoints];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
     }
     else {
         NSLog(@"WRONG");
+        [self.logicalPursuitData removeLive];
     }
     self.tempCounter2++;
 }
@@ -132,9 +145,12 @@
     NSLog(@"diamond clicked");
     if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"diamond"]){
         NSLog(@"correct");
+        [self.logicalPursuitData calculatePoints];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
     }
     else {
         NSLog(@"WRONG");
+        [self.logicalPursuitData removeLive];
     }
     self.tempCounter2++;
 }
@@ -142,9 +158,12 @@
     NSLog(@"triangle clicked");
     if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"triangle"]){
         NSLog(@"correct");
+        [self.logicalPursuitData calculatePoints];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
     }
     else {
         NSLog(@"WRONG");
+        [self.logicalPursuitData removeLive];
     }
     self.tempCounter2++;
 }
