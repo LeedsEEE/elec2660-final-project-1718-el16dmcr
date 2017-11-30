@@ -10,6 +10,19 @@
 
 @implementation FlipRetentionData
 
-
-
+-(int)generatePairImages{
+    self.randomOne = arc4random_uniform(7);
+    return self.randomOne;
+}
+-(int)generatePairPositions{
+    self.randomTwo =arc4random_uniform(15);
+    return self.randomTwo;
+}
+-(BOOL)picturesMatch{
+    return YES;
+}
+-(int)gameTwoScoreCumulative{
+    self.currentScore = self.currentScore + self.pointsPlus;
+    return self.currentScore;
+}
 @end

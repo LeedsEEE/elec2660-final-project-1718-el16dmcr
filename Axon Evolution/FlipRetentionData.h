@@ -17,8 +17,12 @@
 @property int secondPicture;
 @property int randomOne;
 @property int randomTwo;
+@property int currentScore;
 
 -(BOOL)picturesMatch;
--(int)GameTwoScoreCumulative;
+-(int)gameTwoScoreCumulative;
+-(int)generatePairPositions;
+-(int)generatePairImages;
+
 
 @end

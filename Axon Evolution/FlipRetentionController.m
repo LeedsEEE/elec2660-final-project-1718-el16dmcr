@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.a11Image setImage:[UIImage imageNamed:@"redCircleOffImage"]]; //Needs to be set
+    //[self.flipRetentionData ]
+    
+    [self.a11Image setImage:[UIImage imageNamed:@"setOnePairOne"]]; //Needs to be set
     [self.a11Image setUserInteractionEnabled:YES];
 }
 
