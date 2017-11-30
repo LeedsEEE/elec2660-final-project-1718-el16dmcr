@@ -115,7 +115,7 @@
             UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
             [self presentViewController:vc animated:YES completion:nil];
         }
-        
+        [self reset];
         [self generatePattern];
     
     }
@@ -140,7 +140,7 @@
             UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
             [self presentViewController:vc animated:YES completion:nil];
         }
-        
+        [self reset];
         [self generatePattern];
     
     }
@@ -164,7 +164,7 @@
             UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
             [self presentViewController:vc animated:YES completion:nil];
         }
-        
+        [self reset];
         [self generatePattern];
     
     }
@@ -188,7 +188,7 @@
             UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
             [self presentViewController:vc animated:YES completion:nil];
         }
-        
+        [self reset];
         [self generatePattern];
     
     }
@@ -212,7 +212,7 @@
             UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
             [self presentViewController:vc animated:YES completion:nil];
         }
-        
+        [self reset];
         [self generatePattern];
     
     }
@@ -236,9 +236,9 @@
             UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
             [self presentViewController:vc animated:YES completion:nil];
         }
-        
+        [self reset];
         [self generatePattern];
-    
+     
     }
     self.tempCounter2++;
 }
@@ -284,6 +284,8 @@
 -(int)reset{
     self.tempCounter = 0;
     self.tempCounter2 = 0;
+    
+    
     
     return self.tempCounter;
     return self.tempCounter2;
