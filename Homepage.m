@@ -41,7 +41,7 @@ UIColor* RGB(float r, float g, float b)
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     
-    NSLog(@"Commit Check");
+    
     
     
     // Define the height and width of the scren so it works for all screens
