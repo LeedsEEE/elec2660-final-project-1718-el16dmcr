@@ -63,8 +63,8 @@
     NSLog(@"lives are %d", self.logicalPursuitData.currentLives);
     
     
-    //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(flashPattern) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
+    //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(flashPattern) userInfo:nil repeats:NO];
     //[self generatePattern];
     //[self flashPattern];
     //[self.logicalPursuitData pickNextShape];
@@ -91,112 +91,129 @@
 
 -(void)lightCircle{
     [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOnImage"]];
+    self.tempCounter ++;
     //[NSThread sleepForTimeInterval:2.0f];
     
 }
 -(void)lightInvertedSquare{
     [self.pinkInvertedSquareImage setImage:[UIImage imageNamed:@"pinkInvertedSquareOnImage"]];
+    self.tempCounter ++;
     
 }
 -(void)lightRhombus{
-    [self.redCircleImage setImage:[UIImage imageNamed:@"blueRhombusOnImage"]];
+    [self.blueRhombusImage setImage:[UIImage imageNamed:@"blueRhombusOnImage"]];
+    self.tempCounter ++;
     
 }
 -(void)lightSquare{
-    [self.redCircleImage setImage:[UIImage imageNamed:@"cyanSquareOnImage"]];
+    [self.cyanSquareImage setImage:[UIImage imageNamed:@"cyanSquareOnImage"]];
+    self.tempCounter ++;
     
 }
 -(void)lightDiamond{
-    [self.redCircleImage setImage:[UIImage imageNamed:@"purpleDiamondOnImage"]];
+    [self.purpleDiamondImage setImage:[UIImage imageNamed:@"purpleDiamondOnImage"]];
+    self.tempCounter ++;
     
 }
 -(void)lightTriangle{
-    [self.redCircleImage setImage:[UIImage imageNamed:@"greenTriangleOnImage"]];
+    [self.greenTriangleImage setImage:[UIImage imageNamed:@"greenTriangleOnImage"]];
+    self.tempCounter ++;
     
 }
 -(void)shapeClicked{
     NSLog(@"shape clicked");
 }
--(NSMutableArray *)generatePattern{
-    for(int i = 0; i<=self.logicalPursuitData.roundCounter; i++){
-        
-        [self.logicalPursuitData pickNextShape];
-        [self.logicalPursuitData shapeSelector];
-        NSLog(@"random number is: %d", self.logicalPursuitData.randomOne);
-        NSLog(@"Next shape has been picked");
-        //[self.logicalPursuitData.latestPattern addObject:self.logicalPursuitData.shape];
-        NSLog(@"pattern has been generated");
-        
-    }
-    return self.logicalPursuitData.latestPattern;
+-(int)reset{
+    self.tempCounter = 0;
+    self.tempCounter2 = 0;
+    
+    return self.tempCounter;
+    return self.tempCounter2;
 }
-
-
--(void)flashPattern {
-    for(int i = 0; i<self.logicalPursuitData.roundCounter; i++) {
+-(void)generatePattern{
+    
+    if(self.tempCounter < self.logicalPursuitData.roundCounter){
         
-        
+        NSLog(@"roundCounter is %d",self.logicalPursuitData.roundCounter);
+        NSLog(@"roundCounter is %d",self.tempCounter);
         [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOffImage"]]; //Needs to be set
-        
         [self.pinkInvertedSquareImage setImage:[UIImage imageNamed:@"pinkInvertedSquareOffImage"]]; //Needs to be set
-        
         [self.blueRhombusImage setImage:[UIImage imageNamed:@"blueRhombusOffImage"]]; //Needs to be set
-        
         [self.cyanSquareImage setImage:[UIImage imageNamed:@"cyanSquareOffImage"]]; //Needs to be set
-        
         [self.purpleDiamondImage setImage:[UIImage imageNamed:@"purpleDiamondOffImage"]]; //Needs to be set
-        
         [self.greenTriangleImage setImage:[UIImage imageNamed:@"greenTriangleOffImage"]]; //Needs to be set
         
         [self.logicalPursuitData pickNextShape];
         [self.logicalPursuitData shapeSelector];
+        [self flashPattern];
+        NSLog(@"random number is: %d", self.logicalPursuitData.randomOne);
+        NSLog(@"Next shape has been picked");
+        //[self.logicalPursuitData.latestPattern addObject:self.logicalPursuitData.shape];
+        NSLog(@"pattern has been generated");
+    }
+    else {
+        [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOffImage"]]; //Needs to be set
+        [self.pinkInvertedSquareImage setImage:[UIImage imageNamed:@"pinkInvertedSquareOffImage"]]; //Needs to be set
+        [self.blueRhombusImage setImage:[UIImage imageNamed:@"blueRhombusOffImage"]]; //Needs to be set
+        [self.cyanSquareImage setImage:[UIImage imageNamed:@"cyanSquareOffImage"]]; //Needs to be set
+        [self.purpleDiamondImage setImage:[UIImage imageNamed:@"purpleDiamondOffImage"]]; //Needs to be set
+        [self.greenTriangleImage setImage:[UIImage imageNamed:@"greenTriangleOffImage"]]; //Needs to be set
+        NSLog(@"pattern has been flashed");
+    }
+    
+    
+}
+
+
+-(void)flashPattern {
+    //for(int i = 0; i<self.logicalPursuitData.roundCounter; i++) {
         
-        double delayInSeconds = 2.0;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)); //REFERENCE
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            NSLog(@"shape from the index is: %@", [self.logicalPursuitData.latestPattern objectAtIndex:i]);
+        
+    
+        
+            NSLog(@"shape from the index is: %@", [self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]);
             
         
-        if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqualToString: @"circle"]){
+        if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"circle"]){
             NSLog(@"light up red circle");
             [self lightCircle];
-            //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(lightCircle) userInfo:nil repeats:NO];
+            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
             
         }
-        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqualToString: @"invertedSquare"]){
+        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"invertedSquare"]){
             NSLog(@"light up pink inverted square");
             [self lightInvertedSquare];
-            //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(lightInvertedSquare) userInfo:nil repeats:NO];
+            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
-        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqualToString: @"rhombus"]){
+        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"rhombus"]){
             NSLog(@"light up blue rhombus");
             [self lightRhombus];
-            //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(lightRhombus) userInfo:nil repeats:NO];
+            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
-        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqualToString: @"square"]){
+        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"square"]){
             NSLog(@"light up cyan square");
             [self lightSquare];
-            //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(lightSquare) userInfo:nil repeats:NO];
+            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
-        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqualToString: @"diamond"]){
+        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"diamond"]){
             NSLog(@"light up purple diamond");
             [self lightDiamond];
-            //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(lightDiamond) userInfo:nil repeats:NO];
+            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
-        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:i]  isEqualToString: @"triangle"]){
+        else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"triangle"]){
             NSLog(@"light up green triangle");
             [self lightTriangle];
-            //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(lightTriangle) userInfo:nil repeats:NO];
+            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
-        });
+        
             
-    }
+   // }
 }
 
 - (IBAction)mainMenuButtonPressed:(UIButton *)sender {

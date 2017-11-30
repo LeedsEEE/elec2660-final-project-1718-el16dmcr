@@ -26,5 +26,7 @@
 - (IBAction)mainMenuButtonPressed:(UIButton *)sender;
 
 @property LogicalPursuit* logicalPursuitData;
+@property int tempCounter;
+@property int tempCounter2;
 
 @end
