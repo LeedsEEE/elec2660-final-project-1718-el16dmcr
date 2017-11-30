@@ -14,6 +14,7 @@
     if (self.randomOne == 0){
         self.shape = @"circle";
         [self.latestPattern addObject: @"circle"];
+        
     }
     else if (self.randomOne == 1){
         self.shape = @"invertedSquare";
@@ -55,11 +56,11 @@
 }
 -(BOOL)checkLives {
     if (self.currentLives == 0){
-        return YES;
+        return true;
         
     }
     else {
-        return NO;
+        return false;
     }
 }
 -(int)calculatePoints{

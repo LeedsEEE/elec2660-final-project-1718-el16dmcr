@@ -62,7 +62,7 @@
     NSLog(@"counter is %d", self.logicalPursuitData.roundCounter);
     NSLog(@"lives are %d", self.logicalPursuitData.currentLives);
     self.scoreLabel.text = @"0";
-    
+    self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
     //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(flashPattern) userInfo:nil repeats:NO];
     //[self generatePattern];
@@ -88,16 +88,36 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)checkLenghtOfArray{
+    if (self.tempCounter2 == self.logicalPursuitData.roundCounter - 1){
+        [self reset];
+        [self.logicalPursuitData roundCounterPlus];
+        [self generatePattern];
+    }
+
+}
 -(void)circleClicked{
     NSLog(@"circle clicked");
+    
     if([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]  isEqualToString: @"circle"]){
         NSLog(@"correct");
         [self.logicalPursuitData calculatePoints];
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
+        [self checkLenghtOfArray];
     }
     else {
         NSLog(@"WRONG");
         [self.logicalPursuitData removeLive];
+        self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
+        [self.logicalPursuitData checkLives];
+        if ([self.logicalPursuitData checkLives] == true){
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+        
+        [self generatePattern];
+    
     }
     self.tempCounter2++;
     
@@ -108,10 +128,21 @@
         NSLog(@"correct");
         [self.logicalPursuitData calculatePoints];
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
+        [self checkLenghtOfArray];
     }
     else {
         NSLog(@"WRONG");
         [self.logicalPursuitData removeLive];
+        self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
+        [self.logicalPursuitData checkLives];
+        if ([self.logicalPursuitData checkLives] == true){
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+        
+        [self generatePattern];
+    
     }
     self.tempCounter2++;
 }
@@ -121,10 +152,21 @@
         NSLog(@"correct");
         [self.logicalPursuitData calculatePoints];
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
+        [self checkLenghtOfArray];
     }
     else {
         NSLog(@"WRONG");
         [self.logicalPursuitData removeLive];
+        self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
+        [self.logicalPursuitData checkLives];
+        if ([self.logicalPursuitData checkLives] == true){
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+        
+        [self generatePattern];
+    
     }
     self.tempCounter2++;
 }
@@ -134,10 +176,21 @@
         NSLog(@"correct");
         [self.logicalPursuitData calculatePoints];
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
+        [self checkLenghtOfArray];
     }
     else {
         NSLog(@"WRONG");
         [self.logicalPursuitData removeLive];
+        self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
+        [self.logicalPursuitData checkLives];
+        if ([self.logicalPursuitData checkLives] == true){
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+        
+        [self generatePattern];
+    
     }
     self.tempCounter2++;
 }
@@ -147,10 +200,21 @@
         NSLog(@"correct");
         [self.logicalPursuitData calculatePoints];
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
+        [self checkLenghtOfArray];
     }
     else {
         NSLog(@"WRONG");
         [self.logicalPursuitData removeLive];
+        self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
+        [self.logicalPursuitData checkLives];
+        if ([self.logicalPursuitData checkLives] == true){
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+        
+        [self generatePattern];
+    
     }
     self.tempCounter2++;
 }
@@ -160,48 +224,59 @@
         NSLog(@"correct");
         [self.logicalPursuitData calculatePoints];
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
+        [self checkLenghtOfArray];
     }
     else {
         NSLog(@"WRONG");
         [self.logicalPursuitData removeLive];
+        self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
+        [self.logicalPursuitData checkLives];
+        if ([self.logicalPursuitData checkLives] == true){
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+        
+        [self generatePattern];
+    
     }
     self.tempCounter2++;
 }
 
 -(void)lightCircle{
     [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOnImage"]];
-    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter+1];
     self.tempCounter ++;
     //[NSThread sleepForTimeInterval:2.0f];
     
 }
 -(void)lightInvertedSquare{
     [self.pinkInvertedSquareImage setImage:[UIImage imageNamed:@"pinkInvertedSquareOnImage"]];
-    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter+1];
     self.tempCounter ++;
     
 }
 -(void)lightRhombus{
     [self.blueRhombusImage setImage:[UIImage imageNamed:@"blueRhombusOnImage"]];
-    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter+1];
     self.tempCounter ++;
     
 }
 -(void)lightSquare{
     [self.cyanSquareImage setImage:[UIImage imageNamed:@"cyanSquareOnImage"]];
-    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter+1];
     self.tempCounter ++;
     
 }
 -(void)lightDiamond{
     [self.purpleDiamondImage setImage:[UIImage imageNamed:@"purpleDiamondOnImage"]];
-    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter+1];
     self.tempCounter ++;
     
 }
 -(void)lightTriangle{
     [self.greenTriangleImage setImage:[UIImage imageNamed:@"greenTriangleOnImage"]];
-    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter];
+    self.whenToPlayLabel.text = [NSString stringWithFormat:(@"%d"),self.tempCounter+1];
     self.tempCounter ++;
     
 }
