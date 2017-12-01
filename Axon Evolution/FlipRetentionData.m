@@ -15,7 +15,7 @@
     return self.randomOne;
 }
 -(int)generatePairPositions{
-    self.randomTwo =arc4random_uniform(15-self.counterOne);
+    self.randomTwo =arc4random_uniform(15-self.counterTwo);
     return self.randomTwo;
 }
 -(BOOL)picturesMatch{
@@ -25,16 +25,20 @@
     self.currentScore = self.currentScore + self.pointsPlus;
     return self.currentScore;
 }
--(int)incrementCounter{
+-(int)incrementCounterOne{
     self.counterOne ++;
     return self.counterOne;
+}
+-(int)incrementCounterTwo{
+    self.counterTwo ++;
+    return self.counterTwo;
 }
 -(id)init{
     self = [super init];
     self.startPoints = 200;
     self.currentScore = self.startPoints;
-    self.firstEightPlaces = [NSMutableArray arrayWithObjects: @"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", nil];
-    self.sixteenPositionTiles = [NSMutableArray arrayWithObjects: @"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", nil];
+    self.firstEightPlaces = [[NSMutableArray alloc] initWithObjects:@1,@2,@3,@4,@5,@6,@7,@8, nil];
+    self.sixteenPositionTiles = [[NSMutableArray alloc] initWithObjects:@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@15, nil];
     return self;
 }
 

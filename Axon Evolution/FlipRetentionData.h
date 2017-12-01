@@ -29,11 +29,14 @@
 @property NSMutableArray *firstEightPlaces;
 @property NSMutableArray *sixteenPositionTiles;
 @property int counterOne;
+@property int counterTwo;
+
 
 -(BOOL)picturesMatch;
 -(int)gameTwoScoreCumulative;
 -(int)generatePairPositions;
 -(int)generatePairImages;
-
+-(int)incrementCounterOne;
+-(int)incrementCounterTwo;
 
 @end
