@@ -109,12 +109,6 @@
     [self.a43Cover setImage:[UIImage imageNamed:@"coverImage"]];
     [self.a44Cover setImage:[UIImage imageNamed:@"coverImage"]];
     
-    
-    //[self.a44Cover setUserInteractionEnabled:YES];
-    //UITapGestureRecognizer *a44CoverTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a44Tapped)];
-    //[a44CoverTapped setNumberOfTapsRequired:1];
-    //[self.a44Cover addGestureRecognizer:a44Tapped];
-    
     NSLog(@"a11 tag is %ld", (long)self.a11Image.tag);
     //self.pairChecker =self.a11Image.tag;
     NSLog(@"check tag correct: %d", self.pairChecker);
@@ -308,54 +302,71 @@
     [self reenablePairImage];
     [self quickreset];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+    [self.view setUserInteractionEnabled:NO];
 }
 -(void)a11Delay{
     self.a11Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a12Delay{
     self.a12Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a13Delay{
     self.a13Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a14Delay{
     self.a14Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a21Delay{
     self.a21Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a22Delay{
     self.a22Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a23Delay{
     self.a23Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a24Delay{
     self.a24Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a31Delay{
     self.a31Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a32Delay{
     self.a32Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a33Delay{
     self.a33Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a34Delay{
     self.a34Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a41Delay{
     self.a41Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a42Delay{
     self.a42Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a43Delay{
     self.a43Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 -(void)a44Delay{
     self.a44Cover.hidden = NO;
+    [self.view setUserInteractionEnabled:YES];
 }
 
 -(void)a11Tapped{
@@ -380,8 +391,9 @@
         else {
             NSLog(@"detected second tap");
             NSLog(@"firstInput was : %d", self.firstInput);
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a11Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a11Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -405,8 +417,8 @@
             [self.a12Image setUserInteractionEnabled:NO];
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a12Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a12Delay) userInfo:nil repeats:NO];
         }
         
     }
@@ -428,8 +440,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a13Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a13Delay) userInfo:nil repeats:NO];
+            
             
         }
         
@@ -451,8 +464,9 @@
             [self.a14Image setUserInteractionEnabled:NO];
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a14Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a14Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -474,8 +488,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a21Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a21Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -497,8 +512,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a22Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a22Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -520,8 +536,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a23Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a23Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -543,8 +560,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a24Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a24Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -565,8 +583,9 @@
             [self.a31Image setUserInteractionEnabled:NO];
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a31Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a31Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -588,8 +607,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a32Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a32Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -611,8 +631,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a33Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a33Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -634,8 +655,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a34Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a34Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -657,8 +679,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a41Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a41Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -680,8 +703,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a42Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a42Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -703,8 +727,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a43Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a43Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
@@ -726,8 +751,9 @@
             
         }
         else {
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a44Delay) userInfo:nil repeats:NO];
             [self incorrectMatch];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a44Delay) userInfo:nil repeats:NO];
+            
         }
         
     }
