@@ -20,6 +20,8 @@
     
     [self.a11Image setImage:[UIImage imageNamed:@"setOnePairOne"]]; //Needs to be set
     [self.a11Image setUserInteractionEnabled:YES];
+    
+    [self generateRandomImages];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,6 +29,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)generateRandomImages{
+    for(int i = 0; i<8; i++){
+        [self.flipRetentionData generatePairImages];
+        if ([[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]  isEqualToString: @"0"]){
+            [self.flipRetentionData.firstEightPlaces removeObjectAtIndex:self.flipRetentionData.randomOne];
+            [self.a11Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
+            [self generatePlaceForImage];
+        }
+        
+    }
+}
+-(void)generatePlaceForImage{
+    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomOne]  isEqualToString: @"0"]){
+        
+        
+    }
+}
 /*
 #pragma mark - Navigation
 

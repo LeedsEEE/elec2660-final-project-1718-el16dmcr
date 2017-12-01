@@ -18,6 +18,17 @@
 @property int randomOne;
 @property int randomTwo;
 @property int currentScore;
+@property NSString *pairOne;
+@property NSString *pairTwo;
+@property NSString *pairThree;
+@property NSString *pairFour;
+@property NSString *pairFive;
+@property NSString *pairSix;
+@property NSString *pairSeven;
+@property NSString *pairEight;
+@property NSMutableArray *firstEightPlaces;
+@property NSMutableArray *sixteenPositionTiles;
+@property int counterOne;
 
 -(BOOL)picturesMatch;
 -(int)gameTwoScoreCumulative;
