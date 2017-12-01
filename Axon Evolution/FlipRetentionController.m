@@ -19,8 +19,8 @@
     //[self.flipRetentionData ]
     [self quickreset];
     self.scoreLabel.text = @"yolo";
-    //self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.flipRetentionData.currentScore];
-    //[self.a11Image setUserInteractionEnabled:YES];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.flipRetentionData.currentScore];
+    
     
     self.flipRetentionData = [[FlipRetentionData alloc] init];
     [self generateRandomImages];
@@ -175,7 +175,7 @@
         
     }
     else if (self.firstInput == 9){
-        self.a31Image.hidden = NO;
+        self.a31Cover.hidden = NO;
         [self.a31Image setUserInteractionEnabled:YES];
         
     }
@@ -297,6 +297,67 @@
         
     }
 }
+-(void)CorrectMatch{
+    [self.flipRetentionData correctAnswer];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+    [self hidePairImage];
+    [self quickreset];
+}
+-(void)incorrectMatch{
+    [self.flipRetentionData wrongAnswer];  // Subtract Points
+    [self reenablePairImage];
+    [self quickreset];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+}
+-(void)a11Delay{
+    self.a11Cover.hidden = NO;
+}
+-(void)a12Delay{
+    self.a12Cover.hidden = NO;
+}
+-(void)a13Delay{
+    self.a13Cover.hidden = NO;
+}
+-(void)a14Delay{
+    self.a14Cover.hidden = NO;
+}
+-(void)a21Delay{
+    self.a21Cover.hidden = NO;
+}
+-(void)a22Delay{
+    self.a22Cover.hidden = NO;
+}
+-(void)a23Delay{
+    self.a23Cover.hidden = NO;
+}
+-(void)a24Delay{
+    self.a24Cover.hidden = NO;
+}
+-(void)a31Delay{
+    self.a31Cover.hidden = NO;
+}
+-(void)a32Delay{
+    self.a32Cover.hidden = NO;
+}
+-(void)a33Delay{
+    self.a33Cover.hidden = NO;
+}
+-(void)a34Delay{
+    self.a34Cover.hidden = NO;
+}
+-(void)a41Delay{
+    self.a41Cover.hidden = NO;
+}
+-(void)a42Delay{
+    self.a42Cover.hidden = NO;
+}
+-(void)a43Delay{
+    self.a43Cover.hidden = NO;
+}
+-(void)a44Delay{
+    self.a44Cover.hidden = NO;
+}
+
 -(void)a11Tapped{
     NSLog(@"a11 Tapped");
     self.a11Cover.hidden = YES;
@@ -311,25 +372,22 @@
         if ( self.a11Image.tag == self.pairChecker){
             NSLog(@"detected second tap");// If the second tile is a match
             NSLog(@"firstInput was : %d", self.firstInput);
-            [self.flipRetentionData correctAnswer];  // Add Points
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            [self CorrectMatch];
+            self.a11Cover.hidden = YES;
             self.a11Image.hidden = YES;
             [self.a11Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
         }
         else {
             NSLog(@"detected second tap");
             NSLog(@"firstInput was : %d", self.firstInput);
-            [self.flipRetentionData wrongAnswer];  // Subtract Points
-            [self reenablePairImage];
-            self.a11Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a11Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
     
 }
+
 -(void)a12Tapped{
     NSLog(@"a12 Tapped");
     self.a12Cover.hidden = YES;
@@ -341,18 +399,14 @@
     }
     else{
         if ( self.a12Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a12Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a12Cover.hidden = YES;
+            self.a12Image.hidden = YES;
             [self.a12Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a12Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a12Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -367,18 +421,16 @@
     }
     else{
         if ( self.a13Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a13Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a13Cover.hidden = YES;
+            self.a13Image.hidden = YES;
             [self.a13Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a13Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a13Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
+            
         }
         
     }
@@ -393,18 +445,14 @@
     }
     else{
         if ( self.a14Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a14Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a14Cover.hidden = YES;
+            self.a14Image.hidden = YES;
             [self.a14Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a14Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a14Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -419,18 +467,15 @@
     }
     else{
         if ( self.a21Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a21Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a21Cover.hidden = YES;
+            self.a21Image.hidden = YES;
             [self.a21Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a21Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a21Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -440,23 +485,20 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a22Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 6;
         [self.a22Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a22Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a22Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a22Cover.hidden = YES;
+            self.a22Image.hidden = YES;
             [self.a22Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a22Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a22Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -466,23 +508,20 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a23Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 7;
         [self.a23Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a23Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a23Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a23Cover.hidden = YES;
+            self.a23Image.hidden = YES;
             [self.a23Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a23Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a23Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -492,23 +531,20 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a24Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 8;
         [self.a24Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a24Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a24Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a24Cover.hidden = YES;
+            self.a24Image.hidden = YES;
             [self.a24Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a24Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a24Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -518,23 +554,19 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a31Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 9;
         [self.a31Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a31Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a31Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a31Cover.hidden = YES;
+            self.a31Image.hidden = YES;
             [self.a31Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a31Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a31Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -544,23 +576,20 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a32Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 10;
         [self.a32Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a32Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a32Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a32Cover.hidden = YES;
+            self.a32Image.hidden = YES;
             [self.a32Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a32Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a32Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -570,23 +599,20 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a33Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 11;
         [self.a33Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a33Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a33Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a33Cover.hidden = YES;
+            self.a33Image.hidden = YES;
             [self.a33Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a31Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a33Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -596,23 +622,20 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a34Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 12;
         [self.a34Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a34Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a34Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a34Cover.hidden = YES;
+            self.a34Image.hidden = YES;
             [self.a34Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a34Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a34Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -622,23 +645,20 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a41Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 13;
         [self.a41Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a41Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a41Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a41Cover.hidden = YES;
+            self.a41Image.hidden = YES;
             [self.a41Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a41Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a41Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -648,23 +668,20 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a42Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 14;
         [self.a42Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a42Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a42Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a42Cover.hidden = YES;
+            self.a42Image.hidden = YES;
             [self.a42Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a42Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a42Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -674,23 +691,20 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a43Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 15;
         [self.a43Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a43Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a43Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a43Cover.hidden = YES;
+            self.a43Image.hidden = YES;
             [self.a43Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a43Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a43Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }
@@ -700,23 +714,20 @@
     if(self.userCounter == 0){
         self.pairChecker = self.a44Image.tag;
         self.userCounter ++;
-        self.firstInput = 1;
+        self.firstInput = 16;
         [self.a44Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a44Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
-            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a44Cover.hidden = NO;
+            [self CorrectMatch];
+            self.a44Cover.hidden = YES;
+            self.a44Image.hidden = YES;
             [self.a44Image setUserInteractionEnabled:NO];
-            [self hidePairImage];
-            [self quickreset];
+            
         }
         else {
-            [self.flipRetentionData wrongAnswer];
-            [self reenablePairImage];
-            self.a44Image.hidden = YES;
-            [self quickreset];
+            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a44Delay) userInfo:nil repeats:NO];
+            [self incorrectMatch];
         }
         
     }

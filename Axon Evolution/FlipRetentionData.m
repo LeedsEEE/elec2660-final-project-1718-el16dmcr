@@ -41,6 +41,8 @@
     self = [super init];
     self.counterOne =0;
     self.counterTwo = 0;
+    self.pointsMinus = 10;
+    self.pointsPlus = 50;
     self.startPoints = 200;
     self.currentScore = self.startPoints;
     self.firstEightPlaces = [[NSMutableArray alloc] init];
