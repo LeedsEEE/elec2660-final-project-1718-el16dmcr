@@ -17,8 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self.flipRetentionData ]
-    
-    
+    [self quickreset];
+    self.scoreLabel.text = @"yolo";
+    //self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.flipRetentionData.currentScore];
     //[self.a11Image setUserInteractionEnabled:YES];
     
     self.flipRetentionData = [[FlipRetentionData alloc] init];
@@ -26,62 +27,62 @@
     [self.a11Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a11Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a11Tapped)];
     [a11Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a11Tapped];
+    [self.a11Image addGestureRecognizer:a11Tapped];
     [self.a12Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a12Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a12Tapped)];
     [a12Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a12Tapped];
+    [self.a12Image addGestureRecognizer:a12Tapped];
     [self.a13Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a13Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a13Tapped)];
     [a13Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a13Tapped];
+    [self.a13Image addGestureRecognizer:a13Tapped];
     [self.a14Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a14Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a14Tapped)];
     [a14Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a14Tapped];
+    [self.a14Image addGestureRecognizer:a14Tapped];
     
     [self.a21Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a21Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a21Tapped)];
     [a21Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a21Tapped];
+    [self.a21Image addGestureRecognizer:a21Tapped];
     [self.a22Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a22Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a22Tapped)];
     [a22Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a22Tapped];
+    [self.a22Image addGestureRecognizer:a22Tapped];
     [self.a23Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a23Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a23Tapped)];
     [a23Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a23Tapped];
+    [self.a23Image addGestureRecognizer:a23Tapped];
     [self.a24Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a24Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a24Tapped)];
     [a24Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a24Tapped];
+    [self.a24Image addGestureRecognizer:a24Tapped];
     
     [self.a31Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a31Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a31Tapped)];
     [a31Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a31Tapped];
+    [self.a31Image addGestureRecognizer:a31Tapped];
     [self.a32Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a32Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a32Tapped)];
     [a32Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a32Tapped];
+    [self.a32Image addGestureRecognizer:a32Tapped];
     [self.a33Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a33Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a33Tapped)];
     [a33Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a33Tapped];
+    [self.a33Image addGestureRecognizer:a33Tapped];
     [self.a34Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a34Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a34Tapped)];
     [a34Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a34Tapped];
+    [self.a34Image addGestureRecognizer:a34Tapped];
     
     [self.a41Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a41Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a41Tapped)];
     [a41Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a41Tapped];
+    [self.a41Image addGestureRecognizer:a41Tapped];
     [self.a42Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a42Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a42Tapped)];
     [a42Tapped setNumberOfTapsRequired:1];
-    [self.a44Image addGestureRecognizer:a42Tapped];
+    [self.a42Image addGestureRecognizer:a42Tapped];
     [self.a43Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a43Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a43Tapped)];
     [a43Tapped setNumberOfTapsRequired:1];
@@ -115,57 +116,59 @@
     //[self.a44Cover addGestureRecognizer:a44Tapped];
     
     NSLog(@"a11 tag is %ld", (long)self.a11Image.tag);
-    self.pairChecker =self.a11Image.tag;
+    //self.pairChecker =self.a11Image.tag;
     NSLog(@"check tag correct: %d", self.pairChecker);
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)bigReset{
+
+//-(void)bigReset{
     
-}
+//}
 -(void)quickreset{
     self.userCounter = 0;
 }
 -(void)reenablePairImage{
     if(self.firstInput == 1){
-        self.a11Image.hidden = NO;
+        self.a11Cover.hidden = NO;
         [self.a11Image setUserInteractionEnabled:YES];
     }
     else if (self.firstInput == 2){
-        self.a12Image.hidden = NO;
+        self.a12Cover.hidden = NO;
         [self.a12Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 3){
-        self.a13Image.hidden = NO;
+        self.a13Cover.hidden = NO;
         [self.a13Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 4){
-        self.a14Image.hidden = NO;
+        self.a14Cover.hidden = NO;
         [self.a14Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 5){
-        self.a21Image.hidden = NO;
+        self.a21Cover.hidden = NO;
         [self.a21Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 6){
-        self.a22Image.hidden = NO;
+        self.a22Cover.hidden = NO;
         [self.a22Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 7){
-        self.a23Image.hidden = NO;
+        self.a23Cover.hidden = NO;
         [self.a23Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 8){
-        self.a24Image.hidden = NO;
+        self.a24Cover.hidden = NO;
         [self.a24Image setUserInteractionEnabled:YES];
         
     }
@@ -175,37 +178,37 @@
         
     }
     else if (self.firstInput == 10){
-        self.a32Image.hidden = NO;
+        self.a32Cover.hidden = NO;
         [self.a32Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 11){
-        self.a33Image.hidden = NO;
+        self.a33Cover.hidden = NO;
         [self.a33Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 12){
-        self.a34Image.hidden = NO;
+        self.a34Cover.hidden = NO;
         [self.a34Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 13){
-        self.a41Image.hidden = NO;
+        self.a41Cover.hidden = NO;
         [self.a41Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 14){
-        self.a42Image.hidden = NO;
+        self.a42Cover.hidden = NO;
         [self.a42Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 15){
-        self.a43Image.hidden = NO;
+        self.a43Cover.hidden = NO;
         [self.a43Image setUserInteractionEnabled:YES];
         
     }
     else if (self.firstInput == 16){
-        self.a44Image.hidden = NO;
+        self.a44Cover.hidden = NO;
         [self.a44Image setUserInteractionEnabled:YES];
         
     }
@@ -292,16 +295,20 @@
     }
 }
 -(void)a11Tapped{
+    NSLog(@"a11 Tapped");
     self.a11Cover.hidden = YES;
     if(self.userCounter == 0){
         self.pairChecker = self.a11Image.tag;
+        NSLog(@"pair checker is: %d",self.pairChecker);
         self.userCounter ++;
         self.firstInput = 1;
         [self.a11Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a11Image.tag == self.pairChecker){  // If the second tile is a match
-            [self.flipRetentionData correctAnswer];
+        if ( self.a11Image.tag == self.pairChecker){
+            NSLog(@"detected second tap");// If the second tile is a match
+            NSLog(@"firstInput was : %d", self.firstInput);
+            [self.flipRetentionData correctAnswer];  // Add Points
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
             self.a11Image.hidden = YES;
             [self.a11Image setUserInteractionEnabled:NO];
@@ -309,8 +316,11 @@
             [self quickreset];
         }
         else {
-            [self.flipRetentionData wrongAnswer];
+            NSLog(@"detected second tap");
+            NSLog(@"firstInput was : %d", self.firstInput);
+            [self.flipRetentionData wrongAnswer];  // Subtract Points
             [self reenablePairImage];
+            self.a11Image.hidden = YES;
             [self quickreset];
         }
         
@@ -318,6 +328,7 @@
     
 }
 -(void)a12Tapped{
+    NSLog(@"a12 Tapped");
     self.a12Cover.hidden = YES;
     if(self.userCounter == 0){
         self.pairChecker = self.a12Image.tag;
@@ -337,6 +348,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a12Image.hidden = YES;
             [self quickreset];
         }
         
@@ -362,6 +374,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a13Image.hidden = YES;
             [self quickreset];
         }
         
@@ -387,6 +400,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a14Image.hidden = YES;
             [self quickreset];
         }
         
@@ -412,6 +426,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a21Image.hidden = YES;
             [self quickreset];
         }
         
@@ -437,6 +452,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a22Image.hidden = YES;
             [self quickreset];
         }
         
@@ -462,6 +478,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a23Image.hidden = YES;
             [self quickreset];
         }
         
@@ -487,6 +504,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a24Image.hidden = YES;
             [self quickreset];
         }
         
@@ -512,6 +530,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a31Image.hidden = YES;
             [self quickreset];
         }
         
@@ -537,6 +556,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a32Image.hidden = YES;
             [self quickreset];
         }
         
@@ -562,6 +582,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a31Image.hidden = YES;
             [self quickreset];
         }
         
@@ -587,6 +608,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a34Image.hidden = YES;
             [self quickreset];
         }
         
@@ -612,6 +634,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a41Image.hidden = YES;
             [self quickreset];
         }
         
@@ -637,6 +660,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a42Image.hidden = YES;
             [self quickreset];
         }
         
@@ -662,6 +686,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a43Image.hidden = YES;
             [self quickreset];
         }
         
@@ -687,6 +712,7 @@
         else {
             [self.flipRetentionData wrongAnswer];
             [self reenablePairImage];
+            self.a44Image.hidden = YES;
             [self quickreset];
         }
         
