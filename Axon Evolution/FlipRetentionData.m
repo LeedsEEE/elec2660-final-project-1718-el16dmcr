@@ -35,8 +35,12 @@
 }
 -(id)init{
     self = [super init];
+    self.counterOne =0;
+    self.counterTwo = 0;
     self.startPoints = 200;
     self.currentScore = self.startPoints;
+    self.firstEightPlaces = [[NSMutableArray alloc] init];
+    self.sixteenPositionTiles = [[NSMutableArray alloc] init];
     self.firstEightPlaces = [[NSMutableArray alloc] initWithObjects:@1,@2,@3,@4,@5,@6,@7,@8, nil];
     self.sixteenPositionTiles = [[NSMutableArray alloc] initWithObjects:@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@15, nil];
     return self;

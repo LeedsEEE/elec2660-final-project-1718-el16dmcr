@@ -22,7 +22,7 @@
     
     self.navigationItem.hidesBackButton = YES;
     [self.view setUserInteractionEnabled:NO];
-    //[self reset];
+    
     //[self.logicalPursuitData init];
     
     [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOffImage"]]; //Needs to be set

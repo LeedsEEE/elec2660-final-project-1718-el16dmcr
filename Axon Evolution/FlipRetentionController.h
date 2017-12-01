@@ -48,4 +48,6 @@
 @property UIImage *PairSeven;
 @property UIImage *PairEight;
 
+@property int tagSetter;
+
 @end
