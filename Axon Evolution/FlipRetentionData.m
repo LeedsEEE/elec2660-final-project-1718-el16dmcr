@@ -42,7 +42,7 @@
     self.firstEightPlaces = [[NSMutableArray alloc] init];
     self.sixteenPositionTiles = [[NSMutableArray alloc] init];
     self.firstEightPlaces = [[NSMutableArray alloc] initWithObjects:@1,@2,@3,@4,@5,@6,@7,@8, nil];
-    self.sixteenPositionTiles = [[NSMutableArray alloc] initWithObjects:@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@15, nil];
+    self.sixteenPositionTiles = [[NSMutableArray alloc] initWithObjects:@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16, nil];
     return self;
 }
 
