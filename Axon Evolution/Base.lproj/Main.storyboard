@@ -149,26 +149,106 @@
                                 <frame key="frameInset" minX="275" minY="419" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iR3-oY-H1a">
+                                <frame key="frameInset" minX="10" minY="157" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb9-0R-f1e">
+                                <frame key="frameInset" minX="98" minY="157" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FyL-9y-UhW">
+                                <frame key="frameInset" minX="187" minY="157" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nco-Xr-UJp">
+                                <frame key="frameInset" minX="275" minY="157" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6r-Pb-rCK">
+                                <frame key="frameInset" minX="10" minY="245" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sGs-88-FFE">
+                                <frame key="frameInset" minX="98" minY="245" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8TM-Ib-3fY">
+                                <frame key="frameInset" minX="187" minY="245" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAD-u7-SdS">
+                                <frame key="frameInset" minX="275" minY="245" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xlg-VH-HgO">
+                                <frame key="frameInset" minX="10" minY="331" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAN-5s-IHO">
+                                <frame key="frameInset" minX="98" minY="331" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMy-u3-WIX">
+                                <frame key="frameInset" minX="187" minY="331" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="suf-N9-MG2">
+                                <frame key="frameInset" minX="275" minY="331" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UDT-4e-V4W">
+                                <frame key="frameInset" minX="10" minY="419" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awR-kH-eya">
+                                <frame key="frameInset" minX="98" minY="419" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gR4-e3-edI">
+                                <frame key="frameInset" minX="187" minY="419" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91K-gK-HZu">
+                                <frame key="frameInset" minX="275" minY="419" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="vTT-Bp-Ee2"/>
                     <connections>
+                        <outlet property="a11Cover" destination="iR3-oY-H1a" id="5Z4-O7-i3m"/>
                         <outlet property="a11Image" destination="2Db-QS-mUK" id="uYw-hS-8Nl"/>
+                        <outlet property="a12Cover" destination="Cb9-0R-f1e" id="Ek8-QO-JGY"/>
                         <outlet property="a12Image" destination="XP2-y5-xad" id="CHA-iG-PNc"/>
+                        <outlet property="a13Cover" destination="FyL-9y-UhW" id="Nha-Ni-5BE"/>
                         <outlet property="a13Image" destination="gBg-PS-cMo" id="Ls3-bf-n7y"/>
+                        <outlet property="a14Cover" destination="Nco-Xr-UJp" id="Iun-OP-k8V"/>
                         <outlet property="a14Image" destination="mGy-dS-sMh" id="7rH-AO-q19"/>
+                        <outlet property="a21Cover" destination="n6r-Pb-rCK" id="eLQ-cn-FbA"/>
                         <outlet property="a21Image" destination="aEs-bN-I7L" id="x17-CO-wwB"/>
+                        <outlet property="a22Cover" destination="sGs-88-FFE" id="0Cq-vX-9yo"/>
                         <outlet property="a22Image" destination="b0b-Qq-m3B" id="udI-Tt-UnY"/>
+                        <outlet property="a23Cover" destination="8TM-Ib-3fY" id="DNZ-D4-5Pk"/>
                         <outlet property="a23Image" destination="rcV-N5-FIk" id="up2-wo-wer"/>
+                        <outlet property="a24Cover" destination="NAD-u7-SdS" id="vRu-Rp-m7A"/>
                         <outlet property="a24Image" destination="IkY-K9-HhE" id="AFQ-Qx-HbT"/>
+                        <outlet property="a31Cover" destination="Xlg-VH-HgO" id="7LO-kr-BRF"/>
                         <outlet property="a31Image" destination="B8N-Cj-hgy" id="nDS-YK-FlR"/>
+                        <outlet property="a32Cover" destination="eAN-5s-IHO" id="0cP-tJ-B2D"/>
                         <outlet property="a32Image" destination="MEK-BE-oGL" id="RjS-Ay-5A5"/>
+                        <outlet property="a33Cover" destination="bMy-u3-WIX" id="6aQ-h9-HW9"/>
                         <outlet property="a33Image" destination="oDU-RC-LDX" id="3el-M7-Wbm"/>
+                        <outlet property="a34Cover" destination="suf-N9-MG2" id="WWu-0x-Unt"/>
                         <outlet property="a34Image" destination="Nfa-xi-IqO" id="Qqk-T4-mqa"/>
+                        <outlet property="a41Cover" destination="UDT-4e-V4W" id="Hbp-ly-8gm"/>
                         <outlet property="a41Image" destination="M3m-zq-onA" id="AXc-Ln-2uQ"/>
+                        <outlet property="a42Cover" destination="awR-kH-eya" id="hMB-Rk-QRu"/>
                         <outlet property="a42Image" destination="hES-Up-z3o" id="SDe-Ba-g1D"/>
+                        <outlet property="a43Cover" destination="gR4-e3-edI" id="6vZ-tc-vse"/>
                         <outlet property="a43Image" destination="Rie-BI-Hf3" id="6zk-Ai-r7J"/>
+                        <outlet property="a44Cover" destination="91K-gK-HZu" id="vQE-iF-kfI"/>
                         <outlet property="a44Image" destination="xqA-Ee-5Sd" id="geL-rL-XgE"/>
                         <outlet property="mainMenuButton" destination="AX5-lq-raT" id="V0T-fr-WZ1"/>
                         <outlet property="scoreLabel" destination="iPp-d5-F1Y" id="KFe-hu-frS"/>

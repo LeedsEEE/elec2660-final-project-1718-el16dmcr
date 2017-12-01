@@ -38,5 +38,7 @@
 -(int)generatePairImages;
 -(int)incrementCounterOne;
 -(int)incrementCounterTwo;
+-(int)wrongAnswer;
+-(int)correctAnswer;
 
 @end

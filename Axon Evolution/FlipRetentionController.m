@@ -26,109 +26,671 @@
     [self.a11Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a11Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a11Tapped)];
     [a11Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a11Tapped];
     [self.a12Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a12Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a12Tapped)];
     [a12Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a12Tapped];
     [self.a13Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a13Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a13Tapped)];
     [a13Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a13Tapped];
     [self.a14Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a14Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a14Tapped)];
     [a14Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a14Tapped];
     
     [self.a21Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a21Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a21Tapped)];
     [a21Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a21Tapped];
     [self.a22Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a22Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a22Tapped)];
     [a22Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a22Tapped];
     [self.a23Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a23Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a23Tapped)];
     [a23Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a23Tapped];
     [self.a24Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a24Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a24Tapped)];
     [a24Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a24Tapped];
     
     [self.a31Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a31Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a31Tapped)];
     [a31Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a31Tapped];
     [self.a32Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a32Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a32Tapped)];
     [a32Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a32Tapped];
     [self.a33Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a33Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a33Tapped)];
     [a33Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a33Tapped];
     [self.a34Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a34Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a34Tapped)];
     [a34Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a34Tapped];
     
     [self.a41Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a41Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a41Tapped)];
     [a41Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a41Tapped];
     [self.a42Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a42Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a42Tapped)];
     [a42Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a42Tapped];
     [self.a43Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a43Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a43Tapped)];
     [a43Tapped setNumberOfTapsRequired:1];
+    [self.a43Image addGestureRecognizer:a43Tapped];
     [self.a44Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a44Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a44Tapped)];
     [a44Tapped setNumberOfTapsRequired:1];
+    [self.a44Image addGestureRecognizer:a44Tapped];
     
+    [self.a11Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a12Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a13Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a14Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a21Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a22Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a23Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a24Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a31Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a32Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a33Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a34Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a41Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a42Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a43Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    [self.a44Cover setImage:[UIImage imageNamed:@"coverImage"]];
+    
+    
+    //[self.a44Cover setUserInteractionEnabled:YES];
+    //UITapGestureRecognizer *a44CoverTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a44Tapped)];
+    //[a44CoverTapped setNumberOfTapsRequired:1];
+    //[self.a44Cover addGestureRecognizer:a44Tapped];
+    
+    NSLog(@"a11 tag is %ld", (long)self.a11Image.tag);
+    self.pairChecker =self.a11Image.tag;
+    NSLog(@"check tag correct: %d", self.pairChecker);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)bigReset{
+    
+}
+-(void)quickreset{
+    self.userCounter = 0;
+}
+-(void)reenablePairImage{
+    if(self.firstInput == 1){
+        self.a11Image.hidden = NO;
+        [self.a11Image setUserInteractionEnabled:YES];
+    }
+    else if (self.firstInput == 2){
+        self.a12Image.hidden = NO;
+        [self.a12Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 3){
+        self.a13Image.hidden = NO;
+        [self.a13Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 4){
+        self.a14Image.hidden = NO;
+        [self.a14Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 5){
+        self.a21Image.hidden = NO;
+        [self.a21Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 6){
+        self.a22Image.hidden = NO;
+        [self.a22Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 7){
+        self.a23Image.hidden = NO;
+        [self.a23Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 8){
+        self.a24Image.hidden = NO;
+        [self.a24Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 9){
+        self.a31Image.hidden = NO;
+        [self.a31Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 10){
+        self.a32Image.hidden = NO;
+        [self.a32Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 11){
+        self.a33Image.hidden = NO;
+        [self.a33Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 12){
+        self.a34Image.hidden = NO;
+        [self.a34Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 13){
+        self.a41Image.hidden = NO;
+        [self.a41Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 14){
+        self.a42Image.hidden = NO;
+        [self.a42Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 15){
+        self.a43Image.hidden = NO;
+        [self.a43Image setUserInteractionEnabled:YES];
+        
+    }
+    else if (self.firstInput == 16){
+        self.a44Image.hidden = NO;
+        [self.a44Image setUserInteractionEnabled:YES];
+        
+    }
+}
+-(void)hidePairImage{
+    if(self.firstInput == 1){
+        self.a11Image.hidden = YES;
+        [self.a11Image setUserInteractionEnabled:NO];
+    }
+    else if (self.firstInput == 2){
+        self.a12Image.hidden = YES;
+        [self.a12Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 3){
+        self.a13Image.hidden = YES;
+        [self.a13Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 4){
+        self.a14Image.hidden = YES;
+        [self.a14Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 5){
+        self.a21Image.hidden = YES;
+        [self.a21Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 6){
+        self.a22Image.hidden = YES;
+        [self.a21Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 7){
+        self.a23Image.hidden = YES;
+        [self.a23Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 8){
+        self.a24Image.hidden = YES;
+        [self.a24Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 9){
+        self.a31Image.hidden = YES;
+        [self.a31Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 10){
+        self.a32Image.hidden = YES;
+        [self.a32Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 11){
+        self.a33Image.hidden = YES;
+        [self.a33Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 12){
+        self.a34Image.hidden = YES;
+        [self.a34Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 13){
+        self.a41Image.hidden = YES;
+        [self.a41Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 14){
+        self.a42Image.hidden = YES;
+        [self.a42Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 15){
+        self.a43Image.hidden = YES;
+        [self.a43Image setUserInteractionEnabled:NO];
+        
+    }
+    else if (self.firstInput == 16){
+        self.a44Image.hidden = YES;
+        [self.a44Image setUserInteractionEnabled:NO];
+        
+    }
+}
 -(void)a11Tapped{
+    self.a11Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a11Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a11Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a11Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a11Image.hidden = YES;
+            [self.a11Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
     
 }
 -(void)a12Tapped{
-    
+    self.a12Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a12Image.tag;
+        self.userCounter ++;
+        self.firstInput = 2;
+        [self.a12Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a12Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a12Image.hidden = YES;
+            [self.a12Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a13Tapped{
-    
+    self.a13Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a12Image.tag;
+        self.userCounter ++;
+        self.firstInput = 3;
+        [self.a13Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a13Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a13Image.hidden = YES;
+            [self.a13Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a14Tapped{
-    
+    self.a14Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a14Image.tag;
+        self.userCounter ++;
+        self.firstInput = 4;
+        [self.a14Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a14Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a14Image.hidden = YES;
+            [self.a14Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a21Tapped{
-    
+    self.a21Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a21Image.tag;
+        self.userCounter ++;
+        self.firstInput = 5;
+        [self.a11Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a21Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a21Image.hidden = YES;
+            [self.a21Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a22Tapped{
-    
+    self.a22Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a22Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a22Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a22Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a22Image.hidden = YES;
+            [self.a22Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a23Tapped{
-    
+    self.a23Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a23Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a23Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a23Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a23Image.hidden = YES;
+            [self.a23Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a24Tapped{
-    
+    self.a24Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a24Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a24Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a24Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a24Image.hidden = YES;
+            [self.a24Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a31Tapped{
-    
+    self.a31Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a31Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a31Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a31Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a31Image.hidden = YES;
+            [self.a31Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a32Tapped{
-    
+    self.a32Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a32Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a32Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a32Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a32Image.hidden = YES;
+            [self.a32Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a33Tapped{
-    
+    self.a33Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a33Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a33Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a33Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a33Image.hidden = YES;
+            [self.a33Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a34Tapped{
-    
+    self.a34Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a34Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a34Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a34Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a34Image.hidden = YES;
+            [self.a34Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a41Tapped{
-    
+    self.a41Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a41Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a41Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a41Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a41Image.hidden = YES;
+            [self.a41Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a42Tapped{
-    
+    self.a42Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a42Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a42Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a42Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a42Image.hidden = YES;
+            [self.a42Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 -(void)a43Tapped{
-    
+    self.a43Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a43Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a43Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a43Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a43Image.hidden = YES;
+            [self.a43Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
--(void)a144Tapped{
-    
+-(void)a44Tapped{
+    self.a44Cover.hidden = YES;
+    if(self.userCounter == 0){
+        self.pairChecker = self.a44Image.tag;
+        self.userCounter ++;
+        self.firstInput = 1;
+        [self.a44Image setUserInteractionEnabled:NO];
+    }
+    else{
+        if ( self.a44Image.tag == self.pairChecker){  // If the second tile is a match
+            [self.flipRetentionData correctAnswer];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
+            self.a44Image.hidden = YES;
+            [self.a44Image setUserInteractionEnabled:NO];
+            [self hidePairImage];
+            [self quickreset];
+        }
+        else {
+            [self.flipRetentionData wrongAnswer];
+            [self reenablePairImage];
+            [self quickreset];
+        }
+        
+    }
 }
 
 -(void)generateRandomImages{
@@ -258,37 +820,37 @@
         if (self.tagSetter == 1){
             
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a11Image setTag:(int) sender];
+            [self.a11Image setTag:1];
         }
         else if(self.tagSetter == 2){
             
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a11Image setTag:(int) sender];
+            [self.a11Image setTag:2];
         }
         else if(self.tagSetter == 3){
 
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a11Image setTag:(int) sender];
+            [self.a11Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a11Image setTag:(int) sender];
+            [self.a11Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a11Image setTag:(int) sender];
+            [self.a11Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a11Image setTag:(int) sender];
+            [self.a11Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a11Image setTag:(int) sender];
+            [self.a11Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a11Image setTag:(int) sender];
+            [self.a11Image setTag:8];
         }
         
     }
@@ -296,35 +858,35 @@
         NSLog(@" picture a12");
         if (self.tagSetter == 1){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a12Image setTag:(int) sender];
+            [self.a12Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a11Image setTag:(int) sender];
+            [self.a11Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a11Image setTag:(int) sender];
+            [self.a11Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a12Image setTag:(int) sender];
+            [self.a12Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a12Image setTag:(int) sender];
+            [self.a12Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a12Image setTag:(int) sender];
+            [self.a12Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a12Image setTag:(int) sender];
+            [self.a12Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a12Image setTag:(int) sender];
+            [self.a12Image setTag:8];
         }
         
     }
@@ -332,35 +894,35 @@
         NSLog(@" picture a13");
         if (self.tagSetter == 1){
             [self.a13Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a13Image setTag:(int) sender];
+            [self.a13Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a13Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a13Image setTag:(int) sender];
+            [self.a13Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a13Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a13Image setTag:(int) sender];
+            [self.a13Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a13Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a13Image setTag:(int) sender];
+            [self.a13Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a13Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a13Image setTag:(int) sender];
+            [self.a13Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a13Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a13Image setTag:(int) sender];
+            [self.a13Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a13Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a13Image setTag:(int) sender];
+            [self.a13Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a13Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a13Image setTag:(int) sender];
+            [self.a13Image setTag:8];
         }
         
     }
@@ -368,35 +930,35 @@
         NSLog(@" picture a14");
         if (self.tagSetter == 1){
             [self.a14Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a14Image setTag:(int) sender];
+            [self.a14Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a14Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a14Image setTag:(int) sender];
+            [self.a14Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a14Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a14Image setTag:(int) sender];
+            [self.a14Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a14Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a14Image setTag:(int) sender];
+            [self.a14Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a14Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a14Image setTag:(int) sender];
+            [self.a14Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a14Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a14Image setTag:(int) sender];
+            [self.a14Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a14Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a14Image setTag:(int) sender];
+            [self.a14Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a14Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a14Image setTag:(int) sender];
+            [self.a14Image setTag:8];
         }
         
     }
@@ -404,35 +966,35 @@
         NSLog(@" picture a21");
         if (self.tagSetter == 1){
             [self.a21Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a21Image setTag:(int) sender];
+            [self.a21Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a21Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a21Image setTag:(int) sender];
+            [self.a21Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a21Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a21Image setTag:(int) sender];
+            [self.a21Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a21Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a21Image setTag:(int) sender];
+            [self.a21Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a21Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a21Image setTag:(int) sender];
+            [self.a21Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a21Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a21Image setTag:(int) sender];
+            [self.a21Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a21Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a21Image setTag:(int) sender];
+            [self.a21Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a21Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a21Image setTag:(int) sender];
+            [self.a21Image setTag:8];
         }
         
     }
@@ -440,35 +1002,35 @@
         NSLog(@" picture a22");
         if (self.tagSetter == 1){
             [self.a22Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a22Image setTag:(int) sender];
+            [self.a22Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a22Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a22Image setTag:(int) sender];
+            [self.a22Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a22Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a22Image setTag:(int) sender];
+            [self.a22Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a22Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a22Image setTag:(int) sender];
+            [self.a22Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a22Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a22Image setTag:(int) sender];
+            [self.a22Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a22Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a22Image setTag:(int) sender];
+            [self.a22Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a22Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a22Image setTag:(int) sender];
+            [self.a22Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a22Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a22Image setTag:(int) sender];
+            [self.a22Image setTag:8];
         }
         
     }
@@ -476,35 +1038,35 @@
         NSLog(@" picture a23");
         if (self.tagSetter == 1){
             [self.a23Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a23Image setTag:(int) sender];
+            [self.a23Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a23Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a23Image setTag:(int) sender];
+            [self.a23Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a23Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a23Image setTag:(int) sender];
+            [self.a23Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a23Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a23Image setTag:(int) sender];
+            [self.a23Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a23Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a23Image setTag:(int) sender];
+            [self.a23Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a23Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a23Image setTag:(int) sender];
+            [self.a23Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a23Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a23Image setTag:(int) sender];
+            [self.a23Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a23Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a23Image setTag:(int) sender];
+            [self.a23Image setTag:8];
         }
         
     }
@@ -512,35 +1074,35 @@
         NSLog(@" picture a24");
         if (self.tagSetter == 1){
             [self.a24Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a24Image setTag:(int) sender];
+            [self.a24Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a24Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a24Image setTag:(int) sender];
+            [self.a24Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a24Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a24Image setTag:(int) sender];
+            [self.a24Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a24Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a24Image setTag:(int) sender];
+            [self.a24Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a24Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a24Image setTag:(int) sender];
+            [self.a24Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a24Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a24Image setTag:(int) sender];
+            [self.a24Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a24Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a24Image setTag:(int) sender];
+            [self.a24Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a24Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a24Image setTag:(int) sender];
+            [self.a24Image setTag:8];
         }
         
     }
@@ -548,35 +1110,35 @@
         NSLog(@" picture a31");
         if (self.tagSetter == 1){
             [self.a31Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a31Image setTag:(int) sender];
+            [self.a31Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a31Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a31Image setTag:(int) sender];
+            [self.a31Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a31Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a31Image setTag:(int) sender];
+            [self.a31Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a31Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a31Image setTag:(int) sender];
+            [self.a31Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a31Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a31Image setTag:(int) sender];
+            [self.a31Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a31Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a31Image setTag:(int) sender];
+            [self.a31Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a31Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a31Image setTag:(int) sender];
+            [self.a31Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a31Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a31Image setTag:(int) sender];
+            [self.a31Image setTag:8];
         }
         
     }
@@ -584,35 +1146,35 @@
         NSLog(@" picture a32");
         if (self.tagSetter == 1){
             [self.a32Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a32Image setTag:(int) sender];
+            [self.a32Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a32Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a32Image setTag:(int) sender];
+            [self.a32Image setTag:2];
         }
         else if(self.tagSetter== 3){
             [self.a32Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a32Image setTag:(int) sender];
+            [self.a32Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a32Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a32Image setTag:(int) sender];
+            [self.a32Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a32Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a32Image setTag:(int) sender];
+            [self.a32Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a32Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a32Image setTag:(int) sender];
+            [self.a32Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a32Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a32Image setTag:(int) sender];
+            [self.a32Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a32Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a32Image setTag:(int) sender];
+            [self.a32Image setTag:8];
         }
         
     }
@@ -620,35 +1182,35 @@
         NSLog(@" picture a33");
         if (self.tagSetter == 1){
             [self.a33Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a33Image setTag:(int) sender];
+            [self.a33Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a33Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a33Image setTag:(int) sender];
+            [self.a33Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a33Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a33Image setTag:(int) sender];
+            [self.a33Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a33Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a33Image setTag:(int) sender];
+            [self.a33Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a33Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a33Image setTag:(int) sender];
+            [self.a33Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a33Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a33Image setTag:(int) sender];
+            [self.a33Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a33Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a33Image setTag:(int) sender];
+            [self.a33Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a33Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a33Image setTag:(int) sender];
+            [self.a33Image setTag:8];
         }
         
     }
@@ -656,35 +1218,35 @@
         NSLog(@" picture a34");
         if (self.tagSetter == 1){
             [self.a34Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a34Image setTag:(int) sender];
+            [self.a34Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a34Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a34Image setTag:(int) sender];
+            [self.a34Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a34Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a34Image setTag:(int) sender];
+            [self.a34Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a34Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a34Image setTag:(int) sender];
+            [self.a34Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a34Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a34Image setTag:(int) sender];
+            [self.a34Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a34Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a34Image setTag:(int) sender];
+            [self.a34Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a34Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a34Image setTag:(int) sender];
+            [self.a34Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a34Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a34Image setTag:(int) sender];
+            [self.a34Image setTag:8];
         }
         
     }
@@ -692,35 +1254,35 @@
         NSLog(@" picture a41");
         if (self.tagSetter == 1){
             [self.a41Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a41Image setTag:(int) sender];
+            [self.a41Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a41Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a41Image setTag:(int) sender];
+            [self.a41Image setTag:2];
         }
         else if(self.tagSetter== 3){
             [self.a41Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a41Image setTag:(int) sender];
+            [self.a41Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a41Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a41Image setTag:(int) sender];
+            [self.a41Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a41Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a41Image setTag:(int) sender];
+            [self.a41Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a41Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a41Image setTag:(int) sender];
+            [self.a41Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a41Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a41Image setTag:(int) sender];
+            [self.a41Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a41Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a41Image setTag:(int) sender];
+            [self.a41Image setTag:8];
         }
         
     }
@@ -728,35 +1290,35 @@
         NSLog(@" picture a42");
         if (self.tagSetter == 1){
             [self.a42Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a42Image setTag:(int) sender];
+            [self.a42Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a42Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a42Image setTag:(int) sender];
+            [self.a42Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a42Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a42Image setTag:(int) sender];
+            [self.a42Image setTag:3];
         }
         else if(self.tagSetter== 4){
             [self.a42Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a42Image setTag:(int) sender];
+            [self.a42Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a42Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a42Image setTag:(int) sender];
+            [self.a42Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a42Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a42Image setTag:(int) sender];
+            [self.a42Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a42Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a42Image setTag:(int) sender];
+            [self.a42Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a42Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a42Image setTag:(int) sender];
+            [self.a42Image setTag:8];
         }
         
     }
@@ -764,35 +1326,35 @@
         NSLog(@" picture a43");
         if (self.tagSetter == 1){
             [self.a43Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a43Image setTag:(int) sender];
+            [self.a43Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a43Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a43Image setTag:(int) sender];
+            [self.a43Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a43Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a43Image setTag:(int) sender];
+            [self.a43Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a43Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a43Image setTag:(int) sender];
+            [self.a43Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a43Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a43Image setTag:(int) sender];
+            [self.a43Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a43Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a43Image setTag:(int) sender];
+            [self.a43Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a43Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a43Image setTag:(int) sender];
+            [self.a43Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a43Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a43Image setTag:(int) sender];
+            [self.a43Image setTag:8];
         }
         
     }
@@ -800,35 +1362,35 @@
         NSLog(@" picture a44");
         if (self.tagSetter == 1){
             [self.a44Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
-            [self.a44Image setTag:(int) sender];
+            [self.a44Image setTag:1];
         }
         else if(self.tagSetter == 2){
             [self.a44Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a44Image setTag:(int) sender];
+            [self.a44Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a44Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a44Image setTag:(int) sender];
+            [self.a44Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a44Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
-            [self.a44Image setTag:(int) sender];
+            [self.a44Image setTag:4];
         }
         else if(self.tagSetter == 5){
             [self.a44Image setImage:[UIImage imageNamed:@"setOnePairFive"]];
-            [self.a44Image setTag:(int) sender];
+            [self.a44Image setTag:5];
         }
         else if(self.tagSetter == 6){
             [self.a44Image setImage:[UIImage imageNamed:@"setOnePairSix"]];
-            [self.a44Image setTag:(int) sender];
+            [self.a44Image setTag:6];
         }
         else if(self.tagSetter == 7){
             [self.a44Image setImage:[UIImage imageNamed:@"setOnePairSeven"]];
-            [self.a44Image setTag:(int) sender];
+            [self.a44Image setTag:7];
         }
         else if(self.tagSetter == 8){
             [self.a44Image setImage:[UIImage imageNamed:@"setOnePairEight"]];
-            [self.a44Image setTag:(int) sender];
+            [self.a44Image setTag:8];
         }
         
     }

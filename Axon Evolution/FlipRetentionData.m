@@ -21,7 +21,11 @@
 -(BOOL)picturesMatch{
     return YES;
 }
--(int)gameTwoScoreCumulative{
+-(int)wrongAnswer{
+    self.currentScore = self.currentScore - self.pointsMinus;
+    return self.currentScore;
+}
+-(int)correctAnswer{
     self.currentScore = self.currentScore + self.pointsPlus;
     return self.currentScore;
 }
