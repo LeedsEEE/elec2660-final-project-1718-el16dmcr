@@ -131,8 +131,10 @@
 //}
 -(void)quickreset{
     self.userCounter = 0;
+    self.firstInput = 0;
 }
 -(void)reenablePairImage{
+    NSLog(@"reenablePairImage working");
     if(self.firstInput == 1){
         self.a11Cover.hidden = NO;
         [self.a11Image setUserInteractionEnabled:YES];
@@ -214,6 +216,7 @@
     }
 }
 -(void)hidePairImage{
+    NSLog(@"hide Pair Image is working");
     if(self.firstInput == 1){
         self.a11Image.hidden = YES;
         [self.a11Image setUserInteractionEnabled:NO];
@@ -340,7 +343,7 @@
         if ( self.a12Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a12Image.hidden = YES;
+            self.a12Cover.hidden = NO;
             [self.a12Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -366,7 +369,7 @@
         if ( self.a13Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a13Image.hidden = YES;
+            self.a13Cover.hidden = NO;
             [self.a13Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -392,7 +395,7 @@
         if ( self.a14Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a14Image.hidden = YES;
+            self.a14Cover.hidden = NO;
             [self.a14Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -418,7 +421,7 @@
         if ( self.a21Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a21Image.hidden = YES;
+            self.a21Cover.hidden = NO;
             [self.a21Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -444,7 +447,7 @@
         if ( self.a22Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a22Image.hidden = YES;
+            self.a22Cover.hidden = NO;
             [self.a22Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -470,7 +473,7 @@
         if ( self.a23Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a23Image.hidden = YES;
+            self.a23Cover.hidden = NO;
             [self.a23Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -496,7 +499,7 @@
         if ( self.a24Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a24Image.hidden = YES;
+            self.a24Cover.hidden = NO;
             [self.a24Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -522,7 +525,7 @@
         if ( self.a31Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a31Image.hidden = YES;
+            self.a31Cover.hidden = NO;
             [self.a31Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -548,7 +551,7 @@
         if ( self.a32Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a32Image.hidden = YES;
+            self.a32Cover.hidden = NO;
             [self.a32Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -574,7 +577,7 @@
         if ( self.a33Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a33Image.hidden = YES;
+            self.a33Cover.hidden = NO;
             [self.a33Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -600,7 +603,7 @@
         if ( self.a34Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a34Image.hidden = YES;
+            self.a34Cover.hidden = NO;
             [self.a34Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -626,7 +629,7 @@
         if ( self.a41Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a41Image.hidden = YES;
+            self.a41Cover.hidden = NO;
             [self.a41Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -652,7 +655,7 @@
         if ( self.a42Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a42Image.hidden = YES;
+            self.a42Cover.hidden = NO;
             [self.a42Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -678,7 +681,7 @@
         if ( self.a43Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a43Image.hidden = YES;
+            self.a43Cover.hidden = NO;
             [self.a43Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
@@ -704,7 +707,7 @@
         if ( self.a44Image.tag == self.pairChecker){  // If the second tile is a match
             [self.flipRetentionData correctAnswer];
             self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
-            self.a44Image.hidden = YES;
+            self.a44Cover.hidden = NO;
             [self.a44Image setUserInteractionEnabled:NO];
             [self hidePairImage];
             [self quickreset];
