@@ -22,8 +22,6 @@
     
     self.pairCounter = 0;
     
-    
-    
     self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.flipRetentionData.currentScore];
     [self generateRandomImages];
     [self.a11Image setUserInteractionEnabled:YES];
@@ -125,9 +123,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-//-(void)bigReset{
-    
-//}
+
 -(void)tick{
     if ( self.timeTick == 0){
         self.timeTick--;
@@ -501,7 +497,6 @@
     }
     else{
         if ( self.a12Image.tag == self.pairChecker){  // If the second tile is a match
-            
             self.a12Cover.hidden = YES;
             self.a12Image.hidden = YES;
             [self.a12Image setUserInteractionEnabled:NO];
@@ -880,7 +875,6 @@
         NSLog(@"i = %d",i);
         NSLog(@"counter one %d", self.flipRetentionData.counterOne);
         
-        
         [self.flipRetentionData generatePairImages];
         NSLog(@"random number one is : %d", self.flipRetentionData.randomOne);
         NSLog(@"number in array: %@", [self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]);
@@ -931,7 +925,6 @@
             [self.flipRetentionData incrementCounterTwo];
             [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
             [self.flipRetentionData generatePairPositions];
-            
             [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
             [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
@@ -999,17 +992,14 @@
     if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @1]){
         NSLog(@" picture a11");
         if (self.tagSetter == 1){
-            
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
             [self.a11Image setTag:1];
         }
         else if(self.tagSetter == 2){
-            
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
             [self.a11Image setTag:2];
         }
         else if(self.tagSetter == 3){
-
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
             [self.a11Image setTag:3];
         }
@@ -1043,11 +1033,11 @@
         }
         else if(self.tagSetter == 2){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairTwo"]];
-            [self.a11Image setTag:2];
+            [self.a12Image setTag:2];
         }
         else if(self.tagSetter == 3){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairThree"]];
-            [self.a11Image setTag:3];
+            [self.a12Image setTag:3];
         }
         else if(self.tagSetter == 4){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairFour"]];
