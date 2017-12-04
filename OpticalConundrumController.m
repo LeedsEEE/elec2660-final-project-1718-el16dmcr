@@ -117,14 +117,7 @@
 -(NSString *) wordDefiner {
     
     
-        /*[self.tempArray addObject: [UIColor blackColor]];
-        [self.tempArray addObject: [UIColor blackColor]];
-        [self.tempArray addObject: [UIColor blackColor]];
-        [self.tempArray addObject: [UIColor blackColor]]; */
         self.tempArray = [[NSMutableArray alloc] initWithCapacity:self.colourArray.count];
-        /*for (id element in self.colourArray) {
-            [self.tempArray addObject:[element mutableCopy]];
-        }*/
         for (NSInteger index = 0; index < 8; index++) {
             [self.tempArray addObject:[self.colourArray objectAtIndex:index]];
         }

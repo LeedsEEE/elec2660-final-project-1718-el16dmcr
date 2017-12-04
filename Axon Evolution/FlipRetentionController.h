@@ -73,6 +73,10 @@
 @property int userCounter;
 @property int pairChecker;
 @property int firstInput;
-@property int bigReset;
+@property NSTimer* timer;
+@property int timeTick;
+@property int pairCounter;
+@property NSMutableArray *tempArray1;
+@property NSMutableArray *tempArray2;
 
 @end

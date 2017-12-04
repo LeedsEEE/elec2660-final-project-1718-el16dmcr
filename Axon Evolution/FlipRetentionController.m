@@ -16,13 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.flipRetentionData ]
-    [self quickreset];
-    self.scoreLabel.text = @"yolo";
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.flipRetentionData.currentScore];
-    
     
     self.flipRetentionData = [[FlipRetentionData alloc] init];
+    [self quickreset];
+    
+    self.pairCounter = 0;
+    
+    
+    
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.flipRetentionData.currentScore];
     [self generateRandomImages];
     [self.a11Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a11Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a11Tapped)];
@@ -112,6 +114,9 @@
     NSLog(@"a11 tag is %ld", (long)self.a11Image.tag);
     //self.pairChecker =self.a11Image.tag;
     NSLog(@"check tag correct: %d", self.pairChecker);
+    self.timeTick = 100;
+    self.timerLabel.text = [NSString stringWithFormat:@"TimeRemaining : %d", self.timeTick];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     
 }
 
@@ -123,9 +128,90 @@
 //-(void)bigReset{
     
 //}
+-(void)tick{
+    if ( self.timeTick == 0){
+        self.timeTick--;
+        self.timerLabel.text = [NSString stringWithFormat:@"Time Remaining : %d", self.timeTick];
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else {
+        self.timeTick--;
+        self.timerLabel.text = [NSString stringWithFormat:@"Time Remaining : %d", self.timeTick];
+    }
+}
+-(void)bigReset{
+    self.pairCounter = 0;
+    self.userCounter = 0;
+    self.firstInput = 0;
+    [self generateRandomImages];
+    [self imagesBack];
+}
 -(void)quickreset{
     self.userCounter = 0;
     self.firstInput = 0;
+}
+-(void)imagesBack{
+    self.a11Cover.hidden = NO;
+    self.a12Cover.hidden = NO;
+    self.a13Cover.hidden = NO;
+    self.a14Cover.hidden = NO;
+    
+    self.a21Cover.hidden = NO;
+    self.a22Cover.hidden = NO;
+    self.a23Cover.hidden = NO;
+    self.a24Cover.hidden = NO;
+    
+    self.a31Cover.hidden = NO;
+    self.a32Cover.hidden = NO;
+    self.a33Cover.hidden = NO;
+    self.a34Cover.hidden = NO;
+    
+    self.a41Cover.hidden = NO;
+    self.a42Cover.hidden = NO;
+    self.a43Cover.hidden = NO;
+    self.a44Cover.hidden = NO;
+    
+    self.a11Image.hidden = NO;
+    self.a12Image.hidden = NO;
+    self.a13Image.hidden = NO;
+    self.a14Image.hidden = NO;
+    
+    self.a21Image.hidden = NO;
+    self.a22Image.hidden = NO;
+    self.a23Image.hidden = NO;
+    self.a24Image.hidden = NO;
+    
+    self.a31Image.hidden = NO;
+    self.a32Image.hidden = NO;
+    self.a33Image.hidden = NO;
+    self.a34Image.hidden = NO;
+    
+    self.a41Image.hidden = NO;
+    self.a42Image.hidden = NO;
+    self.a43Image.hidden = NO;
+    self.a44Image.hidden = NO;
+    
+    [self.a11Image setUserInteractionEnabled:YES];
+    [self.a12Image setUserInteractionEnabled:YES];
+    [self.a13Image setUserInteractionEnabled:YES];
+    [self.a14Image setUserInteractionEnabled:YES];
+    
+    [self.a21Image setUserInteractionEnabled:YES];
+    [self.a22Image setUserInteractionEnabled:YES];
+    [self.a23Image setUserInteractionEnabled:YES];
+    [self.a24Image setUserInteractionEnabled:YES];
+    
+    [self.a31Image setUserInteractionEnabled:YES];
+    [self.a32Image setUserInteractionEnabled:YES];
+    [self.a33Image setUserInteractionEnabled:YES];
+    [self.a34Image setUserInteractionEnabled:YES];
+    
+    [self.a41Image setUserInteractionEnabled:YES];
+    [self.a42Image setUserInteractionEnabled:YES];
+    [self.a43Image setUserInteractionEnabled:YES];
+    [self.a44Image setUserInteractionEnabled:YES];
 }
 -(void)reenablePairImage{
     NSLog(@"reenablePairImage working");
@@ -237,7 +323,7 @@
     }
     else if (self.firstInput == 6){
         self.a22Image.hidden = YES;
-        [self.a21Image setUserInteractionEnabled:NO];
+        [self.a22Image setUserInteractionEnabled:NO];
         
     }
     else if (self.firstInput == 7){
@@ -296,6 +382,10 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
     [self hidePairImage];
     [self quickreset];
+    self.pairCounter ++;
+    if(self.pairCounter == 8){
+        [self bigReset];
+    }
 }
 -(void)incorrectMatch{
     [self.flipRetentionData wrongAnswer];  // Subtract Points
@@ -383,10 +473,10 @@
         if ( self.a11Image.tag == self.pairChecker){
             NSLog(@"detected second tap");// If the second tile is a match
             NSLog(@"firstInput was : %d", self.firstInput);
-            [self CorrectMatch];
             self.a11Cover.hidden = YES;
             self.a11Image.hidden = YES;
             [self.a11Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
         }
         else {
             NSLog(@"detected second tap");
@@ -411,10 +501,11 @@
     }
     else{
         if ( self.a12Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a12Cover.hidden = YES;
             self.a12Image.hidden = YES;
             [self.a12Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
         }
         else {
             [self incorrectMatch];
@@ -426,17 +517,18 @@
 -(void)a13Tapped{
     self.a13Cover.hidden = YES;
     if(self.userCounter == 0){
-        self.pairChecker = self.a12Image.tag;
+        self.pairChecker = self.a13Image.tag;
         self.userCounter ++;
         self.firstInput = 3;
         [self.a13Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a13Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a13Cover.hidden = YES;
             self.a13Image.hidden = YES;
             [self.a13Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -458,10 +550,11 @@
     }
     else{
         if ( self.a14Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a14Cover.hidden = YES;
             self.a14Image.hidden = YES;
             [self.a14Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
         }
         else {
             [self incorrectMatch];
@@ -477,14 +570,15 @@
         self.pairChecker = self.a21Image.tag;
         self.userCounter ++;
         self.firstInput = 5;
-        [self.a11Image setUserInteractionEnabled:NO];
+        [self.a21Image setUserInteractionEnabled:NO];
     }
     else{
         if ( self.a21Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a21Cover.hidden = YES;
             self.a21Image.hidden = YES;
             [self.a21Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -505,10 +599,11 @@
     }
     else{
         if ( self.a22Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a22Cover.hidden = YES;
             self.a22Image.hidden = YES;
             [self.a22Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -529,10 +624,11 @@
     }
     else{
         if ( self.a23Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a23Cover.hidden = YES;
             self.a23Image.hidden = YES;
             [self.a23Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -553,10 +649,11 @@
     }
     else{
         if ( self.a24Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a24Cover.hidden = YES;
             self.a24Image.hidden = YES;
             [self.a24Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -577,10 +674,11 @@
     }
     else{
         if ( self.a31Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a31Cover.hidden = YES;
             self.a31Image.hidden = YES;
             [self.a31Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
         }
         else {
             [self incorrectMatch];
@@ -600,10 +698,11 @@
     }
     else{
         if ( self.a32Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a32Cover.hidden = YES;
             self.a32Image.hidden = YES;
             [self.a32Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -624,10 +723,11 @@
     }
     else{
         if ( self.a33Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a33Cover.hidden = YES;
             self.a33Image.hidden = YES;
             [self.a33Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -648,10 +748,11 @@
     }
     else{
         if ( self.a34Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a34Cover.hidden = YES;
             self.a34Image.hidden = YES;
             [self.a34Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -672,15 +773,16 @@
     }
     else{
         if ( self.a41Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a41Cover.hidden = YES;
             self.a41Image.hidden = YES;
             [self.a41Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
             [self incorrectMatch];
-            [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(a41Delay) userInfo:nil repeats:NO];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a41Delay) userInfo:nil repeats:NO];
             
         }
         
@@ -696,10 +798,11 @@
     }
     else{
         if ( self.a42Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a42Cover.hidden = YES;
             self.a42Image.hidden = YES;
             [self.a42Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -720,10 +823,11 @@
     }
     else{
         if ( self.a43Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a43Cover.hidden = YES;
             self.a43Image.hidden = YES;
             [self.a43Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -744,10 +848,11 @@
     }
     else{
         if ( self.a44Image.tag == self.pairChecker){  // If the second tile is a match
-            [self CorrectMatch];
+            
             self.a44Cover.hidden = YES;
             self.a44Image.hidden = YES;
             [self.a44Image setUserInteractionEnabled:NO];
+            [self CorrectMatch];
             
         }
         else {
@@ -760,6 +865,16 @@
 }
 
 -(void)generateRandomImages{
+    self.flipRetentionData.counterOne = 0;
+    self.flipRetentionData.counterTwo = 0;
+    self.tempArray1 = [[NSMutableArray alloc] initWithCapacity:self.flipRetentionData.firstEightPlaces.count];
+    for (NSInteger index = 0; index < 8; index++) {
+        [self.tempArray1 addObject:[self.flipRetentionData.firstEightPlaces objectAtIndex:index]];
+    }
+    self.tempArray2 = [[NSMutableArray alloc] initWithCapacity:self.flipRetentionData.sixteenPositionTiles.count];
+    for (NSInteger index = 0; index < 16; index++) {
+        [self.tempArray2 addObject:[self.flipRetentionData.sixteenPositionTiles objectAtIndex:index]];
+    }
     for(int i = 0; i<8; i++){
         
         NSLog(@"i = %d",i);
@@ -768,111 +883,111 @@
         
         [self.flipRetentionData generatePairImages];
         NSLog(@"random number one is : %d", self.flipRetentionData.randomOne);
-        NSLog(@"number in array: %@", [self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]);
+        NSLog(@"number in array: %@", [self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]);
         [self.flipRetentionData incrementCounterOne];
-        if ([[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne] isEqual: @1]){
+        if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne] isEqual: @1]){
             self.tagSetter = 1;
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
-            [self.flipRetentionData.firstEightPlaces removeObjectAtIndex:self.flipRetentionData.randomOne];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray1 removeObjectAtIndex:self.flipRetentionData.randomOne];
             NSLog(@"Number 1 Picked");
         }
-        else if ([[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @2]){
+        else if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @2]){
             self.tagSetter = 2;
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
-            [self.flipRetentionData.firstEightPlaces removeObjectAtIndex:self.flipRetentionData.randomOne];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray1 removeObjectAtIndex:self.flipRetentionData.randomOne];
             NSLog(@"Number 2 Picked");
         }
-        else if ([[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @3]){
+        else if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @3]){
             self.tagSetter = 3;
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
-            [self.flipRetentionData.firstEightPlaces removeObjectAtIndex:self.flipRetentionData.randomOne];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray1 removeObjectAtIndex:self.flipRetentionData.randomOne];
             NSLog(@"Number 3 picked");
         }
-        else if ([[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @4]){
+        else if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @4]){
             self.tagSetter = 4;
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
             [self.flipRetentionData generatePairPositions];
             
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
-            [self.flipRetentionData.firstEightPlaces removeObjectAtIndex:self.flipRetentionData.randomOne];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray1 removeObjectAtIndex:self.flipRetentionData.randomOne];
             NSLog(@"Number 4 Picked");
         }
-        else if ([[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @5]){
+        else if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @5]){
             self.tagSetter = 5;
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
-            [self.flipRetentionData.firstEightPlaces removeObjectAtIndex:self.flipRetentionData.randomOne];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray1 removeObjectAtIndex:self.flipRetentionData.randomOne];
             NSLog(@"Number 5 Picked");
         }
-        else if ([[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @6]){
+        else if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @6]){
             self.tagSetter = 6;
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
-            [self.flipRetentionData.firstEightPlaces removeObjectAtIndex:self.flipRetentionData.randomOne];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray1 removeObjectAtIndex:self.flipRetentionData.randomOne];
             NSLog(@"Number 6 Picked");
         }
-        else if ([[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @7]){
+        else if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @7]){
             self.tagSetter = 7;
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
-            [self.flipRetentionData.firstEightPlaces removeObjectAtIndex:self.flipRetentionData.randomOne];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray1 removeObjectAtIndex:self.flipRetentionData.randomOne];
             NSLog(@"Number 7 Picked");
         }
-        else if ([[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @8]){
+        else if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @8]){
             self.tagSetter = 8;
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
             [self.flipRetentionData generatePairPositions];
-            [self generatePlaceForImage:[self.flipRetentionData.firstEightPlaces objectAtIndex:self.flipRetentionData.randomOne]];
+            [self generatePlaceForImage:[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]];
             [self.flipRetentionData incrementCounterTwo];
-            [self.flipRetentionData.sixteenPositionTiles removeObjectAtIndex:self.flipRetentionData.randomTwo];
-            [self.flipRetentionData.firstEightPlaces removeObjectAtIndex:self.flipRetentionData.randomOne];
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];
+            [self.tempArray1 removeObjectAtIndex:self.flipRetentionData.randomOne];
             NSLog(@"Number 8 Picked");
         }
         
@@ -881,7 +996,7 @@
 -(void)generatePlaceForImage: (id)sender{
     NSLog(@"sender is: %@",sender);
     NSLog(@"Random Place selector number is %d", self.flipRetentionData.randomTwo);
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @1]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @1]){
         NSLog(@" picture a11");
         if (self.tagSetter == 1){
             
@@ -920,7 +1035,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @2]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @2]){
         NSLog(@" picture a12");
         if (self.tagSetter == 1){
             [self.a12Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -956,7 +1071,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @3]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @3]){
         NSLog(@" picture a13");
         if (self.tagSetter == 1){
             [self.a13Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -992,7 +1107,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @4]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @4]){
         NSLog(@" picture a14");
         if (self.tagSetter == 1){
             [self.a14Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1028,7 +1143,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @5]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @5]){
         NSLog(@" picture a21");
         if (self.tagSetter == 1){
             [self.a21Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1064,7 +1179,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @6]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @6]){
         NSLog(@" picture a22");
         if (self.tagSetter == 1){
             [self.a22Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1100,7 +1215,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @7]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @7]){
         NSLog(@" picture a23");
         if (self.tagSetter == 1){
             [self.a23Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1136,7 +1251,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @8]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @8]){
         NSLog(@" picture a24");
         if (self.tagSetter == 1){
             [self.a24Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1172,7 +1287,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @9]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @9]){
         NSLog(@" picture a31");
         if (self.tagSetter == 1){
             [self.a31Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1208,7 +1323,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @10]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @10]){
         NSLog(@" picture a32");
         if (self.tagSetter == 1){
             [self.a32Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1244,7 +1359,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @11]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @11]){
         NSLog(@" picture a33");
         if (self.tagSetter == 1){
             [self.a33Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1280,7 +1395,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @12]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @12]){
         NSLog(@" picture a34");
         if (self.tagSetter == 1){
             [self.a34Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1316,7 +1431,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @13]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @13]){
         NSLog(@" picture a41");
         if (self.tagSetter == 1){
             [self.a41Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1352,7 +1467,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @14]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @14]){
         NSLog(@" picture a42");
         if (self.tagSetter == 1){
             [self.a42Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1388,7 +1503,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @15]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @15]){
         NSLog(@" picture a43");
         if (self.tagSetter == 1){
             [self.a43Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
@@ -1424,7 +1539,7 @@
         }
         
     }
-    if([[self.flipRetentionData.sixteenPositionTiles objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @16]){
+    if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @16]){
         NSLog(@" picture a44");
         if (self.tagSetter == 1){
             [self.a44Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
