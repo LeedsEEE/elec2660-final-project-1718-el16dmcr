@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A44EBBD81FD591D900DDD6B1 /* FlipRetentionLooks.m in Sources */ = {isa = PBXBuildFile; fileRef = A44EBBD71FD591D900DDD6B1 /* FlipRetentionLooks.m */; };
+		A44EBBDB1FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.m in Sources */ = {isa = PBXBuildFile; fileRef = A44EBBDA1FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.m */; };
+		A44EBBDE1FD59C1000DDD6B1 /* FlipRetentionEndLooks.m in Sources */ = {isa = PBXBuildFile; fileRef = A44EBBDD1FD59C1000DDD6B1 /* FlipRetentionEndLooks.m */; };
 		A45919521FD080B000FD967A /* FlipRetentionData.m in Sources */ = {isa = PBXBuildFile; fileRef = A45919511FD080B000FD967A /* FlipRetentionData.m */; };
 		A45919551FD080D000FD967A /* FlipRetentionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45919541FD080D000FD967A /* FlipRetentionController.m */; };
 		A49FBAC11FC477D300029B1F /* Homepage.m in Sources */ = {isa = PBXBuildFile; fileRef = A49FBAC01FC477D300029B1F /* Homepage.m */; };
@@ -46,6 +48,10 @@
 /* Begin PBXFileReference section */
 		A44EBBD61FD591D900DDD6B1 /* FlipRetentionLooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionLooks.h; sourceTree = "<group>"; };
 		A44EBBD71FD591D900DDD6B1 /* FlipRetentionLooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionLooks.m; sourceTree = "<group>"; };
+		A44EBBD91FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionInstructionLooks.h; sourceTree = "<group>"; };
+		A44EBBDA1FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionInstructionLooks.m; sourceTree = "<group>"; };
+		A44EBBDC1FD59C1000DDD6B1 /* FlipRetentionEndLooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionEndLooks.h; sourceTree = "<group>"; };
+		A44EBBDD1FD59C1000DDD6B1 /* FlipRetentionEndLooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionEndLooks.m; sourceTree = "<group>"; };
 		A45919501FD080B000FD967A /* FlipRetentionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionData.h; sourceTree = "<group>"; };
 		A45919511FD080B000FD967A /* FlipRetentionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionData.m; sourceTree = "<group>"; };
 		A45919531FD080D000FD967A /* FlipRetentionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionController.h; sourceTree = "<group>"; };
@@ -144,6 +150,10 @@
 				A45919511FD080B000FD967A /* FlipRetentionData.m */,
 				A44EBBD61FD591D900DDD6B1 /* FlipRetentionLooks.h */,
 				A44EBBD71FD591D900DDD6B1 /* FlipRetentionLooks.m */,
+				A44EBBDC1FD59C1000DDD6B1 /* FlipRetentionEndLooks.h */,
+				A44EBBDD1FD59C1000DDD6B1 /* FlipRetentionEndLooks.m */,
+				A44EBBD91FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.h */,
+				A44EBBDA1FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.m */,
 				A4EA64C31FBB45A80062D67F /* ViewController.h */,
 				A4EA64C41FBB45A80062D67F /* ViewController.m */,
 				A49FBABF1FC477D300029B1F /* Homepage.h */,
@@ -320,8 +330,10 @@
 			files = (
 				A4EA64C51FBB45A80062D67F /* ViewController.m in Sources */,
 				A4E20EB71FCDF41E008D794C /* LogicalPursuitController.m in Sources */,
+				A44EBBDE1FD59C1000DDD6B1 /* FlipRetentionEndLooks.m in Sources */,
 				A4EA64F21FC322B10062D67F /* ScoreTracker.m in Sources */,
 				A4E20EB41FCDF3F2008D794C /* LogicalPursuit.m in Sources */,
+				A44EBBDB1FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.m in Sources */,
 				A49FBAC11FC477D300029B1F /* Homepage.m in Sources */,
 				A45919551FD080D000FD967A /* FlipRetentionController.m in Sources */,
 				A4EA64C21FBB45A80062D67F /* AppDelegate.m in Sources */,

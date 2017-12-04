@@ -60,14 +60,7 @@
 
 
 @property FlipRetentionData *flipRetentionData;
-/*@property UIImage *PairOne;
-@property UIImage *PairTwo;
-@property UIImage *PairThree;
-@property UIImage *PairFour;
-@property UIImage *PairFive;
-@property UIImage *PairSix;
-@property UIImage *PairSeven;
-@property UIImage *PairEight; */
+
 
 @property int tagSetter;
 @property int userCounter;

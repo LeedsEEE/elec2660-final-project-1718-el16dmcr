@@ -17,23 +17,6 @@
                             blue:b/255.0f
                            alpha:1.0];
 } */
--(void) drawRoundedRect:(float) startx: (float) starty: (float) widthRect: (float) heightRect: (float) radius
-{
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1].CGColor);
-    CGContextMoveToPoint(context, startx + radius, starty);
-    CGContextAddLineToPoint(context, startx + widthRect - radius, starty);
-    //CGContextAddArcToPoint(context,  startx + widthRect - radius, starty, startx + widthRect, starty - radius, radius);
-    CGContextAddLineToPoint(context, startx + widthRect, starty - heightRect + radius);
-    //CGContextAddArcToPoint(context,  startx + widthRect, starty - heightRect + radius, startx + widthRect - radius, starty - heightRect, radius);
-    CGContextAddLineToPoint(context, startx + radius, starty - heightRect );
-    //CGContextAddArcToPoint(context,  startx + radius, starty - heightRect, startx, starty - heightRect + radius, radius);
-    CGContextAddLineToPoint(context, startx, starty - radius );
-    //CGContextAddArcToPoint(context,  startx, starty - radius, startx + radius, starty, radius);
-    CGContextFillPath(context);
-    
-}
 
 
 
@@ -42,7 +25,16 @@
 - (void)drawRect:(CGRect)rect {
     
     
+    CGColorRef blueGreen = [[UIColor redColor] CGColor];
     
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextClearRect(context, self.bounds);
+    
+    CGContextSetFillColorWithColor(context, blueGreen);
+    CGContextFillRect(context, CGRectMake(0, 0, width, height));
     
     // Define the height and width of the scren so it works for all screens
     //CGFloat width = [UIScreen mainScreen].bounds.size.width;
@@ -63,7 +55,7 @@
     
     //[self drawRoundedRect:100 :100 :100 :100 :10];
     
-    CGContextRef context = UIGraphicsGetCurrentContext();
+  /*  CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1].CGColor);
     
     
@@ -72,7 +64,7 @@
     CGContextAddArcToPoint(context,200,190,190,200,10);
     CGContextAddArcToPoint(context,100,200,90,190,10);
     CGContextAddArcToPoint(context,90,110,100,100,10);
-    CGContextFillPath(context);
+    CGContextFillPath(context); */
     
    /* CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1].CGColor);
     CGContextMoveToPoint(context, 10, 0);
