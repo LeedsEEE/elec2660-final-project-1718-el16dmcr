@@ -18,30 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yWZ-vJ-gDy"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMX-bb-K17">
-                                <frame key="frameInset" minX="259" minY="443" width="100" height="58"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="levelZeroBrainImage" translatesAutoresizingMaskIntoConstraints="NO" id="yWZ-vJ-gDy"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logicalPursuitButton" translatesAutoresizingMaskIntoConstraints="NO" id="xMX-bb-K17">
+                                <frame key="frameInset" minX="196" minY="443" width="164" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="opticalConundrumButton" translatesAutoresizingMaskIntoConstraints="NO" id="nED-7d-RYy">
+                                <frame key="frameInset" minX="105" minY="184" width="164" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4oE-ka-KtE">
                                 <frame key="frameInset" minX="293" minY="184" width="66" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tnx-Ee-xYw">
-                                <frame key="frameInset" minX="16" minY="443" width="100" height="58"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flipRetentionButton" translatesAutoresizingMaskIntoConstraints="NO" id="Tnx-Ee-xYw">
+                                <frame key="frameInset" minX="16" minY="443" width="164" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="axonEvolution" translatesAutoresizingMaskIntoConstraints="NO" id="nNF-qW-Vph">
-                                <frame key="frameInset" minY="52" width="375" height="128"/>
+                                <frame key="frameInset" minY="48" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HighScore: XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-eD-uV6">
-                                <frame key="frameInset" minX="120" minY="323" width="134" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJe-QG-j61">
                                 <frame key="frameInset" minX="164" minY="391" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -50,10 +47,13 @@
                                     <segue destination="Im1-dZ-xK5" kind="push" id="tm2-R6-Eop"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nED-7d-RYy">
-                                <frame key="frameInset" minX="137" minY="223" width="100" height="58"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HighScore: XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-eD-uV6">
+                                <frame key="frameInset" minX="120" minY="323" width="134" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -77,26 +77,28 @@
                         <viewControllerLayoutGuide type="top" id="K4j-Dr-qbC"/>
                         <viewControllerLayoutGuide type="bottom" id="hlO-7R-F1d"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="97n-1c-agm">
+                    <view key="view" contentMode="scaleToFill" id="97n-1c-agm" customClass="FlipRetentionInstructionLooks">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click on the cards to uncover what image lies beneath, " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ep9-R9-KmX">
-                                <frame key="frameInset" minX="-23" minY="28" width="422" height="611"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atS-dg-wCX">
-                                <frame key="frameInset" width="375" height="639"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atS-dg-wCX">
                                 <connections>
                                     <segue destination="NZz-SP-7gC" kind="push" id="d2h-D0-MpS"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instructionsFlipRetention" translatesAutoresizingMaskIntoConstraints="NO" id="CSa-By-umW"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CSa-By-umW" firstAttribute="bottom" secondItem="hlO-7R-F1d" secondAttribute="top" id="6jv-gf-SfC"/>
+                            <constraint firstItem="atS-dg-wCX" firstAttribute="top" secondItem="97n-1c-agm" secondAttribute="top" id="7JC-mi-VjD"/>
+                            <constraint firstItem="CSa-By-umW" firstAttribute="leading" secondItem="97n-1c-agm" secondAttribute="leading" id="S5c-c1-pNR"/>
+                            <constraint firstAttribute="trailing" secondItem="CSa-By-umW" secondAttribute="trailing" id="UHu-YN-40D"/>
+                            <constraint firstItem="CSa-By-umW" firstAttribute="leading" secondItem="atS-dg-wCX" secondAttribute="leading" id="bVW-5M-Zw7"/>
+                            <constraint firstItem="hlO-7R-F1d" firstAttribute="top" secondItem="atS-dg-wCX" secondAttribute="bottom" constant="28" id="duF-FK-Dxc"/>
+                            <constraint firstItem="CSa-By-umW" firstAttribute="trailing" secondItem="atS-dg-wCX" secondAttribute="trailing" id="n19-yF-1Cs"/>
+                            <constraint firstItem="CSa-By-umW" firstAttribute="top" secondItem="K4j-Dr-qbC" secondAttribute="bottom" constant="8" symbolic="YES" id="uoc-k3-NWu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="O94-jp-vxb"/>
                 </viewController>
@@ -312,20 +314,24 @@
             </objects>
             <point key="canvasLocation" x="297" y="687"/>
         </scene>
-        <!--View Controller-->
+        <!--Flip Retention End Screen Win-->
         <scene sceneID="bIm-ja-Cad">
             <objects>
-                <viewController id="iuY-YJ-al2" sceneMemberID="viewController">
+                <viewController id="iuY-YJ-al2" customClass="FlipRetentionEndScreenWin" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="67P-mq-HIY"/>
                         <viewControllerLayoutGuide type="bottom" id="RS7-9s-SKl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mQ9-kE-jUZ">
+                    <view key="view" contentMode="scaleToFill" id="mQ9-kE-jUZ" customClass="FlipRetentionEndLooks">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionWin" translatesAutoresizingMaskIntoConstraints="NO" id="8pa-t8-RpH">
+                                <frame key="frameInset" minY="173" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE3-Aw-Cc8">
-                                <frame key="frameInset" minY="28" width="375" height="639"/>
+                                <frame key="frameInset" minY="173" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="push" id="Iq0-4U-neV"/>
@@ -338,6 +344,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wC4-1F-7g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="997.60000000000002" y="686.80659670164926"/>
+        </scene>
+        <!--Flip Retention End Screen Lose-->
+        <scene sceneID="z6r-Zr-1lx">
+            <objects>
+                <viewController id="zrf-W1-EWT" customClass="FlipRetentionEndScreenLose" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="10E-Nd-RH3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xel-N7-N4l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gOW-8X-hJn" customClass="FlipRetentionEndScreenLose">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionLose" translatesAutoresizingMaskIntoConstraints="NO" id="XwS-9N-8WL">
+                                <frame key="frameInset" minY="174" width="382" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z29-vF-axi">
+                                <frame key="frameInset" minY="20" width="375" height="639"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="cXI-tL-Eph"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKd-vY-3ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997.60000000000002" y="1353.3733133433284"/>
+        </scene>
+        <!--Logicl Pursuit End Screen Lose-->
+        <scene sceneID="GhN-0K-eFb">
+            <objects>
+                <viewController id="b8m-5s-kbV" customClass="LogiclPursuitEndScreenLose" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ezm-3a-Rmu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gr2-jt-diV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EsI-Tx-AJ6" customClass="LogiclPursuitEndScreenLose">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionLose" translatesAutoresizingMaskIntoConstraints="NO" id="wcK-sN-wPV">
+                                <frame key="frameInset" minY="170" width="382" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iK4-Fx-dkh">
+                                <frame key="frameInset" minY="28" width="375" height="639"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="Agn-KN-t7d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MvV-eM-xIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2026" y="-1639"/>
+        </scene>
+        <!--Logical Pursuit End Screen Win-->
+        <scene sceneID="mdY-Hl-bKI">
+            <objects>
+                <viewController id="Iad-dS-9eU" customClass="LogicalPursuitEndScreenWin" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rnN-SU-G3M"/>
+                        <viewControllerLayoutGuide type="bottom" id="oGY-Ze-cDw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WtW-cf-bDQ" customClass="LogicalPursuitEndScreenWin">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pK5-pg-Drn">
+                                <frame key="frameInset" minY="28" width="375" height="639"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="YAd-sn-F1g"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionWin" translatesAutoresizingMaskIntoConstraints="NO" id="Kt3-1L-Syh">
+                                <frame key="frameInset" minY="177" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ndh-Hb-YOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2026" y="-872"/>
         </scene>
         <!--Logical Pursuit Controller-->
         <scene sceneID="jPm-az-crH">
@@ -423,7 +522,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4CB-Mq-tZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-343" y="-890"/>
+            <point key="canvasLocation" x="-1169" y="-872"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ypa-Va-dmg">
+            <objects>
+                <viewController id="zrm-B1-l4A" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="etq-y3-fBi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kka-sj-Sbv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1du-cz-v9T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQD-sx-aty">
+                                <frame key="frameInset" minY="28" width="375" height="639"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="Gh2-RI-P0q" kind="push" id="lL4-SL-Q7O"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instructionsFlipRetention" translatesAutoresizingMaskIntoConstraints="NO" id="aqo-cv-Qzp">
+                                <frame key="frameInset" minY="28" width="375" height="639"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tsg-6e-Mhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-433" y="-872"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TdL-kD-6dl">
+            <objects>
+                <viewController id="iO7-ga-VB2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="csp-N3-njQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wL8-UC-RQJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JHK-IV-pZz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instructionsFlipRetention" translatesAutoresizingMaskIntoConstraints="NO" id="Dcl-4J-BXM">
+                                <frame key="frameInset" minY="28" width="375" height="639"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NR-t2-hJO">
+                                <frame key="frameInset" minY="28" width="375" height="639"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="E26-77-eE9" kind="push" id="lvs-m1-nhF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A57-eK-Nxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447" y="-66"/>
         </scene>
         <!--Optical Conundrum Controller-->
         <scene sceneID="3MP-v0-DqQ">
@@ -511,7 +672,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FE8-QJ-d1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="726" y="-66"/>
+            <point key="canvasLocation" x="1201" y="-66"/>
+        </scene>
+        <!--Optical Conundrum End Screen Lose-->
+        <scene sceneID="QPi-sn-uYr">
+            <objects>
+                <viewController id="Dx9-lU-f1t" customClass="OpticalConundrumEndScreenLose" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4sL-PJ-DhN"/>
+                        <viewControllerLayoutGuide type="bottom" id="xVp-lj-ohu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gT9-3z-kEr" customClass="OpticalConundrumEndScreenLose">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEr-j8-e1d">
+                                <frame key="frameInset" minX="7" minY="28" width="368" height="639"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="1VJ-ta-9x7"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionLose" translatesAutoresizingMaskIntoConstraints="NO" id="MFt-LY-btb">
+                                <frame key="frameInset" minY="178" width="382" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2mh-OO-YUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873" y="-793"/>
+        </scene>
+        <!--Optical Conundrum End Screen Win-->
+        <scene sceneID="MwQ-V7-H2o">
+            <objects>
+                <viewController id="Ky6-1X-LRr" customClass="OpticalConundrumEndScreenWin" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EJR-Xu-SAv"/>
+                        <viewControllerLayoutGuide type="bottom" id="rrt-3J-YMN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fec-Xb-qX7" customClass="OpticalConundrumEndScreenWin">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGi-ZS-dDG">
+                                <frame key="frameInset" minY="28" width="375" height="639"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="xNf-Q4-OA4"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionWin" translatesAutoresizingMaskIntoConstraints="NO" id="pak-J2-P79">
+                                <frame key="frameInset" minY="177" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LLZ-6o-9f5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873" y="-66"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s61-xF-XNl">
@@ -531,9 +754,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="axonEvolution" width="1650" height="282"/>
+        <image name="FlipRetentionLose" width="840" height="78"/>
+        <image name="FlipRetentionWin" width="830" height="136"/>
+        <image name="axonEvolution" width="1383" height="269"/>
+        <image name="flipRetentionButton" width="1116" height="135"/>
+        <image name="instructionsFlipRetention" width="1047" height="385"/>
+        <image name="levelZeroBrainImage" width="400" height="500"/>
+        <image name="logicalPursuitButton" width="1234" height="158"/>
+        <image name="opticalConundrumButton" width="1534" height="138"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Rda-iQ-Yjl"/>
+        <segue reference="Iq0-4U-neV"/>
     </inferredMetricsTieBreakers>
 </document>

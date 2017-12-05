@@ -10,13 +10,13 @@
 
 @implementation Homepage
 // Function to make customizing colour easier
-/*UIColor* RGB(float r, float g, float b)
+UIColor *RGB1(float r, float g, float b)
 {
     return [UIColor colorWithRed:r/255.0f
                            green:g/255.0f
                             blue:b/255.0f
                            alpha:1.0];
-} */
+}
 
 
 
@@ -25,7 +25,7 @@
 - (void)drawRect:(CGRect)rect {
     
     
-    CGColorRef blueGreen = [[UIColor redColor] CGColor];
+    CGColorRef lightblue = [RGB1(0, 256, 242) CGColor];
     
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
@@ -33,8 +33,10 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, self.bounds);
     
-    CGContextSetFillColorWithColor(context, blueGreen);
+    CGContextSetFillColorWithColor(context, lightblue);
     CGContextFillRect(context, CGRectMake(0, 0, width, height));
+    
+    
     
     // Define the height and width of the scren so it works for all screens
     //CGFloat width = [UIScreen mainScreen].bounds.size.width;

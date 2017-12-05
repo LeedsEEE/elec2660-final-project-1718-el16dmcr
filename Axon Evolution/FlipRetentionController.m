@@ -112,7 +112,7 @@
     NSLog(@"a11 tag is %ld", (long)self.a11Image.tag);
     //self.pairChecker =self.a11Image.tag;
     NSLog(@"check tag correct: %d", self.pairChecker);
-    self.timeTick = 100;
+    self.timeTick = 10;
     self.timerLabel.text = [NSString stringWithFormat:@"TimeRemaining : %d", self.timeTick];
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     
@@ -127,9 +127,10 @@
 -(void)tick{
     if ( self.timeTick == 0){
         self.timeTick--;
+        
         self.timerLabel.text = [NSString stringWithFormat:@"Time Remaining : %d", self.timeTick];
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+        UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetentionEndLooks"];
         [self presentViewController:vc animated:YES completion:nil];
     }
     else {
