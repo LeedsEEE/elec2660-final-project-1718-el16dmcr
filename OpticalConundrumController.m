@@ -7,6 +7,7 @@
 //
 
 #import "OpticalConundrumController.h"
+#import "ViewController.h"
 
 
 @interface OpticalConundrumController ()
@@ -21,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.opticalConundrumData = [[OpticalConundrumData alloc] init];
-    self.scoreTracker = [[ScoreTracker alloc] init];
+  
     
     self.navigationItem.hidesBackButton = YES;   // Hides the back button that is there by default, I want to make my own
     self.tempArray = [[NSMutableArray alloc] init];
@@ -47,11 +48,11 @@
     self.shownColourWordLabel.textColor = self.wrongColour;
     self.scoreLabel.text = [NSString stringWithFormat: @"Score : %d",self.opticalConundrumData.startPoints];
     [self.opticalConundrumData getInitialScore]; ///IMPORTANT
-    //NSString *text = [NSString stringWithFormat:@"%d", self.opticalConundrumData.startPoints];
+    
     
     NSLog(@"%@",self.shownColourWord);
     
-    self.timeTick = 100;
+    self.timeTick = 10;
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     self.timerLabel.text = @"100";
     self.timerLabel.backgroundColor = [UIColor blackColor];
@@ -80,10 +81,35 @@
         self.timeTick--;
         NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", self.timeTick];
         self.timerLabel.text = timeRemaining;
-        [self.scoreTracker getOpticalConundrumScore];
-        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumEndScreenWin"];
-        [self presentViewController:vc animated:YES completion:nil];
+        NSLog(@"Last highscore was : %d",self.opticalConundrumData.highScore);
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
+        NSMutableDictionary *userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
+        int currentHighScore = [[userData valueForKey:@"OpticalConundrumHighScore"] intValue];
+        if (self.opticalConundrumData.currentScore > currentHighScore){
+            
+            int newHighScore = self.opticalConundrumData.currentScore;
+            NSNumber *newHighScoreNSN = [[NSNumber alloc] initWithInt:newHighScore];
+            [userData setValue:newHighScoreNSN forKey:@"OpticalConundrumHighScore"];
+            [userData writeToFile:filePath atomically:YES];
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UINavigationController *nc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumWinScreen"];
+            [self presentViewController:nc animated:YES completion:nil];
+            
+        }
+        else {
+        
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumLoseScreen"];
+            [self presentViewController:vc animated:YES completion:nil];
+            
+            
+            
+        /*UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *nc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+        [self presentViewController:nc animated:YES completion:nil]; */
+        }
     }
     else {
     self.timeTick--;

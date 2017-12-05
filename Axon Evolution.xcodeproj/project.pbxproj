@@ -7,11 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A44EBBD81FD591D900DDD6B1 /* FlipRetentionLooks.m in Sources */ = {isa = PBXBuildFile; fileRef = A44EBBD71FD591D900DDD6B1 /* FlipRetentionLooks.m */; };
-		A44EBBDB1FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.m in Sources */ = {isa = PBXBuildFile; fileRef = A44EBBDA1FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.m */; };
-		A44EBBDE1FD59C1000DDD6B1 /* FlipRetentionEndLooks.m in Sources */ = {isa = PBXBuildFile; fileRef = A44EBBDD1FD59C1000DDD6B1 /* FlipRetentionEndLooks.m */; };
+		A406637A1FD7145A00497915 /* OpticalConundrumInstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40663791FD7145A00497915 /* OpticalConundrumInstructionController.m */; };
+		A406637D1FD7147300497915 /* OpticalConundrumWinController.m in Sources */ = {isa = PBXBuildFile; fileRef = A406637C1FD7147300497915 /* OpticalConundrumWinController.m */; };
+		A40663801FD7148500497915 /* OpticalConundrumLoseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A406637F1FD7148500497915 /* OpticalConundrumLoseController.m */; };
+		A406638C1FD7150200497915 /* OpticalConundrumInstructionDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A406638B1FD7150200497915 /* OpticalConundrumInstructionDraw.m */; };
+		A406638F1FD7151400497915 /* OpticalConundrumWinDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A406638E1FD7151400497915 /* OpticalConundrumWinDraw.m */; };
+		A40663921FD7152200497915 /* OpticalConundrumLoseDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A40663911FD7152200497915 /* OpticalConundrumLoseDraw.m */; };
+		A40663951FD7156900497915 /* OpticalConundrumDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A40663941FD7156900497915 /* OpticalConundrumDraw.m */; };
 		A45919521FD080B000FD967A /* FlipRetentionData.m in Sources */ = {isa = PBXBuildFile; fileRef = A45919511FD080B000FD967A /* FlipRetentionData.m */; };
 		A45919551FD080D000FD967A /* FlipRetentionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45919541FD080D000FD967A /* FlipRetentionController.m */; };
+		A495AD9F1FD748F50048F203 /* FlipRetentionInstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A495AD9E1FD748F50048F203 /* FlipRetentionInstructionController.m */; };
+		A495ADA21FD749080048F203 /* FlipRetentionWinController.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADA11FD749080048F203 /* FlipRetentionWinController.m */; };
+		A495ADA51FD7491D0048F203 /* FlipRetentionLoseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADA41FD7491D0048F203 /* FlipRetentionLoseController.m */; };
+		A495ADA81FD7498B0048F203 /* FlipRetentionInstructionDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADA71FD7498B0048F203 /* FlipRetentionInstructionDraw.m */; };
+		A495ADAB1FD7499B0048F203 /* FlipRetentionWinDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADAA1FD7499B0048F203 /* FlipRetentionWinDraw.m */; };
+		A495ADAE1FD749AD0048F203 /* FlipRetentionLoseDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADAD1FD749AD0048F203 /* FlipRetentionLoseDraw.m */; };
+		A495ADB11FD749BC0048F203 /* FlipRetentionDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADB01FD749BC0048F203 /* FlipRetentionDraw.m */; };
+		A495ADB51FD74A2D0048F203 /* LogicalPursuitDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADB41FD74A2D0048F203 /* LogicalPursuitDraw.m */; };
+		A495ADB81FD74A4C0048F203 /* LogicalPursuitInstructionDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADB71FD74A4C0048F203 /* LogicalPursuitInstructionDraw.m */; };
+		A495ADBB1FD74A5D0048F203 /* LogicalPursuitWinDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADBA1FD74A5D0048F203 /* LogicalPursuitWinDraw.m */; };
+		A495ADBE1FD74A7A0048F203 /* LogicalPursuitLoseDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADBD1FD74A7A0048F203 /* LogicalPursuitLoseDraw.m */; };
+		A495ADC11FD74AB10048F203 /* LogicalPursuitInstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADC01FD74AB10048F203 /* LogicalPursuitInstructionController.m */; };
+		A495ADC41FD74ACE0048F203 /* LogicalPursuitWinController.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADC31FD74ACE0048F203 /* LogicalPursuitWinController.m */; };
+		A495ADC71FD74AE00048F203 /* LogicalPursuitLoseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A495ADC61FD74AE00048F203 /* LogicalPursuitLoseController.m */; };
 		A49FBAC11FC477D300029B1F /* Homepage.m in Sources */ = {isa = PBXBuildFile; fileRef = A49FBAC01FC477D300029B1F /* Homepage.m */; };
 		A4E20EB41FCDF3F2008D794C /* LogicalPursuit.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E20EB31FCDF3F2008D794C /* LogicalPursuit.m */; };
 		A4E20EB71FCDF41E008D794C /* LogicalPursuitController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E20EB61FCDF41E008D794C /* LogicalPursuitController.m */; };
@@ -25,7 +43,6 @@
 		A4EA64CD1FBB45A80062D67F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EA64CB1FBB45A80062D67F /* LaunchScreen.storyboard */; };
 		A4EA64D81FBB45A80062D67F /* Axon_EvolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64D71FBB45A80062D67F /* Axon_EvolutionTests.m */; };
 		A4EA64E31FBB45A80062D67F /* Axon_EvolutionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64E21FBB45A80062D67F /* Axon_EvolutionUITests.m */; };
-		A4EA64F21FC322B10062D67F /* ScoreTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64F11FC322B10062D67F /* ScoreTracker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +63,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A44EBBD61FD591D900DDD6B1 /* FlipRetentionLooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionLooks.h; sourceTree = "<group>"; };
-		A44EBBD71FD591D900DDD6B1 /* FlipRetentionLooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionLooks.m; sourceTree = "<group>"; };
-		A44EBBD91FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionInstructionLooks.h; sourceTree = "<group>"; };
-		A44EBBDA1FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionInstructionLooks.m; sourceTree = "<group>"; };
-		A44EBBDC1FD59C1000DDD6B1 /* FlipRetentionEndLooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionEndLooks.h; sourceTree = "<group>"; };
-		A44EBBDD1FD59C1000DDD6B1 /* FlipRetentionEndLooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionEndLooks.m; sourceTree = "<group>"; };
+		A40663781FD7145A00497915 /* OpticalConundrumInstructionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpticalConundrumInstructionController.h; sourceTree = "<group>"; };
+		A40663791FD7145A00497915 /* OpticalConundrumInstructionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpticalConundrumInstructionController.m; sourceTree = "<group>"; };
+		A406637B1FD7147300497915 /* OpticalConundrumWinController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpticalConundrumWinController.h; sourceTree = "<group>"; };
+		A406637C1FD7147300497915 /* OpticalConundrumWinController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpticalConundrumWinController.m; sourceTree = "<group>"; };
+		A406637E1FD7148500497915 /* OpticalConundrumLoseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpticalConundrumLoseController.h; sourceTree = "<group>"; };
+		A406637F1FD7148500497915 /* OpticalConundrumLoseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpticalConundrumLoseController.m; sourceTree = "<group>"; };
+		A406638A1FD7150200497915 /* OpticalConundrumInstructionDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpticalConundrumInstructionDraw.h; sourceTree = "<group>"; };
+		A406638B1FD7150200497915 /* OpticalConundrumInstructionDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpticalConundrumInstructionDraw.m; sourceTree = "<group>"; };
+		A406638D1FD7151400497915 /* OpticalConundrumWinDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpticalConundrumWinDraw.h; sourceTree = "<group>"; };
+		A406638E1FD7151400497915 /* OpticalConundrumWinDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpticalConundrumWinDraw.m; sourceTree = "<group>"; };
+		A40663901FD7152200497915 /* OpticalConundrumLoseDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpticalConundrumLoseDraw.h; sourceTree = "<group>"; };
+		A40663911FD7152200497915 /* OpticalConundrumLoseDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpticalConundrumLoseDraw.m; sourceTree = "<group>"; };
+		A40663931FD7156900497915 /* OpticalConundrumDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpticalConundrumDraw.h; sourceTree = "<group>"; };
+		A40663941FD7156900497915 /* OpticalConundrumDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpticalConundrumDraw.m; sourceTree = "<group>"; };
 		A45919501FD080B000FD967A /* FlipRetentionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionData.h; sourceTree = "<group>"; };
 		A45919511FD080B000FD967A /* FlipRetentionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionData.m; sourceTree = "<group>"; };
 		A45919531FD080D000FD967A /* FlipRetentionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionController.h; sourceTree = "<group>"; };
 		A45919541FD080D000FD967A /* FlipRetentionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionController.m; sourceTree = "<group>"; };
+		A495AD9D1FD748F50048F203 /* FlipRetentionInstructionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionInstructionController.h; sourceTree = "<group>"; };
+		A495AD9E1FD748F50048F203 /* FlipRetentionInstructionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionInstructionController.m; sourceTree = "<group>"; };
+		A495ADA01FD749080048F203 /* FlipRetentionWinController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionWinController.h; sourceTree = "<group>"; };
+		A495ADA11FD749080048F203 /* FlipRetentionWinController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionWinController.m; sourceTree = "<group>"; };
+		A495ADA31FD7491D0048F203 /* FlipRetentionLoseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionLoseController.h; sourceTree = "<group>"; };
+		A495ADA41FD7491D0048F203 /* FlipRetentionLoseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionLoseController.m; sourceTree = "<group>"; };
+		A495ADA61FD7498B0048F203 /* FlipRetentionInstructionDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipRetentionInstructionDraw.h; path = ../FlipRetentionInstructionDraw.h; sourceTree = "<group>"; };
+		A495ADA71FD7498B0048F203 /* FlipRetentionInstructionDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipRetentionInstructionDraw.m; path = ../FlipRetentionInstructionDraw.m; sourceTree = "<group>"; };
+		A495ADA91FD7499B0048F203 /* FlipRetentionWinDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipRetentionWinDraw.h; path = ../FlipRetentionWinDraw.h; sourceTree = "<group>"; };
+		A495ADAA1FD7499B0048F203 /* FlipRetentionWinDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipRetentionWinDraw.m; path = ../FlipRetentionWinDraw.m; sourceTree = "<group>"; };
+		A495ADAC1FD749AD0048F203 /* FlipRetentionLoseDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipRetentionLoseDraw.h; path = ../FlipRetentionLoseDraw.h; sourceTree = "<group>"; };
+		A495ADAD1FD749AD0048F203 /* FlipRetentionLoseDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipRetentionLoseDraw.m; path = ../FlipRetentionLoseDraw.m; sourceTree = "<group>"; };
+		A495ADAF1FD749BC0048F203 /* FlipRetentionDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipRetentionDraw.h; path = ../FlipRetentionDraw.h; sourceTree = "<group>"; };
+		A495ADB01FD749BC0048F203 /* FlipRetentionDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipRetentionDraw.m; path = ../FlipRetentionDraw.m; sourceTree = "<group>"; };
+		A495ADB31FD74A2D0048F203 /* LogicalPursuitDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicalPursuitDraw.h; sourceTree = "<group>"; };
+		A495ADB41FD74A2D0048F203 /* LogicalPursuitDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogicalPursuitDraw.m; sourceTree = "<group>"; };
+		A495ADB61FD74A4C0048F203 /* LogicalPursuitInstructionDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicalPursuitInstructionDraw.h; sourceTree = "<group>"; };
+		A495ADB71FD74A4C0048F203 /* LogicalPursuitInstructionDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogicalPursuitInstructionDraw.m; sourceTree = "<group>"; };
+		A495ADB91FD74A5D0048F203 /* LogicalPursuitWinDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicalPursuitWinDraw.h; sourceTree = "<group>"; };
+		A495ADBA1FD74A5D0048F203 /* LogicalPursuitWinDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogicalPursuitWinDraw.m; sourceTree = "<group>"; };
+		A495ADBC1FD74A7A0048F203 /* LogicalPursuitLoseDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicalPursuitLoseDraw.h; sourceTree = "<group>"; };
+		A495ADBD1FD74A7A0048F203 /* LogicalPursuitLoseDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogicalPursuitLoseDraw.m; sourceTree = "<group>"; };
+		A495ADBF1FD74AB10048F203 /* LogicalPursuitInstructionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogicalPursuitInstructionController.h; path = ../LogicalPursuitInstructionController.h; sourceTree = "<group>"; };
+		A495ADC01FD74AB10048F203 /* LogicalPursuitInstructionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogicalPursuitInstructionController.m; path = ../LogicalPursuitInstructionController.m; sourceTree = "<group>"; };
+		A495ADC21FD74ACE0048F203 /* LogicalPursuitWinController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogicalPursuitWinController.h; path = ../LogicalPursuitWinController.h; sourceTree = "<group>"; };
+		A495ADC31FD74ACE0048F203 /* LogicalPursuitWinController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogicalPursuitWinController.m; path = ../LogicalPursuitWinController.m; sourceTree = "<group>"; };
+		A495ADC51FD74AE00048F203 /* LogicalPursuitLoseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogicalPursuitLoseController.h; path = ../LogicalPursuitLoseController.h; sourceTree = "<group>"; };
+		A495ADC61FD74AE00048F203 /* LogicalPursuitLoseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogicalPursuitLoseController.m; path = ../LogicalPursuitLoseController.m; sourceTree = "<group>"; };
 		A49FBABF1FC477D300029B1F /* Homepage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Homepage.h; path = ../Homepage.h; sourceTree = "<group>"; };
 		A49FBAC01FC477D300029B1F /* Homepage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Homepage.m; path = ../Homepage.m; sourceTree = "<group>"; };
 		A4E20EB21FCDF3F2008D794C /* LogicalPursuit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicalPursuit.h; sourceTree = "<group>"; };
@@ -82,8 +135,6 @@
 		A4EA64DE1FBB45A80062D67F /* Axon EvolutionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Axon EvolutionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4EA64E21FBB45A80062D67F /* Axon_EvolutionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Axon_EvolutionUITests.m; sourceTree = "<group>"; };
 		A4EA64E41FBB45A80062D67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4EA64F01FC322B10062D67F /* ScoreTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreTracker.h; sourceTree = SOURCE_ROOT; };
-		A4EA64F11FC322B10062D67F /* ScoreTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTracker.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +162,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A40663961FD71E1000497915 /* OpticalConundrum */ = {
+			isa = PBXGroup;
+			children = (
+				A40663781FD7145A00497915 /* OpticalConundrumInstructionController.h */,
+				A40663791FD7145A00497915 /* OpticalConundrumInstructionController.m */,
+				A406638A1FD7150200497915 /* OpticalConundrumInstructionDraw.h */,
+				A406638B1FD7150200497915 /* OpticalConundrumInstructionDraw.m */,
+				A4E3C5AF1FC860AB0036F20C /* OpticalConundrumController.h */,
+				A4E3C5B01FC860AB0036F20C /* OpticalConundrumController.m */,
+				A4E3C5B21FC8642C0036F20C /* OpticalConundrumData.h */,
+				A4E3C5B31FC8642C0036F20C /* OpticalConundrumData.m */,
+				A40663931FD7156900497915 /* OpticalConundrumDraw.h */,
+				A40663941FD7156900497915 /* OpticalConundrumDraw.m */,
+				A406637B1FD7147300497915 /* OpticalConundrumWinController.h */,
+				A406637C1FD7147300497915 /* OpticalConundrumWinController.m */,
+				A406638D1FD7151400497915 /* OpticalConundrumWinDraw.h */,
+				A406638E1FD7151400497915 /* OpticalConundrumWinDraw.m */,
+				A406637E1FD7148500497915 /* OpticalConundrumLoseController.h */,
+				A406637F1FD7148500497915 /* OpticalConundrumLoseController.m */,
+				A40663901FD7152200497915 /* OpticalConundrumLoseDraw.h */,
+				A40663911FD7152200497915 /* OpticalConundrumLoseDraw.m */,
+			);
+			name = OpticalConundrum;
+			sourceTree = "<group>";
+		};
+		A495AD9C1FD7489C0048F203 /* FlipRetention */ = {
+			isa = PBXGroup;
+			children = (
+				A495AD9D1FD748F50048F203 /* FlipRetentionInstructionController.h */,
+				A495AD9E1FD748F50048F203 /* FlipRetentionInstructionController.m */,
+				A495ADA61FD7498B0048F203 /* FlipRetentionInstructionDraw.h */,
+				A495ADA71FD7498B0048F203 /* FlipRetentionInstructionDraw.m */,
+				A45919531FD080D000FD967A /* FlipRetentionController.h */,
+				A45919541FD080D000FD967A /* FlipRetentionController.m */,
+				A45919501FD080B000FD967A /* FlipRetentionData.h */,
+				A45919511FD080B000FD967A /* FlipRetentionData.m */,
+				A495ADAF1FD749BC0048F203 /* FlipRetentionDraw.h */,
+				A495ADB01FD749BC0048F203 /* FlipRetentionDraw.m */,
+				A495ADA01FD749080048F203 /* FlipRetentionWinController.h */,
+				A495ADA11FD749080048F203 /* FlipRetentionWinController.m */,
+				A495ADA91FD7499B0048F203 /* FlipRetentionWinDraw.h */,
+				A495ADAA1FD7499B0048F203 /* FlipRetentionWinDraw.m */,
+				A495ADA31FD7491D0048F203 /* FlipRetentionLoseController.h */,
+				A495ADA41FD7491D0048F203 /* FlipRetentionLoseController.m */,
+				A495ADAC1FD749AD0048F203 /* FlipRetentionLoseDraw.h */,
+				A495ADAD1FD749AD0048F203 /* FlipRetentionLoseDraw.m */,
+			);
+			name = FlipRetention;
+			sourceTree = "<group>";
+		};
+		A495ADB21FD749C80048F203 /* LogicalPursuit */ = {
+			isa = PBXGroup;
+			children = (
+				A495ADBF1FD74AB10048F203 /* LogicalPursuitInstructionController.h */,
+				A495ADC01FD74AB10048F203 /* LogicalPursuitInstructionController.m */,
+				A495ADB61FD74A4C0048F203 /* LogicalPursuitInstructionDraw.h */,
+				A495ADB71FD74A4C0048F203 /* LogicalPursuitInstructionDraw.m */,
+				A4E20EB51FCDF41E008D794C /* LogicalPursuitController.h */,
+				A4E20EB61FCDF41E008D794C /* LogicalPursuitController.m */,
+				A4E20EB21FCDF3F2008D794C /* LogicalPursuit.h */,
+				A4E20EB31FCDF3F2008D794C /* LogicalPursuit.m */,
+				A495ADB31FD74A2D0048F203 /* LogicalPursuitDraw.h */,
+				A495ADB41FD74A2D0048F203 /* LogicalPursuitDraw.m */,
+				A495ADC21FD74ACE0048F203 /* LogicalPursuitWinController.h */,
+				A495ADC31FD74ACE0048F203 /* LogicalPursuitWinController.m */,
+				A495ADB91FD74A5D0048F203 /* LogicalPursuitWinDraw.h */,
+				A495ADBA1FD74A5D0048F203 /* LogicalPursuitWinDraw.m */,
+				A495ADC51FD74AE00048F203 /* LogicalPursuitLoseController.h */,
+				A495ADC61FD74AE00048F203 /* LogicalPursuitLoseController.m */,
+				A495ADBC1FD74A7A0048F203 /* LogicalPursuitLoseDraw.h */,
+				A495ADBD1FD74A7A0048F203 /* LogicalPursuitLoseDraw.m */,
+			);
+			name = LogicalPursuit;
+			sourceTree = "<group>";
+		};
 		A4EA64B11FBB45A70062D67F = {
 			isa = PBXGroup;
 			children = (
@@ -134,32 +260,15 @@
 		A4EA64BC1FBB45A80062D67F /* Axon Evolution */ = {
 			isa = PBXGroup;
 			children = (
+				A40663961FD71E1000497915 /* OpticalConundrum */,
+				A495AD9C1FD7489C0048F203 /* FlipRetention */,
+				A495ADB21FD749C80048F203 /* LogicalPursuit */,
 				A4EA64C01FBB45A80062D67F /* AppDelegate.h */,
 				A4EA64C11FBB45A80062D67F /* AppDelegate.m */,
-				A4E3C5AF1FC860AB0036F20C /* OpticalConundrumController.h */,
-				A4E3C5B01FC860AB0036F20C /* OpticalConundrumController.m */,
-				A4E3C5B21FC8642C0036F20C /* OpticalConundrumData.h */,
-				A4E3C5B31FC8642C0036F20C /* OpticalConundrumData.m */,
-				A4E20EB51FCDF41E008D794C /* LogicalPursuitController.h */,
-				A4E20EB61FCDF41E008D794C /* LogicalPursuitController.m */,
-				A4E20EB21FCDF3F2008D794C /* LogicalPursuit.h */,
-				A4E20EB31FCDF3F2008D794C /* LogicalPursuit.m */,
-				A45919531FD080D000FD967A /* FlipRetentionController.h */,
-				A45919541FD080D000FD967A /* FlipRetentionController.m */,
-				A45919501FD080B000FD967A /* FlipRetentionData.h */,
-				A45919511FD080B000FD967A /* FlipRetentionData.m */,
-				A44EBBD61FD591D900DDD6B1 /* FlipRetentionLooks.h */,
-				A44EBBD71FD591D900DDD6B1 /* FlipRetentionLooks.m */,
-				A44EBBDC1FD59C1000DDD6B1 /* FlipRetentionEndLooks.h */,
-				A44EBBDD1FD59C1000DDD6B1 /* FlipRetentionEndLooks.m */,
-				A44EBBD91FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.h */,
-				A44EBBDA1FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.m */,
 				A4EA64C31FBB45A80062D67F /* ViewController.h */,
 				A4EA64C41FBB45A80062D67F /* ViewController.m */,
 				A49FBABF1FC477D300029B1F /* Homepage.h */,
 				A49FBAC01FC477D300029B1F /* Homepage.m */,
-				A4EA64F01FC322B10062D67F /* ScoreTracker.h */,
-				A4EA64F11FC322B10062D67F /* ScoreTracker.m */,
 				A4EA64C61FBB45A80062D67F /* Main.storyboard */,
 				A4EA64C91FBB45A80062D67F /* Assets.xcassets */,
 				A4EA64CB1FBB45A80062D67F /* LaunchScreen.storyboard */,
@@ -330,18 +439,35 @@
 			files = (
 				A4EA64C51FBB45A80062D67F /* ViewController.m in Sources */,
 				A4E20EB71FCDF41E008D794C /* LogicalPursuitController.m in Sources */,
-				A44EBBDE1FD59C1000DDD6B1 /* FlipRetentionEndLooks.m in Sources */,
-				A4EA64F21FC322B10062D67F /* ScoreTracker.m in Sources */,
+				A495ADA81FD7498B0048F203 /* FlipRetentionInstructionDraw.m in Sources */,
+				A406637D1FD7147300497915 /* OpticalConundrumWinController.m in Sources */,
+				A406638F1FD7151400497915 /* OpticalConundrumWinDraw.m in Sources */,
+				A40663801FD7148500497915 /* OpticalConundrumLoseController.m in Sources */,
+				A495ADBB1FD74A5D0048F203 /* LogicalPursuitWinDraw.m in Sources */,
+				A495ADA21FD749080048F203 /* FlipRetentionWinController.m in Sources */,
 				A4E20EB41FCDF3F2008D794C /* LogicalPursuit.m in Sources */,
-				A44EBBDB1FD59BFD00DDD6B1 /* FlipRetentionInstructionLooks.m in Sources */,
+				A495ADC41FD74ACE0048F203 /* LogicalPursuitWinController.m in Sources */,
 				A49FBAC11FC477D300029B1F /* Homepage.m in Sources */,
 				A45919551FD080D000FD967A /* FlipRetentionController.m in Sources */,
+				A495ADB51FD74A2D0048F203 /* LogicalPursuitDraw.m in Sources */,
+				A495ADAB1FD7499B0048F203 /* FlipRetentionWinDraw.m in Sources */,
 				A4EA64C21FBB45A80062D67F /* AppDelegate.m in Sources */,
+				A406638C1FD7150200497915 /* OpticalConundrumInstructionDraw.m in Sources */,
+				A495ADBE1FD74A7A0048F203 /* LogicalPursuitLoseDraw.m in Sources */,
+				A40663951FD7156900497915 /* OpticalConundrumDraw.m in Sources */,
+				A495ADC71FD74AE00048F203 /* LogicalPursuitLoseController.m in Sources */,
 				A4E3C5B11FC860AB0036F20C /* OpticalConundrumController.m in Sources */,
+				A40663921FD7152200497915 /* OpticalConundrumLoseDraw.m in Sources */,
 				A4EA64BF1FBB45A80062D67F /* main.m in Sources */,
+				A495AD9F1FD748F50048F203 /* FlipRetentionInstructionController.m in Sources */,
+				A495ADB81FD74A4C0048F203 /* LogicalPursuitInstructionDraw.m in Sources */,
+				A495ADAE1FD749AD0048F203 /* FlipRetentionLoseDraw.m in Sources */,
+				A406637A1FD7145A00497915 /* OpticalConundrumInstructionController.m in Sources */,
+				A495ADA51FD7491D0048F203 /* FlipRetentionLoseController.m in Sources */,
 				A4E3C5B41FC8642C0036F20C /* OpticalConundrumData.m in Sources */,
-				A44EBBD81FD591D900DDD6B1 /* FlipRetentionLooks.m in Sources */,
 				A45919521FD080B000FD967A /* FlipRetentionData.m in Sources */,
+				A495ADC11FD74AB10048F203 /* LogicalPursuitInstructionController.m in Sources */,
+				A495ADB11FD749BC0048F203 /* FlipRetentionDraw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

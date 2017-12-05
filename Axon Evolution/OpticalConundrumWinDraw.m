@@ -1,16 +1,15 @@
 //
-//  FlipRetentionInstructionLooks.m
+//  OpticalConundrumWinDraw.m
 //  Axon Evolution
 //
-//  Created by David Russell [el16dmcr] on 04/12/2017.
+//  Created by David Russell [el16dmcr] on 05/12/2017.
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
-#import "FlipRetentionInstructionLooks.h"
+#import "OpticalConundrumWinDraw.h"
 
-@implementation FlipRetentionInstructionLooks
-
-UIColor *RGB2(float r, float g, float b)
+@implementation OpticalConundrumWinDraw
+UIColor *RGB4(float r, float g, float b)
 {
     return [UIColor colorWithRed:r/255.0f
                            green:g/255.0f
@@ -21,8 +20,8 @@ UIColor *RGB2(float r, float g, float b)
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
-    CGColorRef mistyGreen = [RGB2(3, 196, 132) CGColor];
+    
+    CGColorRef opticalConundrumPurple = [RGB4(161, 0, 255) CGColor];
     
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
@@ -30,7 +29,7 @@ UIColor *RGB2(float r, float g, float b)
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, self.bounds);
     
-    CGContextSetFillColorWithColor(context, mistyGreen);
+    CGContextSetFillColorWithColor(context, opticalConundrumPurple);
     CGContextFillRect(context, CGRectMake(0, 0, width, height));
     
 }

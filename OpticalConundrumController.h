@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "OpticalConundrumData.h"
-#import "ScoreTracker.h"
+
 
 @interface OpticalConundrumController : UIViewController
 
@@ -38,9 +38,10 @@
 @property int randomThree;
 @property int randomFour;
 @property int randomFive;
+@property int test;
 
 @property OpticalConundrumData* opticalConundrumData;
-@property ScoreTracker* scoreTracker;
+
 
 @property NSTimer* timer;
 @property UILabel *progress;

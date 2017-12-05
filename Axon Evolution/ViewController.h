@@ -7,10 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OpticalConundrumController.h"
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *opticalConundrumGame;
+@property (weak, nonatomic) IBOutlet UIImageView *logicalPursuitGame;
+@property (weak, nonatomic) IBOutlet UIImageView *flipRetentionGame;
 
+@property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
+
+
+
+@property OpticalConundrumData* opticalConundrumData;
+
+@property NSDictionary* userData;
 
 @end
 

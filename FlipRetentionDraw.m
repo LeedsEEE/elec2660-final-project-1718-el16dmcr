@@ -1,14 +1,14 @@
 //
-//  FlipRetentionEndLooks.m
+//  FlipRetentionDraw.m
 //  Axon Evolution
 //
-//  Created by David Russell [el16dmcr] on 04/12/2017.
+//  Created by David Russell [el16dmcr] on 05/12/2017.
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
-#import "FlipRetentionEndLooks.h"
+#import "FlipRetentionDraw.h"
 
-@implementation FlipRetentionEndLooks
+@implementation FlipRetentionDraw
 
 /*
 // Only override drawRect: if you perform custom drawing.

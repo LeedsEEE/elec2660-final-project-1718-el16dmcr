@@ -16,9 +16,10 @@
 @property int pointsMinus;
 @property int startPoints;
 @property int currentScore;
+@property int highScore;
 
--(int) getInitialScore;
--(int) wrongSelection;
--(int) correctSelection;
+-(int)getInitialScore;
+-(int)wrongSelection;
+-(int)correctSelection;
 
 @end

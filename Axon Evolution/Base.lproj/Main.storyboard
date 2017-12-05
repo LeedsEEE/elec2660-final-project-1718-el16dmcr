@@ -39,14 +39,6 @@
                                 <frame key="frameInset" minY="48" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJe-QG-j61">
-                                <frame key="frameInset" minX="164" minY="391" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="Im1-dZ-xK5" kind="show" id="Q8n-yq-xzZ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HighScore: XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-eD-uV6">
                                 <frame key="frameInset" minX="120" minY="323" width="134" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -64,6 +56,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r3s-e3-IWm"/>
+                    <connections>
+                        <outlet property="flipRetentionGame" destination="Tnx-Ee-xYw" id="bt2-3l-sNk"/>
+                        <outlet property="highScoreLabel" destination="xhB-eD-uV6" id="rhD-oA-ng4"/>
+                        <outlet property="logicalPursuitGame" destination="xMX-bb-K17" id="MMH-gc-PC3"/>
+                        <outlet property="opticalConundrumGame" destination="nED-7d-RYy" id="2bK-eT-oET"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,11 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atS-dg-wCX">
-                                <connections>
-                                    <segue destination="NZz-SP-7gC" kind="push" id="d2h-D0-MpS"/>
-                                </connections>
-                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atS-dg-wCX"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instructionsFlipRetention" translatesAutoresizingMaskIntoConstraints="NO" id="CSa-By-umW"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,9 +123,6 @@
                                 <frame key="frameInset" minX="122" minY="617" width="131" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back to Main Menu"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="Rda-iQ-Yjl"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Db-QS-mUK">
                                 <frame key="frameInset" minX="10" minY="157" width="90" height="90"/>
@@ -333,9 +324,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE3-Aw-Cc8">
                                 <frame key="frameInset" minY="20" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="modal" id="SEp-xs-D7p"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -364,9 +352,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z29-vF-axi">
                                 <frame key="frameInset" minY="20" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="cXI-tL-Eph"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -395,9 +380,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iK4-Fx-dkh">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="Agn-KN-t7d"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -422,9 +404,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pK5-pg-Drn">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="YAd-sn-F1g"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionWin" translatesAutoresizingMaskIntoConstraints="NO" id="Kt3-1L-Syh">
                                 <frame key="frameInset" minY="177" width="375" height="66"/>
@@ -539,9 +518,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQD-sx-aty">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="Gh2-RI-P0q" kind="push" id="lL4-SL-Q7O"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instructionsFlipRetention" translatesAutoresizingMaskIntoConstraints="NO" id="aqo-cv-Qzp">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
@@ -555,27 +531,27 @@
             </objects>
             <point key="canvasLocation" x="-433" y="-872"/>
         </scene>
-        <!--View Controller-->
+        <!--Optical Conundrum Instruction Controller-->
         <scene sceneID="TdL-kD-6dl">
             <objects>
-                <viewController id="iO7-ga-VB2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OpticalConundrumInstructionScreen" id="iO7-ga-VB2" customClass="OpticalConundrumInstructionController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="csp-N3-njQ"/>
                         <viewControllerLayoutGuide type="bottom" id="wL8-UC-RQJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JHK-IV-pZz">
+                    <view key="view" contentMode="scaleToFill" id="JHK-IV-pZz" customClass="OpticalConundrumInstructionDraw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instructionsFlipRetention" translatesAutoresizingMaskIntoConstraints="NO" id="Dcl-4J-BXM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instructionsOpticalConundrum" translatesAutoresizingMaskIntoConstraints="NO" id="Dcl-4J-BXM">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NR-t2-hJO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsQ-PL-5no">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="E26-77-eE9" kind="push" id="lvs-m1-nhF"/>
+                                    <action selector="continueToGame:" destination="iO7-ga-VB2" eventType="touchUpInside" id="our-d2-ZwA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -584,7 +560,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A57-eK-Nxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447" y="-66"/>
+            <point key="canvasLocation" x="445.60000000000002" y="-66.11694152923539"/>
         </scene>
         <!--Optical Conundrum Controller-->
         <scene sceneID="3MP-v0-DqQ">
@@ -594,7 +570,7 @@
                         <viewControllerLayoutGuide type="top" id="WYo-wD-uEa"/>
                         <viewControllerLayoutGuide type="bottom" id="vRq-aG-T4q"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1E4-yZ-mb9">
+                    <view key="view" contentMode="scaleToFill" id="1E4-yZ-mb9" customClass="OpticalConundrumInstructionDraw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -674,29 +650,29 @@
             </objects>
             <point key="canvasLocation" x="1201" y="-66"/>
         </scene>
-        <!--Optical Conundrum End Screen Lose-->
+        <!--Optical Conundrum Lose Controller-->
         <scene sceneID="QPi-sn-uYr">
             <objects>
-                <viewController storyboardIdentifier="OpticalConundrumEndScreenLose" id="Dx9-lU-f1t" customClass="OpticalConundrumEndScreenLose" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OpticalConundrumLoseScreen" id="Dx9-lU-f1t" customClass="OpticalConundrumLoseController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4sL-PJ-DhN"/>
                         <viewControllerLayoutGuide type="bottom" id="xVp-lj-ohu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gT9-3z-kEr" customClass="OpticalConundrumEndScreenLose">
+                    <view key="view" contentMode="scaleToFill" id="gT9-3z-kEr" customClass="OpticalConundrumLoseDraw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="opticalConundrumLose" translatesAutoresizingMaskIntoConstraints="NO" id="MFt-LY-btb">
+                                <frame key="frameInset" minY="178" width="382" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEr-j8-e1d">
                                 <frame key="frameInset" minX="7" minY="28" width="368" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="1VJ-ta-9x7"/>
+                                    <action selector="contineToHome:" destination="Dx9-lU-f1t" eventType="touchUpInside" id="7ey-zS-8s4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionLose" translatesAutoresizingMaskIntoConstraints="NO" id="MFt-LY-btb">
-                                <frame key="frameInset" minY="178" width="382" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -705,29 +681,29 @@
             </objects>
             <point key="canvasLocation" x="1873" y="-793"/>
         </scene>
-        <!--Optical Conundrum End Screen Win-->
+        <!--Optical Conundrum Win Controller-->
         <scene sceneID="MwQ-V7-H2o">
             <objects>
-                <viewController storyboardIdentifier="OpticalConundrumEndScreenWin" id="Ky6-1X-LRr" customClass="OpticalConundrumEndScreenWin" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OpticalConundrumWinScreen" id="Ky6-1X-LRr" customClass="OpticalConundrumWinController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EJR-Xu-SAv"/>
                         <viewControllerLayoutGuide type="bottom" id="rrt-3J-YMN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fec-Xb-qX7" customClass="OpticalConundrumEndScreenWin">
+                    <view key="view" contentMode="scaleToFill" id="fec-Xb-qX7" customClass="OpticalConundrumWinDraw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="opticalConundrumWin" translatesAutoresizingMaskIntoConstraints="NO" id="pak-J2-P79">
+                                <frame key="frameInset" minY="177" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGi-ZS-dDG">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="xNf-Q4-OA4"/>
+                                    <action selector="contineToHome:" destination="Ky6-1X-LRr" eventType="touchUpInside" id="bge-qh-fmN"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionWin" translatesAutoresizingMaskIntoConstraints="NO" id="pak-J2-P79">
-                                <frame key="frameInset" minY="177" width="375" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -759,11 +735,11 @@
         <image name="axonEvolution" width="1383" height="269"/>
         <image name="flipRetentionButton" width="1116" height="135"/>
         <image name="instructionsFlipRetention" width="1047" height="385"/>
+        <image name="instructionsOpticalConundrum" width="1046" height="497"/>
         <image name="levelZeroBrainImage" width="400" height="500"/>
         <image name="logicalPursuitButton" width="1234" height="158"/>
         <image name="opticalConundrumButton" width="1534" height="138"/>
+        <image name="opticalConundrumLose" width="814" height="76"/>
+        <image name="opticalConundrumWin" width="842" height="144"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="SEp-xs-D7p"/>
-    </inferredMetricsTieBreakers>
 </document>

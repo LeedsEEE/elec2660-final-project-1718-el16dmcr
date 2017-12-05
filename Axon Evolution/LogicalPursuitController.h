@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "LogicalPursuit.h"
-#import "ScoreTracker.h"
+
 
 @interface LogicalPursuitController : ViewController
 
@@ -27,7 +27,7 @@
 - (IBAction)mainMenuButtonPressed:(UIButton *)sender;
 
 @property LogicalPursuit* logicalPursuitData;
-@property ScoreTracker* scoreTraker;
+
 
 @property int tempCounter;
 @property int tempCounter2;
