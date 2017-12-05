@@ -33,7 +33,6 @@ UIColor *RGB2(float r, float g, float b)
     CGContextSetFillColorWithColor(context, mistyGreen);
     CGContextFillRect(context, CGRectMake(0, 0, width, height));
     
-    
 }
 
 

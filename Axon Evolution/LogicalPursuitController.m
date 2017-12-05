@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     self.logicalPursuitData = [[LogicalPursuit alloc] init];  // need this so it knows what ive set variables as in other classes
+    self.scoreTraker = [[ScoreTracker alloc] init];
     
     self.navigationItem.hidesBackButton = YES;
     [self.view setUserInteractionEnabled:NO];
@@ -136,7 +137,7 @@
         [self.logicalPursuitData checkLives];
         if ([self.logicalPursuitData checkLives] == true){
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LogicalPursuitEndScreenWin"];
             [self presentViewController:vc animated:YES completion:nil];
         }
         [self reset];
@@ -231,6 +232,7 @@
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
         if ([self.logicalPursuitData checkLives] == true){
+            [self.scoreTraker getLogicalPursuitScore];
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
             [self presentViewController:vc animated:YES completion:nil];

@@ -8,6 +8,7 @@
 
 #import "OpticalConundrumController.h"
 
+
 @interface OpticalConundrumController ()
 
 @end
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.opticalConundrumData = [[OpticalConundrumData alloc] init];
+    self.scoreTracker = [[ScoreTracker alloc] init];
     
     self.navigationItem.hidesBackButton = YES;   // Hides the back button that is there by default, I want to make my own
     self.tempArray = [[NSMutableArray alloc] init];
@@ -78,8 +80,9 @@
         self.timeTick--;
         NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", self.timeTick];
         self.timerLabel.text = timeRemaining;
+        [self.scoreTracker getOpticalConundrumScore];
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+        UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumEndScreenWin"];
         [self presentViewController:vc animated:YES completion:nil];
     }
     else {

@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OpticalConundrumData.h"
+#import "LogicalPursuit.h"
+#import "FlipRetentionData.h"
 
 @interface ScoreTracker : NSObject
 
@@ -17,6 +20,13 @@
 @property int logicalPursuitHighScore;
 @property int flipRetentionHighScore;
 
+@property OpticalConundrumData* opticalConumdrumSave;
+@property FlipRetentionData* flipRetentionSave;
+@property LogicalPursuit* logicalPursuitSave;
 
+-(int)getOpticalConundrumScore;
+-(int)getLogicalPursuitScore;
+-(int)getFlipRetentionScore;
+-(void)saveDataToFile;
 
 @end

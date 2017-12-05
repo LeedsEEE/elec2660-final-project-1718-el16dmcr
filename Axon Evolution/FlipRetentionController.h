@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "FlipRetentionData.h"
+#import "ScoreTracker.h"
 
 @interface FlipRetentionController : ViewController
 
@@ -60,6 +61,7 @@
 
 
 @property FlipRetentionData *flipRetentionData;
+@property ScoreTracker* scoreTracker;
 
 
 @property int tagSetter;

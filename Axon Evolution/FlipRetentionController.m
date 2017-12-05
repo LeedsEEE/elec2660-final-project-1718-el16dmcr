@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     self.flipRetentionData = [[FlipRetentionData alloc] init];
+    self.scoreTracker = [[ScoreTracker alloc] init];
     [self quickreset];
     
     self.pairCounter = 0;
@@ -129,8 +130,9 @@
         self.timeTick--;
         
         self.timerLabel.text = [NSString stringWithFormat:@"Time Remaining : %d", self.timeTick];
+        [self.scoreTracker getFlipRetentionScore];
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetentionEndLooks"];
+        UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetentionEndScreenWin"];
         [self presentViewController:vc animated:YES completion:nil];
     }
     else {
