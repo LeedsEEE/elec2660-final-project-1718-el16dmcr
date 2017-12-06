@@ -14,7 +14,6 @@
     if (self.randomOne == 0){
         self.shape = @"circle";
         [self.latestPattern addObject: @"circle"];
-        
     }
     else if (self.randomOne == 1){
         self.shape = @"invertedSquare";
@@ -36,6 +35,11 @@
         self.shape = @"triangle";
         [self.latestPattern addObject: @"triangle"];
     }
+    return self.latestPattern;
+}
+-(NSMutableArray *)clearArray{
+    [self.latestPattern removeAllObjects];
+    NSLog (@"Number of elements in array = %lu", [self.latestPattern count]);
     return self.latestPattern;
 }
 -(int)pickNextShape{
@@ -68,9 +72,10 @@
     return self.currentPoints;
 }
 -(id)init{
+    SettingsData *data = [SettingsData sharedInstance];
     self = [super init];
-    self.startLives = 1;
-    self.pointsPlus = 50;
+    self.startLives = [data logicalPursuitStartLives];
+    self.pointsPlus = [data logicalPursuitPointsPlus];
     self.roundCounter = 5;
     self.currentPoints = 0;
     self.latestPattern = [[NSMutableArray alloc] init];

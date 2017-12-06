@@ -58,7 +58,8 @@
     self.opticalConundrumLabel.text = [NSString stringWithFormat:@"HighScore: %@", [self.userData valueForKey:@"OpticalConundrumHighScore"]];
     self.logicalPursuitLabel.text = [NSString stringWithFormat:@"HighScore: %@", [self.userData valueForKey:@"LogicalPursuitHighScore"]];
     self.flipRetentionLabel.text = [NSString stringWithFormat:@"HighScore: %@", [self.userData valueForKey:@"FlipRetentionHighScore"]];
-    self.highScoreLabel.text = [NSString stringWithFormat:@"HighScore : %@", [self.userData valueForKey:@"OpticalConundrumHighScore"]];
+    int totalDisplayedHighScore = [[self.userData valueForKey:@"OpticalConundrumHighScore"] intValue] + [[self.userData valueForKey:@"LogicalPursuitHighScore"] intValue] + [[self.userData valueForKey:@"FlipRetentionHighScore"] intValue];
+    self.highScoreLabel.text = [NSString stringWithFormat:@"Total HighScore: %d", totalDisplayedHighScore];
 }
 
 
@@ -86,4 +87,9 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 
+- (IBAction)settingsButtonPressed:(UIButton *)sender {
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"SettingsScreen"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 @end

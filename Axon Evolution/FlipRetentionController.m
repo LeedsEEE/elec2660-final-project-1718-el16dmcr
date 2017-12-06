@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     self.flipRetentionData = [[FlipRetentionData alloc] init];
+    SettingsData *data = [SettingsData sharedInstance];
     
     [self quickreset];
     
@@ -113,7 +114,7 @@
     NSLog(@"a11 tag is %ld", (long)self.a11Image.tag);
     //self.pairChecker =self.a11Image.tag;
     NSLog(@"check tag correct: %d", self.pairChecker);
-    self.timeTick = 10;
+    self.timeTick = [data flipRetentionTimeAvailable];;
     self.timerLabel.text = [NSString stringWithFormat:@"TimeRemaining : %d", self.timeTick];
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     

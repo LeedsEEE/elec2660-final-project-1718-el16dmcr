@@ -39,11 +39,12 @@
 }
 -(id)init{
     self = [super init];
-    self.counterOne =0;
+    SettingsData *data = [SettingsData sharedInstance];
+    self.counterOne = 0;
     self.counterTwo = 0;
-    self.pointsMinus = 10;
-    self.pointsPlus = 50;
-    self.startPoints = 200;
+    self.pointsMinus = [data flipRetentionPointsMinus];
+    self.pointsPlus = [data flipRetentionPointsPlus];
+    self.startPoints = [data flipRetentionStartPoints];
     self.currentScore = self.startPoints;
     self.firstEightPlaces = [[NSMutableArray alloc] init];
     self.sixteenPositionTiles = [[NSMutableArray alloc] init];

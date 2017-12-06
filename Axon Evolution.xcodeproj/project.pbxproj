@@ -14,6 +14,8 @@
 		A406638F1FD7151400497915 /* OpticalConundrumWinDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A406638E1FD7151400497915 /* OpticalConundrumWinDraw.m */; };
 		A40663921FD7152200497915 /* OpticalConundrumLoseDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A40663911FD7152200497915 /* OpticalConundrumLoseDraw.m */; };
 		A40663951FD7156900497915 /* OpticalConundrumDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A40663941FD7156900497915 /* OpticalConundrumDraw.m */; };
+		A43CD0851FD8808F007469EF /* SettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = A43CD0841FD8808F007469EF /* SettingsData.m */; };
+		A43CD0881FD880A4007469EF /* SettingsDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = A43CD0871FD880A4007469EF /* SettingsDraw.m */; };
 		A45919521FD080B000FD967A /* FlipRetentionData.m in Sources */ = {isa = PBXBuildFile; fileRef = A45919511FD080B000FD967A /* FlipRetentionData.m */; };
 		A45919551FD080D000FD967A /* FlipRetentionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45919541FD080D000FD967A /* FlipRetentionController.m */; };
 		A495AD9F1FD748F50048F203 /* FlipRetentionInstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A495AD9E1FD748F50048F203 /* FlipRetentionInstructionController.m */; };
@@ -43,6 +45,7 @@
 		A4EA64CD1FBB45A80062D67F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EA64CB1FBB45A80062D67F /* LaunchScreen.storyboard */; };
 		A4EA64D81FBB45A80062D67F /* Axon_EvolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64D71FBB45A80062D67F /* Axon_EvolutionTests.m */; };
 		A4EA64E31FBB45A80062D67F /* Axon_EvolutionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA64E21FBB45A80062D67F /* Axon_EvolutionUITests.m */; };
+		A4F238271FD872FA003213FC /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F238261FD872FA003213FC /* SettingsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,10 @@
 		A40663911FD7152200497915 /* OpticalConundrumLoseDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpticalConundrumLoseDraw.m; sourceTree = "<group>"; };
 		A40663931FD7156900497915 /* OpticalConundrumDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpticalConundrumDraw.h; sourceTree = "<group>"; };
 		A40663941FD7156900497915 /* OpticalConundrumDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpticalConundrumDraw.m; sourceTree = "<group>"; };
+		A43CD0831FD8808F007469EF /* SettingsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsData.h; sourceTree = "<group>"; };
+		A43CD0841FD8808F007469EF /* SettingsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsData.m; sourceTree = "<group>"; };
+		A43CD0861FD880A4007469EF /* SettingsDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsDraw.h; sourceTree = "<group>"; };
+		A43CD0871FD880A4007469EF /* SettingsDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsDraw.m; sourceTree = "<group>"; };
 		A45919501FD080B000FD967A /* FlipRetentionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionData.h; sourceTree = "<group>"; };
 		A45919511FD080B000FD967A /* FlipRetentionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipRetentionData.m; sourceTree = "<group>"; };
 		A45919531FD080D000FD967A /* FlipRetentionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipRetentionController.h; sourceTree = "<group>"; };
@@ -135,6 +142,8 @@
 		A4EA64DE1FBB45A80062D67F /* Axon EvolutionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Axon EvolutionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4EA64E21FBB45A80062D67F /* Axon_EvolutionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Axon_EvolutionUITests.m; sourceTree = "<group>"; };
 		A4EA64E41FBB45A80062D67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4F238251FD872FA003213FC /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
+		A4F238261FD872FA003213FC /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +278,12 @@
 				A4EA64C41FBB45A80062D67F /* ViewController.m */,
 				A49FBABF1FC477D300029B1F /* Homepage.h */,
 				A49FBAC01FC477D300029B1F /* Homepage.m */,
+				A4F238251FD872FA003213FC /* SettingsController.h */,
+				A4F238261FD872FA003213FC /* SettingsController.m */,
+				A43CD0831FD8808F007469EF /* SettingsData.h */,
+				A43CD0841FD8808F007469EF /* SettingsData.m */,
+				A43CD0861FD880A4007469EF /* SettingsDraw.h */,
+				A43CD0871FD880A4007469EF /* SettingsDraw.m */,
 				A4EA64C61FBB45A80062D67F /* Main.storyboard */,
 				A4EA64C91FBB45A80062D67F /* Assets.xcassets */,
 				A4EA64CB1FBB45A80062D67F /* LaunchScreen.storyboard */,
@@ -441,6 +456,7 @@
 				A4E20EB71FCDF41E008D794C /* LogicalPursuitController.m in Sources */,
 				A495ADA81FD7498B0048F203 /* FlipRetentionInstructionDraw.m in Sources */,
 				A406637D1FD7147300497915 /* OpticalConundrumWinController.m in Sources */,
+				A4F238271FD872FA003213FC /* SettingsController.m in Sources */,
 				A406638F1FD7151400497915 /* OpticalConundrumWinDraw.m in Sources */,
 				A40663801FD7148500497915 /* OpticalConundrumLoseController.m in Sources */,
 				A495ADBB1FD74A5D0048F203 /* LogicalPursuitWinDraw.m in Sources */,
@@ -452,10 +468,12 @@
 				A495ADB51FD74A2D0048F203 /* LogicalPursuitDraw.m in Sources */,
 				A495ADAB1FD7499B0048F203 /* FlipRetentionWinDraw.m in Sources */,
 				A4EA64C21FBB45A80062D67F /* AppDelegate.m in Sources */,
+				A43CD0881FD880A4007469EF /* SettingsDraw.m in Sources */,
 				A406638C1FD7150200497915 /* OpticalConundrumInstructionDraw.m in Sources */,
 				A495ADBE1FD74A7A0048F203 /* LogicalPursuitLoseDraw.m in Sources */,
 				A40663951FD7156900497915 /* OpticalConundrumDraw.m in Sources */,
 				A495ADC71FD74AE00048F203 /* LogicalPursuitLoseController.m in Sources */,
+				A43CD0851FD8808F007469EF /* SettingsData.m in Sources */,
 				A4E3C5B11FC860AB0036F20C /* OpticalConundrumController.m in Sources */,
 				A40663921FD7152200497915 /* OpticalConundrumLoseDraw.m in Sources */,
 				A4EA64BF1FBB45A80062D67F /* main.m in Sources */,

@@ -14,9 +14,10 @@
 
 -(id)init{
     self = [super init];
-    self.startPoints = 1000;
-    self.pointsPlus = 50;
-    self.pointsMinus = 50;
+    SettingsData *data = [SettingsData sharedInstance];
+    self.startPoints = [data opticalConundrumStartPoints];
+    self.pointsPlus = [data opticalConundrumPointsPlus];
+    self.pointsMinus = [data opticalConundrumPointsMinus];
     return self;
 }
 -(int)getInitialScore {

@@ -17,14 +17,37 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    
     self.logicalPursuitData = [[LogicalPursuit alloc] init];  // need this so it knows what ive set variables as in other classes
     
     
     self.navigationItem.hidesBackButton = YES;
     [self.view setUserInteractionEnabled:NO];
+    [self initShapes];
+    [self.logicalPursuitData setStartLives];
     
-    
+    NSLog(@"counter is %d", self.logicalPursuitData.roundCounter);
+    NSLog(@"lives are %d", self.logicalPursuitData.currentLives);
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.logicalPursuitData.currentPoints];
+    self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
+
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+-(void)initShapes{
     [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOffImage"]]; //Needs to be set
     [self.redCircleImage setUserInteractionEnabled:YES];
     [self.pinkInvertedSquareImage setImage:[UIImage imageNamed:@"pinkInvertedSquareOffImage"]]; //Needs to be set
@@ -56,43 +79,16 @@
     [self.cyanSquareImage addGestureRecognizer:cyanSquareTapped];
     [self.purpleDiamondImage addGestureRecognizer:purpleDiamondTapped];
     [self.greenTriangleImage addGestureRecognizer:greenTriangleTapped];
-    
-    [self.logicalPursuitData setStartLives];
-    
-    NSLog(@"counter is %d", self.logicalPursuitData.roundCounter);
-    NSLog(@"lives are %d", self.logicalPursuitData.currentLives);
-    self.scoreLabel.text = @"0";
-    self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
-    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
-    //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(flashPattern) userInfo:nil repeats:NO];
-    //[self generatePattern];
-    //[self flashPattern];
-    //[self.logicalPursuitData pickNextShape];
-    //NSLog(@"random number is %d", self.logicalPursuitData.randomOne);
-    
-     
-    // Do any additional setup after loading the view.
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 -(void)checkLenghtOfArray{
     if (self.tempCounter2 == self.logicalPursuitData.roundCounter - 1){
         [self reset];
         [self.logicalPursuitData roundCounterPlus];
         [self generatePattern];
+        
+    }
+    else{
+        self.tempCounter2++;
     }
 
 }
@@ -128,9 +124,11 @@
         [self.logicalPursuitData calculatePoints];
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.logicalPursuitData.currentPoints];
         [self checkLenghtOfArray];
+        
     }
     else {
         NSLog(@"WRONG");
+        NSLog(@"Correct Shape was : %@", [self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]);
         [self.logicalPursuitData removeLive];
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
@@ -141,8 +139,6 @@
         [self generatePattern];
     
     }
-    self.tempCounter2++;
-    
 }
 -(void)invertedSquareClicked{
     NSLog(@"inverted square clicked");
@@ -154,6 +150,7 @@
     }
     else {
         NSLog(@"WRONG");
+        NSLog(@"Correct Shape was : %@", [self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]);
         [self.logicalPursuitData removeLive];
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
@@ -164,7 +161,6 @@
         [self generatePattern];
     
     }
-    self.tempCounter2++;
 }
 -(void)rhombusClicked{
     NSLog(@"rhombus clicked");
@@ -176,6 +172,7 @@
     }
     else {
         NSLog(@"WRONG");
+        NSLog(@"Correct Shape was : %@", [self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]);
         [self.logicalPursuitData removeLive];
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
@@ -186,7 +183,6 @@
         [self generatePattern];
     
     }
-    self.tempCounter2++;
 }
 -(void)squareClicked{
     NSLog(@"square clicked");
@@ -198,6 +194,7 @@
     }
     else {
         NSLog(@"WRONG");
+        NSLog(@"Correct Shape was : %@", [self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]);
         [self.logicalPursuitData removeLive];
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
@@ -208,7 +205,6 @@
         [self generatePattern];
     
     }
-    self.tempCounter2++;
 }
 -(void)diamondClicked{
     NSLog(@"diamond clicked");
@@ -220,6 +216,7 @@
     }
     else {
         NSLog(@"WRONG");
+        NSLog(@"Correct Shape was : %@", [self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]);
         [self.logicalPursuitData removeLive];
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
@@ -230,7 +227,6 @@
         [self generatePattern];
     
     }
-    self.tempCounter2++;
 }
 -(void)triangleClicked{
     NSLog(@"triangle clicked");
@@ -242,6 +238,7 @@
     }
     else {
         NSLog(@"WRONG");
+        NSLog(@"Correct Shape was : %@", [self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter2]);
         [self.logicalPursuitData removeLive];
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
@@ -252,7 +249,6 @@
         [self generatePattern];
      
     }
-    self.tempCounter2++;
 }
 
 -(void)lightCircle{
@@ -296,10 +292,10 @@
 -(int)reset{
     self.tempCounter = 0;
     self.tempCounter2 = 0;
-    
-    for (int i = 0; i < self.logicalPursuitData.roundCounter; i++) {
-        [self.logicalPursuitData.latestPattern removeLastObject];
-    }
+    [self.logicalPursuitData clearArray];
+    //for (int i = 0; i < self.logicalPursuitData.roundCounter ; i++) {
+       // [self.logicalPursuitData.latestPattern removeAllObjects];
+    //}
     return self.tempCounter;
     return self.tempCounter2;
 }
@@ -312,12 +308,13 @@
         
         NSLog(@"roundCounter is %d",self.logicalPursuitData.roundCounter);
         NSLog(@"roundCounter is %d",self.tempCounter);
-        [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOffImage"]]; //Needs to be set
-        [self.pinkInvertedSquareImage setImage:[UIImage imageNamed:@"pinkInvertedSquareOffImage"]]; //Needs to be set
-        [self.blueRhombusImage setImage:[UIImage imageNamed:@"blueRhombusOffImage"]]; //Needs to be set
-        [self.cyanSquareImage setImage:[UIImage imageNamed:@"cyanSquareOffImage"]]; //Needs to be set
-        [self.purpleDiamondImage setImage:[UIImage imageNamed:@"purpleDiamondOffImage"]]; //Needs to be set
-        [self.greenTriangleImage setImage:[UIImage imageNamed:@"greenTriangleOffImage"]]; //Needs to be set
+        // Turs last shape that was on off
+        [self.redCircleImage setImage:[UIImage imageNamed:@"redCircleOffImage"]];
+        [self.pinkInvertedSquareImage setImage:[UIImage imageNamed:@"pinkInvertedSquareOffImage"]];
+        [self.blueRhombusImage setImage:[UIImage imageNamed:@"blueRhombusOffImage"]];
+        [self.cyanSquareImage setImage:[UIImage imageNamed:@"cyanSquareOffImage"]];
+        [self.purpleDiamondImage setImage:[UIImage imageNamed:@"purpleDiamondOffImage"]];
+        [self.greenTriangleImage setImage:[UIImage imageNamed:@"greenTriangleOffImage"]];
         
         [self.logicalPursuitData pickNextShape];
         [self.logicalPursuitData shapeSelector];
@@ -345,15 +342,12 @@
 
 
 -(void)flashPattern {
-        
             NSLog(@"shape from the index is: %@", [self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]);
-            
-        
+    
         if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"circle"]){
             NSLog(@"light up red circle");
             [self lightCircle];
             [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
-            
             
         }
         else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"invertedSquare"]){
@@ -386,9 +380,6 @@
             [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
-        
-            
-   
 }
 
 - (IBAction)mainMenuButtonPressed:(UIButton *)sender {

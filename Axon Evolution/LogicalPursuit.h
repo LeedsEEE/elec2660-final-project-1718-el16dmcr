@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SettingsData.h"
 
 @interface LogicalPursuit : NSObject
 
@@ -31,5 +32,6 @@
 -(BOOL)checkLives;
 -(id)init;
 -(NSMutableArray *)shapeSelector;
+-(NSMutableArray *)clearArray;
 
 @end

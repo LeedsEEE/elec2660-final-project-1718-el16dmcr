@@ -22,8 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.opticalConundrumData = [[OpticalConundrumData alloc] init];
+    SettingsData *data = [SettingsData sharedInstance];
   
-    
     self.navigationItem.hidesBackButton = YES;   // Hides the back button that is there by default, I want to make my own
     self.tempArray = [[NSMutableArray alloc] init];
     self.colourArray = [[NSMutableArray alloc] init];
@@ -52,9 +52,9 @@
     
     NSLog(@"%@",self.shownColourWord);
     
-    self.timeTick = 10;
+    self.timeTick = [data opticalConundrumTimeAvailable];
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
-    self.timerLabel.text = @"100";
+    self.timerLabel.text = [NSString stringWithFormat:@"Time left: %d", [data opticalConundrumTimeAvailable]];
     self.timerLabel.backgroundColor = [UIColor blackColor];
     self.timerLabel.textColor = [UIColor whiteColor];
     NSLog(@"start points: %d", self.opticalConundrumData.startPoints);

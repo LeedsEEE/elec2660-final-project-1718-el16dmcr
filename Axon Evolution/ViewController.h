@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *logicalPursuitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flipRetentionLabel;
 
+- (IBAction)settingsButtonPressed:(UIButton *)sender;
 
 
 @property OpticalConundrumData* opticalConundrumData;
