@@ -34,4 +34,11 @@
 }
 */
 
+- (IBAction)continueToHomePage:(UIButton *)sender {
+    
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *nc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+    [self presentViewController:nc animated:YES completion:nil];
+    
+}
 @end

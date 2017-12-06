@@ -26,18 +26,17 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
     _userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
-    NSLog(@"USER DATA: %@", _userData);
-    if(!_userData){
-        _userData = [NSMutableDictionary dictionary];
-//        _userData[@"OpticalConundrumHighScore"] = @0;
-        [_userData setValue:@0 forKey:@"OpticalConundrumHighScore"];
-        [_userData setValue:@0 forKey:@"LogicalPursuitHighScore"];
-        [_userData setValue:@0 forKey:@"FlipRetentionHighScore"];
-        [_userData setValue:@"" forKey:@"UserName"];
-        [_userData setValue:@0 forKey:@"Age"];
-        [_userData writeToFile:filePath atomically:YES];
+    NSLog(@"USER DATA: %@", self.userData);
+    if(!self.userData){
+        self.userData = [NSMutableDictionary dictionary];
+        [self.userData setValue:@0 forKey:@"OpticalConundrumHighScore"];
+        [self.userData setValue:@0 forKey:@"LogicalPursuitHighScore"];
+        [self.userData setValue:@0 forKey:@"FlipRetentionHighScore"];
+        [self.userData setValue:@"" forKey:@"UserName"];
+        [self.userData setValue:@0 forKey:@"Age"];
+        [self.userData writeToFile:filePath atomically:YES];
     }
-    NSLog(@"USER DATA AFTER ISSUES: %@", _userData);
+    NSLog(@"USER DATA AFTER ISSUES: %@", self.userData);
     
     
     [self.opticalConundrumGame setUserInteractionEnabled:YES];
@@ -47,12 +46,19 @@
     
     [self.flipRetentionGame setUserInteractionEnabled:YES];
     UITapGestureRecognizer *flipRetentionTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(flipRetentionTapped)];
-    [opticalConundrumTapped setNumberOfTapsRequired:1];
-    [self.opticalConundrumGame addGestureRecognizer:opticalConundrumTapped];
+    [flipRetentionTapped setNumberOfTapsRequired:1];
+    [self.flipRetentionGame addGestureRecognizer:flipRetentionTapped];
+    
+    [self.logicalPursuitGame setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *logicalPursuitTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(logicalPursuitTapped)];
+    [logicalPursuitTapped setNumberOfTapsRequired:1];
+    [self.logicalPursuitGame addGestureRecognizer:logicalPursuitTapped];
     
     
-    
-    self.highScoreLabel.text = [NSString stringWithFormat:@"HighScore : %@", [_userData valueForKey:@"OpticalConundrumHighScore"]];
+    self.opticalConundrumLabel.text = [NSString stringWithFormat:@"HighScore: %@", [self.userData valueForKey:@"OpticalConundrumHighScore"]];
+    self.logicalPursuitLabel.text = [NSString stringWithFormat:@"HighScore: %@", [self.userData valueForKey:@"LogicalPursuitHighScore"]];
+    self.flipRetentionLabel.text = [NSString stringWithFormat:@"HighScore: %@", [self.userData valueForKey:@"FlipRetentionHighScore"]];
+    self.highScoreLabel.text = [NSString stringWithFormat:@"HighScore : %@", [self.userData valueForKey:@"OpticalConundrumHighScore"]];
 }
 
 
@@ -65,14 +71,19 @@
     
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumInstructionScreen"];
-    vc.opticalConundrumData = self.opticalConundrumData;
     [self presentViewController:vc animated:YES completion:nil];
 }
 -(void)logicalPursuitTapped{
     
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LogicalPursuitInstructionScreen"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 -(void)flipRetentionTapped{
     
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetentionInstructionScreen"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end

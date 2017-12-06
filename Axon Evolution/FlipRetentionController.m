@@ -130,9 +130,28 @@
         self.timeTick--;
         
         self.timerLabel.text = [NSString stringWithFormat:@"Time Remaining : %d", self.timeTick];
-        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetentionEndScreenWin"];
-        [self presentViewController:vc animated:YES completion:nil];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
+        NSMutableDictionary *userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
+        int currentHighScore = [[userData valueForKey:@"FlipRetentionHighScore"] intValue];
+        if (self.flipRetentionData.currentScore > currentHighScore){
+            
+            int newHighScore = self.flipRetentionData.currentScore;
+            NSNumber *newHighScoreNSN = [[NSNumber alloc] initWithInt:newHighScore];
+            [userData setValue:newHighScoreNSN forKey:@"FlipRetentionHighScore"];
+            [userData writeToFile:filePath atomically:YES];
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetentionWinScreen"];
+            [self presentViewController:vc animated:YES completion:nil];
+            
+        }
+        else {
+            
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetentionLoseScreen"];
+            [self presentViewController:vc animated:YES completion:nil];
+            
+        }
     }
     else {
         self.timeTick--;

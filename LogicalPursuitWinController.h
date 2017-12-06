@@ -10,4 +10,6 @@
 
 @interface LogicalPursuitWinController : ViewController
 
+- (IBAction)continueToHome:(UIButton *)sender;
+
 @end

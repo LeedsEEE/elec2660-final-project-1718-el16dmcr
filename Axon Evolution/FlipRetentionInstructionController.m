@@ -34,4 +34,11 @@
 }
 */
 
+- (IBAction)continueToGame:(UIButton *)sender {
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetention"];
+    vc.opticalConundrumData = self.opticalConundrumData;
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
 @end

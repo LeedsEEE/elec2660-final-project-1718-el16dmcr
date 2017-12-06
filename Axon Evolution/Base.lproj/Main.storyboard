@@ -46,6 +46,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdS-cQ-Q8m">
+                                <frame key="frameInset" minX="196" minY="432" width="163" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7B-Ls-Fuf">
+                                <frame key="frameInset" minX="16" minY="432" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKd-1j-tSf">
+                                <frame key="frameInset" minX="105" minY="230" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -58,19 +79,22 @@
                     <navigationItem key="navigationItem" id="r3s-e3-IWm"/>
                     <connections>
                         <outlet property="flipRetentionGame" destination="Tnx-Ee-xYw" id="bt2-3l-sNk"/>
+                        <outlet property="flipRetentionLabel" destination="P7B-Ls-Fuf" id="Hc9-gQ-IKW"/>
                         <outlet property="highScoreLabel" destination="xhB-eD-uV6" id="rhD-oA-ng4"/>
                         <outlet property="logicalPursuitGame" destination="xMX-bb-K17" id="MMH-gc-PC3"/>
+                        <outlet property="logicalPursuitLabel" destination="tdS-cQ-Q8m" id="MiF-9w-t42"/>
                         <outlet property="opticalConundrumGame" destination="nED-7d-RYy" id="2bK-eT-oET"/>
+                        <outlet property="opticalConundrumLabel" destination="eKd-1j-tSf" id="VIr-A7-Xdt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-372" y="-66.11694152923539"/>
         </scene>
-        <!--View Controller-->
+        <!--Flip Retention Instruction Controller-->
         <scene sceneID="N7w-SX-vDy">
             <objects>
-                <viewController id="Im1-dZ-xK5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FlipRetentionInstructionScreen" id="Im1-dZ-xK5" customClass="FlipRetentionInstructionController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K4j-Dr-qbC"/>
                         <viewControllerLayoutGuide type="bottom" id="hlO-7R-F1d"/>
@@ -79,7 +103,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atS-dg-wCX"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atS-dg-wCX">
+                                <connections>
+                                    <action selector="continueToGame:" destination="Im1-dZ-xK5" eventType="touchUpInside" id="dRT-mF-1n4"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instructionsFlipRetention" translatesAutoresizingMaskIntoConstraints="NO" id="CSa-By-umW"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -103,7 +131,7 @@
         <!--Flip Retention Controller-->
         <scene sceneID="IUd-lV-Kgu">
             <objects>
-                <viewController id="NZz-SP-7gC" customClass="FlipRetentionController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FlipRetention" id="NZz-SP-7gC" customClass="FlipRetentionController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wYh-Gm-GIl"/>
                         <viewControllerLayoutGuide type="bottom" id="J5Z-PY-w6n"/>
@@ -305,10 +333,10 @@
             </objects>
             <point key="canvasLocation" x="297" y="687"/>
         </scene>
-        <!--Flip Retention End Screen Win-->
+        <!--Flip Retention Win Controller-->
         <scene sceneID="bIm-ja-Cad">
             <objects>
-                <viewController storyboardIdentifier="FlipRetentionEndScreenWin" id="iuY-YJ-al2" customClass="FlipRetentionEndScreenWin" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FlipRetentionWinScreen" id="iuY-YJ-al2" customClass="FlipRetentionWinController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="67P-mq-HIY"/>
                         <viewControllerLayoutGuide type="bottom" id="RS7-9s-SKl"/>
@@ -324,6 +352,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE3-Aw-Cc8">
                                 <frame key="frameInset" minY="20" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="continueToHomePage:" destination="iuY-YJ-al2" eventType="touchUpInside" id="y1e-ut-ZlP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -333,10 +364,10 @@
             </objects>
             <point key="canvasLocation" x="997.60000000000002" y="686.80659670164926"/>
         </scene>
-        <!--Flip Retention End Screen Lose-->
+        <!--Flip Retention Lose Controller-->
         <scene sceneID="z6r-Zr-1lx">
             <objects>
-                <viewController id="zrf-W1-EWT" customClass="FlipRetentionEndScreenLose" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FlipRetentionLoseScreen" id="zrf-W1-EWT" customClass="FlipRetentionLoseController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="10E-Nd-RH3"/>
                         <viewControllerLayoutGuide type="bottom" id="Xel-N7-N4l"/>
@@ -352,6 +383,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z29-vF-axi">
                                 <frame key="frameInset" minY="20" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="contineToHomePage:" destination="zrf-W1-EWT" eventType="touchUpInside" id="ZyS-ph-Inx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -361,10 +395,10 @@
             </objects>
             <point key="canvasLocation" x="997.60000000000002" y="1353.3733133433284"/>
         </scene>
-        <!--Logicl Pursuit End Screen Lose-->
+        <!--Logical Pursuit Lose Controller-->
         <scene sceneID="GhN-0K-eFb">
             <objects>
-                <viewController storyboardIdentifier="LogicalPursuitEndScreenLose" id="b8m-5s-kbV" customClass="LogiclPursuitEndScreenLose" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogicalPursuitLoseScreen" id="b8m-5s-kbV" customClass="LogicalPursuitLoseController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ezm-3a-Rmu"/>
                         <viewControllerLayoutGuide type="bottom" id="Gr2-jt-diV"/>
@@ -380,6 +414,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iK4-Fx-dkh">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="continueToHome:" destination="b8m-5s-kbV" eventType="touchUpInside" id="O0H-se-0ZR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -389,10 +426,10 @@
             </objects>
             <point key="canvasLocation" x="-2026" y="-1639"/>
         </scene>
-        <!--Logical Pursuit End Screen Win-->
+        <!--Logical Pursuit Win Controller-->
         <scene sceneID="mdY-Hl-bKI">
             <objects>
-                <viewController storyboardIdentifier="LogicalPursuitEndScreenWin" id="Iad-dS-9eU" customClass="LogicalPursuitEndScreenWin" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogicalPursuitWinScreen" id="Iad-dS-9eU" customClass="LogicalPursuitWinController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rnN-SU-G3M"/>
                         <viewControllerLayoutGuide type="bottom" id="oGY-Ze-cDw"/>
@@ -404,6 +441,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pK5-pg-Drn">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="continueToHome:" destination="Iad-dS-9eU" eventType="touchUpInside" id="n3q-x2-wSu"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionWin" translatesAutoresizingMaskIntoConstraints="NO" id="Kt3-1L-Syh">
                                 <frame key="frameInset" minY="177" width="375" height="66"/>
@@ -420,7 +460,7 @@
         <!--Logical Pursuit Controller-->
         <scene sceneID="jPm-az-crH">
             <objects>
-                <viewController id="Gh2-RI-P0q" customClass="LogicalPursuitController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogicalPursuit" id="Gh2-RI-P0q" customClass="LogicalPursuitController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1ba-bL-shP"/>
                         <viewControllerLayoutGuide type="bottom" id="KcR-4j-1IB"/>
@@ -503,10 +543,10 @@
             </objects>
             <point key="canvasLocation" x="-1169" y="-872"/>
         </scene>
-        <!--View Controller-->
+        <!--Logical Pursuit Instruction Controller-->
         <scene sceneID="ypa-Va-dmg">
             <objects>
-                <viewController id="zrm-B1-l4A" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogicalPursuitInstructionScreen" id="zrm-B1-l4A" customClass="LogicalPursuitInstructionController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="etq-y3-fBi"/>
                         <viewControllerLayoutGuide type="bottom" id="Kka-sj-Sbv"/>
@@ -518,6 +558,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQD-sx-aty">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="continueToGame:" destination="zrm-B1-l4A" eventType="touchUpInside" id="uaa-5g-K08"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instructionsFlipRetention" translatesAutoresizingMaskIntoConstraints="NO" id="aqo-cv-Qzp">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
@@ -582,23 +625,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vq9-Gl-iQ8">
-                                <frame key="frameInset" minX="217" minY="204" width="46" height="30"/>
+                                <frame key="frameInset" minX="193" minY="118" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="topRightButtonPressed:" destination="E26-77-eE9" eventType="touchUpInside" id="gSL-8O-DDL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvr-1Y-Nbb">
-                                <frame key="frameInset" minX="217" minY="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="bottomRightButtonPressed:" destination="E26-77-eE9" eventType="touchUpInside" id="i0A-1G-KBd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNL-1g-t5X">
-                                <frame key="frameInset" minX="111" minY="318" width="46" height="30"/>
+                                <frame key="frameInset" minX="28" minY="280" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -606,7 +641,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mP-Y0-AEp">
-                                <frame key="frameInset" minX="111" minY="204" width="46" height="30"/>
+                                <frame key="frameInset" minX="28" minY="118" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -614,7 +649,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="994-8a-Zzh">
-                                <frame key="frameInset" minX="111" minY="416" width="152" height="21"/>
+                                <frame key="frameInset" minX="111" minY="438" width="152" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -632,6 +667,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back to Main Menu"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvr-1Y-Nbb">
+                                <frame key="frameInset" minX="193" minY="280" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="bottomRightButtonPressed:" destination="E26-77-eE9" eventType="touchUpInside" id="i0A-1G-KBd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -648,7 +691,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FE8-QJ-d1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1201" y="-66"/>
+            <point key="canvasLocation" x="1189.5999999999999" y="-66.11694152923539"/>
         </scene>
         <!--Optical Conundrum Lose Controller-->
         <scene sceneID="QPi-sn-uYr">

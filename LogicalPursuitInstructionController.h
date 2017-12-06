@@ -10,4 +10,6 @@
 
 @interface LogicalPursuitInstructionController : ViewController
 
+- (IBAction)continueToGame:(UIButton *)sender;
+
 @end

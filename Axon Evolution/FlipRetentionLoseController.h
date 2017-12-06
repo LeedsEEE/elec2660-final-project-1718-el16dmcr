@@ -10,4 +10,6 @@
 
 @interface FlipRetentionLoseController : ViewController
 
+- (IBAction)contineToHomePage:(UIButton *)sender;
+
 @end

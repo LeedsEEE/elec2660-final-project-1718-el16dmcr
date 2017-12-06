@@ -16,12 +16,15 @@
 @property (weak, nonatomic) IBOutlet UIImageView *flipRetentionGame;
 
 @property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *opticalConundrumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *logicalPursuitLabel;
+@property (weak, nonatomic) IBOutlet UILabel *flipRetentionLabel;
 
 
 
 @property OpticalConundrumData* opticalConundrumData;
 
 @property NSDictionary* userData;
-
+@property int totalHighcore;
 @end
 

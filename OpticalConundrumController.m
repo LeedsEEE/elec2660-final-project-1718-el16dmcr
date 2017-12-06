@@ -94,8 +94,8 @@
             [userData setValue:newHighScoreNSN forKey:@"OpticalConundrumHighScore"];
             [userData writeToFile:filePath atomically:YES];
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UINavigationController *nc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumWinScreen"];
-            [self presentViewController:nc animated:YES completion:nil];
+            ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumWinScreen"];
+            [self presentViewController:vc animated:YES completion:nil];
             
         }
         else {
@@ -104,11 +104,6 @@
             ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumLoseScreen"];
             [self presentViewController:vc animated:YES completion:nil];
             
-            
-            
-        /*UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UINavigationController *nc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
-        [self presentViewController:nc animated:YES completion:nil]; */
         }
     }
     else {

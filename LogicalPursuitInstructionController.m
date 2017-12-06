@@ -34,4 +34,10 @@
 }
 */
 
+- (IBAction)continueToGame:(UIButton *)sender {
+    
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LogicalPursuit"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 @end

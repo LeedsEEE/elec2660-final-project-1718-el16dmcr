@@ -96,6 +96,30 @@
     }
 
 }
+-(void)saveScoreAndExit{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
+    NSMutableDictionary *userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
+    int currentHighScore = [[userData valueForKey:@"LogicalPursuitHighScore"] intValue];
+    if (self.logicalPursuitData.currentPoints > currentHighScore){
+        
+        int newHighScore = self.logicalPursuitData.currentPoints;
+        NSNumber *newHighScoreNSN = [[NSNumber alloc] initWithInt:newHighScore];
+        [userData setValue:newHighScoreNSN forKey:@"LogicalPursuitHighScore"];
+        [userData writeToFile:filePath atomically:YES];
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LogicalPursuitWinScreen"];
+        [self presentViewController:vc animated:YES completion:nil];
+        
+    }
+    else {
+        
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LogicalPursuitLoseScreen"];
+        [self presentViewController:vc animated:YES completion:nil];
+        
+    }
+}
 -(void)circleClicked{
     NSLog(@"circle clicked");
     
@@ -111,9 +135,7 @@
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
         if ([self.logicalPursuitData checkLives] == true){
-            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
-            [self presentViewController:vc animated:YES completion:nil];
+            [self saveScoreAndExit];
         }
         [self reset];
         [self generatePattern];
@@ -136,9 +158,7 @@
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
         if ([self.logicalPursuitData checkLives] == true){
-            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LogicalPursuitEndScreenWin"];
-            [self presentViewController:vc animated:YES completion:nil];
+            [self saveScoreAndExit];
         }
         [self reset];
         [self generatePattern];
@@ -160,9 +180,7 @@
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
         if ([self.logicalPursuitData checkLives] == true){
-            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
-            [self presentViewController:vc animated:YES completion:nil];
+            [self saveScoreAndExit];
         }
         [self reset];
         [self generatePattern];
@@ -184,9 +202,7 @@
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
         if ([self.logicalPursuitData checkLives] == true){
-            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
-            [self presentViewController:vc animated:YES completion:nil];
+            [self saveScoreAndExit];
         }
         [self reset];
         [self generatePattern];
@@ -208,9 +224,7 @@
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
         if ([self.logicalPursuitData checkLives] == true){
-            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
-            [self presentViewController:vc animated:YES completion:nil];
+            [self saveScoreAndExit];
         }
         [self reset];
         [self generatePattern];
@@ -232,11 +246,7 @@
         self.livesRemainingLabel.text = [NSString stringWithFormat:@"Lives Remaining: %d", self.logicalPursuitData.currentLives];
         [self.logicalPursuitData checkLives];
         if ([self.logicalPursuitData checkLives] == true){
-            
-            
-            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
-            [self presentViewController:vc animated:YES completion:nil];
+            [self saveScoreAndExit];
         }
         [self reset];
         [self generatePattern];

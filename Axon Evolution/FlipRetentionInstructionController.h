@@ -10,4 +10,7 @@
 
 @interface FlipRetentionInstructionController : ViewController
 
+- (IBAction)continueToGame:(UIButton *)sender;
+
+
 @end

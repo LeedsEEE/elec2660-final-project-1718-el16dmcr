@@ -69,7 +69,7 @@
 }
 -(id)init{
     self = [super init];
-    self.startLives = 3;
+    self.startLives = 1;
     self.pointsPlus = 50;
     self.roundCounter = 5;
     self.currentPoints = 0;

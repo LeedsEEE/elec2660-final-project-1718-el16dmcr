@@ -28,7 +28,7 @@
     return self.currentScore;
 }
 -(int)correctSelection {
-    self.currentScore =self.currentScore + self.pointsPlus;
+    self.currentScore = self.currentScore + self.pointsPlus;
     return self.currentScore;
 }
 
