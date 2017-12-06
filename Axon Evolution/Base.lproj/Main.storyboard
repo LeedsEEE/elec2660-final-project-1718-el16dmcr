@@ -407,7 +407,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionLose" translatesAutoresizingMaskIntoConstraints="NO" id="wcK-sN-wPV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logicalPursuitLose" translatesAutoresizingMaskIntoConstraints="NO" id="wcK-sN-wPV">
                                 <frame key="frameInset" minY="170" width="382" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -445,7 +445,7 @@
                                     <action selector="continueToHome:" destination="Iad-dS-9eU" eventType="touchUpInside" id="n3q-x2-wSu"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlipRetentionWin" translatesAutoresizingMaskIntoConstraints="NO" id="Kt3-1L-Syh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logicalPursuitWin" translatesAutoresizingMaskIntoConstraints="NO" id="Kt3-1L-Syh" customClass="logicalPursuitWin">
                                 <frame key="frameInset" minY="177" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -562,7 +562,7 @@
                                     <action selector="continueToGame:" destination="zrm-B1-l4A" eventType="touchUpInside" id="uaa-5g-K08"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instructionsFlipRetention" translatesAutoresizingMaskIntoConstraints="NO" id="aqo-cv-Qzp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instructionsLogicalPursuit" translatesAutoresizingMaskIntoConstraints="NO" id="aqo-cv-Qzp">
                                 <frame key="frameInset" minY="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -777,10 +777,13 @@
         <image name="FlipRetentionWin" width="830" height="136"/>
         <image name="axonEvolution" width="1383" height="269"/>
         <image name="flipRetentionButton" width="1116" height="135"/>
-        <image name="instructionsFlipRetention" width="1047" height="385"/>
-        <image name="instructionsOpticalConundrum" width="1046" height="497"/>
+        <image name="instructionsFlipRetention" width="709" height="564"/>
+        <image name="instructionsLogicalPursuit" width="712" height="896"/>
+        <image name="instructionsOpticalConundrum" width="717" height="833"/>
         <image name="levelZeroBrainImage" width="400" height="500"/>
         <image name="logicalPursuitButton" width="1234" height="158"/>
+        <image name="logicalPursuitLose" width="806" height="67"/>
+        <image name="logicalPursuitWin" width="842" height="134"/>
         <image name="opticalConundrumButton" width="1534" height="138"/>
         <image name="opticalConundrumLose" width="814" height="76"/>
         <image name="opticalConundrumWin" width="842" height="144"/>
