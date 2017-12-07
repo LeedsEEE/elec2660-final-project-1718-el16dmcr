@@ -21,11 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.opticalConundrumData = [[OpticalConundrumData alloc] init];
-    SettingsData *data = [SettingsData sharedInstance]; // Allows this game to read the data from the settings page and give the user the correct amount of time and points awarded depending on what the user set
+    SettingsData *data = [SettingsData sharedInstance];             // Allows this game to read the data from the settings page and give the user the correct amount of time and points awarded depending on what the user set
   
-    self.tempArray = [[NSMutableArray alloc] init]; // Allocates memory for my array, this array is for duplicating my stored array and then removing objects for each round of the game
-    self.colourArray = [[NSMutableArray alloc] init]; // Allocates memory for my main array the colour array
-    self.colourArray = [NSMutableArray arrayWithObjects: [UIColor greenColor], //Setting what colours are to be used for my game, this array will not be altered in any way it will just get copied over and over again
+    self.tempArray = [[NSMutableArray alloc] init];             // Allocates memory for my array, this array is for duplicating my stored array and then removing objects for each round of the game
+    self.colourArray = [[NSMutableArray alloc] init];           // Allocates memory for my main array the colour array
+    self.colourArray = [NSMutableArray arrayWithObjects: [UIColor greenColor],          //Setting what colours are to be used for my game, this array will not be altered in any way it will just get copied over and over again
                         [UIColor blueColor],
                         [UIColor redColor],
                         [UIColor magentaColor],
@@ -34,13 +34,13 @@
                         [UIColor orangeColor],
                         [UIColor brownColor], nil];
     
-    [self randomWordColourChosen]; //initial word chosen
-    [self randomFontColourChosen];  //initial font colour chosen
-    [self randomCorrectButtonChosen]; // Generates the random number that will then go on to define which button will have the correct answer on it
-    [self randomThirdButtonChosen];  // Generates random number to select which colour will go on the third button
-    [self randomFourthButtonChosen]; //Generates a random colour to select which colour will go on the fourth button
-    [self wordDefiner]; // From the random variable previously generated it will find the correct word and display it on the label
-    [self colourDefiner]; // From a previously selected random number it will generate the font colour fo the displayed word
+    [self randomWordColourChosen];          //initial word chosen
+    [self randomFontColourChosen];              //initial font colour chosen
+    [self randomCorrectButtonChosen];           // Generates the random number that will then go on to define which button will have the correct answer on it
+    [self randomThirdButtonChosen];             // Generates random number to select which colour will go on the third button
+    [self randomFourthButtonChosen];            //Generates a random colour to select which colour will go on the fourth button
+    [self wordDefiner];             // From the random variable previously generated it will find the correct word and display it on the label
+    [self colourDefiner];           // From a previously selected random number it will generate the font colour fo the displayed word
     [self correctButtonSelector];  // From a previosuly geenrated random number generator it will choose which button holds the right answer
     // Updates the label
     self.shownColourWordLabel.text = self.shownColourWord;
@@ -48,7 +48,7 @@
     
     // Updates score label
     self.scoreLabel.text = [NSString stringWithFormat: @"Score : %d",self.opticalConundrumData.startPoints];
-    [self.opticalConundrumData getInitialScore]; // Pulls in the correct data from my data file
+    [self.opticalConundrumData getInitialScore];            // Pulls in the correct data from my data file
     
     NSLog(@"%@",self.shownColourWord);
     // This segment of code was referenced and slightly changed from , it is used to tick down a timer and diplay it on a label
@@ -96,7 +96,7 @@ UIColor *RGB8(float r, float g, float b)
 #pragma mark - Timer function Countdown
 // This function tics down every seconds shwoing the suer how much time they have left, when it goes to zero it will shove ou to the next screen
 -(void)tick{
-    if ( self.timeTick == 0){ // checks if time = 0
+    if ( self.timeTick == 0){           // checks if time = 0
         NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", self.timeTick];
         self.timerLabel.text = timeRemaining;
         NSLog(@"Last highscore was : %d",self.opticalConundrumData.highScore);
@@ -166,12 +166,12 @@ UIColor *RGB8(float r, float g, float b)
         // I generate a temporary array and copy my permanant colour array into it, this is so i can remove colours as i go throught the sequcne and make sure no colour gets picked and shown on the screen twice.
         self.tempArray = [[NSMutableArray alloc] initWithCapacity:self.colourArray.count];
         for (NSInteger index = 0; index < 8; index++) {
-            [self.tempArray addObject:[self.colourArray objectAtIndex:index]]; // Copying the array using a for loop
+            [self.tempArray addObject:[self.colourArray objectAtIndex:index]];          // Copying the array using a for loop
         }
         //Sets the correct colour from the array at the ide f the random number that was genrated ealrier
         self.correctColour = [self.tempArray objectAtIndex:self.randomTwo];
         NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
-        [self.tempArray removeObjectAtIndex:self.randomTwo];  // removes that colour so we will get no bugs or bad gameplay
+        [self.tempArray removeObjectAtIndex:self.randomTwo];            // removes that colour so we will get no bugs or bad gameplay
         // These if statements are jsut defining what the word will read depening on the colour chosen
         if (self.randomTwo == 0) {
             self.shownColourWord = @"green";
@@ -204,14 +204,14 @@ UIColor *RGB8(float r, float g, float b)
 // Function that generates the font colour being shown
 -(UIColor *) colourDefiner {
     NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
-    self.shownFontColour = [self.tempArray objectAtIndex:self.randomOne]; //Definines the shown font colour that will be displayed
+    self.shownFontColour = [self.tempArray objectAtIndex:self.randomOne];           //Definines the shown font colour that will be displayed
     [self.tempArray removeObjectAtIndex:self.randomOne];
-    self.wrongColour = self.shownFontColour;  //Setting the wrong colour variable so that when the user presses the button we can check
+    self.wrongColour = self.shownFontColour;            //Setting the wrong colour variable so that when the user presses the button we can check
     NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
-    self.otherColour1 = [self.tempArray objectAtIndex:self.randomFour]; //Defining one of the other buttons colour
+    self.otherColour1 = [self.tempArray objectAtIndex:self.randomFour];                 //Defining one of the other buttons colour
     [self.tempArray removeObjectAtIndex:self.randomFour];
     NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
-    self.otherColour2 = [self.tempArray objectAtIndex:self.randomFive]; // Defining the last coloured button, the other red herring just there to be a distraction
+    self.otherColour2 = [self.tempArray objectAtIndex:self.randomFive];             // Defining the last coloured button, the other red herring just there to be a distraction
     [self.tempArray removeObjectAtIndex:self.randomFive];
     
     //Returns all my variables
@@ -311,8 +311,8 @@ UIColor *RGB8(float r, float g, float b)
 #pragma mark - Any Button Pressed Regenerate
 // Whenever any button is pressed, whether right or wrong the app must now rerandomly select all the variavles and display them on the buttons and labels, this is what this functin does.
 -(void) anyButtonPressed {
-    [self randomWordColourChosen]; //initial word chosen
-    [self randomFontColourChosen];  //initial font colour chosen
+    [self randomWordColourChosen];          //initial word chosen
+    [self randomFontColourChosen];              //initial font colour chosen
     [self randomCorrectButtonChosen];
     [self randomThirdButtonChosen];
     [self randomFourthButtonChosen];

@@ -21,8 +21,7 @@
     self.flipRetentionTimeLimitLabel.text = [NSString stringWithFormat:@"%d", [data flipRetentionTimeAvailable]];
     self.logicalPursuitLivesLabel.text = [NSString stringWithFormat:@"%d", [data logicalPursuitStartLives]];
     [self setupLooks];
-    NSLog(@"value is %d", [data opticalConundrumTimeAvailable]);
-    self.opticalConundrumSlider.value = ([data opticalConundrumTimeAvailable] - 30)/(120) ;
+    
 
 }
 
@@ -120,7 +119,7 @@ UIColor *RGB19(float r, float g, float b)
 - (IBAction)opticalConundrumSliderMoved:(UISlider *)sender {
     SettingsData *data = [SettingsData sharedInstance];
     NSLog(@"Slider is being moved");
-    data.opticalConundrumStartPoints = (300*sender.value) + 100;
+    data.opticalConundrumStartPoints = (-300*sender.value) + 100;
     data.opticalConundrumPointsMinus = (25*sender.value) + 25;
     data.opticalConundrumPointsPlus = (-50*sender.value) + 100;
     data.opticalConundrumTimeAvailable = (120*sender.value) + 30;
@@ -132,7 +131,7 @@ UIColor *RGB19(float r, float g, float b)
 - (IBAction)flipRetentionSliderMoved:(UISlider *)sender {
     SettingsData *data = [SettingsData sharedInstance];
     NSLog(@"Slider is being moved");
-    data.flipRetentionStartPoints = (300*sender.value) + 100;
+    data.flipRetentionStartPoints = (-300*sender.value) + 100;
     data.flipRetentionPointsMinus = (25*sender.value) + 25;
     data.flipRetentionPointsPlus = (-50*sender.value) + 100;
     data.flipRetentionTimeAvailable = (120*sender.value) + 30;

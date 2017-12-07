@@ -31,6 +31,7 @@
         [self.userData setValue:@"" forKey:@"UserName"];
         [self.userData setValue:@0 forKey:@"Age"];
         [self.userData writeToFile:filePath atomically:YES];
+        [self.brainBannerImage setImage:[UIImage imageNamed:@"levelZeroBrainImage"]];
     }
     NSLog(@"USER DATA AFTER ISSUES: %@", self.userData); // Checking that the data is being saved when i return to the home screen
     
@@ -113,14 +114,6 @@
     self.logicalPursuitLabel.backgroundColor = RGB7(255, 131, 0);
     self.logicalPursuitLabel.layer.masksToBounds = YES;
     
-    /*[self.opticalConundrumGame.layer setBorderColor:[UIColor blackColor].CGColor];
-    [self.opticalConundrumGame.layer setBorderWidth:(2.0)];
-    
-    [self.logicalPursuitGame.layer setBorderColor:[UIColor blackColor].CGColor];
-    [self.logicalPursuitGame.layer setBorderWidth:(2.0)];
-    
-    [self.flipRetentionGame.layer setBorderColor:[UIColor blackColor].CGColor];
-    [self.flipRetentionGame.layer setBorderWidth:(2.0)]; */
 }
 
 // This function just chekcs what your highscore is and then sets the appropriate brain image at the bottom of the screen
@@ -185,6 +178,7 @@ UIColor *RGB7(float r, float g, float b)
     [self.userData setValue:@0 forKey:@"Age"];
     [self.userData writeToFile:filePath atomically:NO];
     [self highScoreDisplay];
+    [self.brainBannerImage setImage:[UIImage imageNamed:@"levelZeroBrainImage"]];
 }
 // This button will take you to the settings page so ou can alter the settings of the games and how you want to play them
 -(void)settingsButtonTapped{

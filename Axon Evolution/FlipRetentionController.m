@@ -18,17 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.flipRetentionData = [[FlipRetentionData alloc] init]; // Initialising the data from my data model
-    SettingsData *data = [SettingsData sharedInstance]; // creating a shared instace of my settings page so that the gameplay will be affected by what the user set on the slider
+    self.flipRetentionData = [[FlipRetentionData alloc] init];          // Initialising the data from my data model
+    SettingsData *data = [SettingsData sharedInstance];             // Creating a shared instace of my settings page so that the gameplay will be affected by what the user set on the slider
     [self setupLooks];
     [self quickreset];
     [self initialiseImages];
-    self.pairCounter = 0; // Sets this value to zero, when this counter equals 8 the game will regenrate the grid again
+    self.pairCounter = 0;           // Sets this value to zero, when this counter equals 8 the game will regenrate the grid again
     self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.flipRetentionData.currentScore]; // Sets the initial start score on the label for the game
-    [self generateRandomImages]; // Generates the randomly allocated pairs and positions for all the tiles
-    self.timeTick = [data flipRetentionTimeAvailable];;  //lets the timer as was set on the slider in the settings page
-    self.timerLabel.text = [NSString stringWithFormat:@"TimeRemaining : %d", self.timeTick]; // Initially updates the label for the time at the start of the game
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES]; // This timer repeatedly contoles my count down timer functin that gets displayed on the label
+    [self generateRandomImages];            // Generates the randomly allocated pairs and positions for all the tiles
+    self.timeTick = [data flipRetentionTimeAvailable];;             //Lets the timer as was set on the slider in the settings page
+    self.timerLabel.text = [NSString stringWithFormat:@"TimeRemaining : %d", self.timeTick];            // Initially updates the label for the time at the start of the game
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];            // This timer repeatedly contoles my count down timer functin that gets displayed on the label
     
 }
 
@@ -162,13 +162,13 @@ UIColor *RGB13(float r, float g, float b)
         NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
         NSMutableDictionary *userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
         int currentHighScore = [[userData valueForKey:@"FlipRetentionHighScore"] intValue]; // creates a temp value of currentHighScore from the permanatly stored data text file
-        if (self.flipRetentionData.currentScore > currentHighScore){ // This if statement checks whether you beat yiur kast highscore for this game or not
+        if (self.flipRetentionData.currentScore > currentHighScore){            // This if statement checks whether you beat yiur kast highscore for this game or not
             // This stores the new highscore in a text file that will be read on the home screen
             int newHighScore = self.flipRetentionData.currentScore;
             NSNumber *newHighScoreNSN = [[NSNumber alloc] initWithInt:newHighScore];
             [userData setValue:newHighScoreNSN forKey:@"FlipRetentionHighScore"];
             [userData writeToFile:filePath atomically:YES];
-            // Kicks you to the Win Screen
+            // Moves you to the Win Screen
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetentionWinScreen"];
             [self presentViewController:vc animated:YES completion:nil];
@@ -183,7 +183,7 @@ UIColor *RGB13(float r, float g, float b)
         }
     }
     else {
-        // if timer doenst equal zero yet it will decrease the counter by ine again and didplay the output on the time rlabel
+        // If timer doenst equal zero yet it will decrease the counter by ine again and didplay the output on the time rlabel
         self.timeTick--;
         self.timerLabel.text = [NSString stringWithFormat:@"Time Remaining : %d", self.timeTick];
     }
@@ -537,27 +537,27 @@ UIColor *RGB13(float r, float g, float b)
 // All this code below goes through the permuations of whether the shape is the first or second one pressed, and will store a temporary variable if it is the first selection so on the second choice the code can work out whether a pair was found
 -(void)a11Tapped{
     NSLog(@"a11 Tapped");
-    self.a11Cover.hidden = YES; // Since a11 is tapped it hides a11Cover to reveal the image in a11
-    if(self.userCounter == 0){ // if this is the first half of the pair the user has clicked
-        self.pairChecker = self.a11Image.tag;  // Sets the temporary variable to be the tag that refers to that image
+    self.a11Cover.hidden = YES;             // Since a11 is tapped it hides a11Cover to reveal the image in a11
+    if(self.userCounter == 0){          // if this is the first half of the pair the user has clicked
+        self.pairChecker = self.a11Image.tag;           // Sets the temporary variable to be the tag that refers to that image
         NSLog(@"pair checker is: %d",self.pairChecker);
-        self.userCounter ++;  // Increments the user counter so that the app knows the next click will be trying to match it to this one
-        self.firstInput = 1;  // Sets the firstInput as 1 since tile a11 was pressed, this is used to hide or recover it later depending on a correct or wrong selection
-        [self.a11Image setUserInteractionEnabled:NO]; // makes it so thatthe user cant select the same tile twice in one selection
+        self.userCounter ++;            // Increments the user counter so that the app knows the next click will be trying to match it to this one
+        self.firstInput = 1;            // Sets the firstInput as 1 since tile a11 was pressed, this is used to hide or recover it later depending on a correct or wrong selection
+        [self.a11Image setUserInteractionEnabled:NO];           // makes it so thatthe user cant select the same tile twice in one selection
     }
-    else{ // If this image is the second half of the selection
-        if ( self.a11Image.tag == self.pairChecker){ // if the first tile and this tile match do this
-            NSLog(@"detected second tap");// If the second tile is a match
+    else{           // If this image is the second half of the selection
+        if ( self.a11Image.tag == self.pairChecker){            // If the first tile and this tile match do this
+            NSLog(@"detected second tap");          // If the second tile is a match
             NSLog(@"firstInput was : %d", self.firstInput);
-            self.a11Cover.hidden = YES;  // hide this tile and its cover
+            self.a11Cover.hidden = YES;             // Hide this tile and its cover
             self.a11Image.hidden = YES;
-            [self.a11Image setUserInteractionEnabled:NO];  // make it so that the user can no longer interact with this tile until a big reset hapens
-            [self CorrectMatch]; // triggers the correct match function this will hide the tile that was selected in the first half of this pair selection using the varibale first input
+            [self.a11Image setUserInteractionEnabled:NO];           // make it so that the user can no longer interact with this tile until a big reset hapens
+            [self CorrectMatch];            // triggers the correct match function this will hide the tile that was selected in the first half of this pair selection using the varibale first input
         }
         else {  // User got the selection wrong
             NSLog(@"detected second tap");
             NSLog(@"firstInput was : %d", self.firstInput);
-            [self incorrectMatch];  // triggers incorrect match  function, which will rehide the two images selected and make them able to be interacted with again
+            [self incorrectMatch];                  // triggers incorrect match  function, which will rehide the two images selected and make them able to be interacted with again
             [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(a11Delay) userInfo:nil repeats:NO]; // has a timer before the user can continue playong, this is so you can see what you clicked on the second half of the pair selection
             
         }
@@ -576,7 +576,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a12Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a12Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a12Image.tag == self.pairChecker){            // If the second tile is a match
             self.a12Cover.hidden = YES;
             self.a12Image.hidden = YES;
             [self.a12Image setUserInteractionEnabled:NO];
@@ -598,7 +598,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a13Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a13Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a13Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a13Cover.hidden = YES;
             self.a13Image.hidden = YES;
@@ -624,7 +624,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a14Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a14Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a14Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a14Cover.hidden = YES;
             self.a14Image.hidden = YES;
@@ -648,7 +648,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a21Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a21Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a21Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a21Cover.hidden = YES;
             self.a21Image.hidden = YES;
@@ -673,7 +673,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a22Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a22Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a22Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a22Cover.hidden = YES;
             self.a22Image.hidden = YES;
@@ -698,7 +698,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a23Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a23Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a23Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a23Cover.hidden = YES;
             self.a23Image.hidden = YES;
@@ -723,7 +723,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a24Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a24Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a24Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a24Cover.hidden = YES;
             self.a24Image.hidden = YES;
@@ -748,7 +748,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a31Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a31Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a31Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a31Cover.hidden = YES;
             self.a31Image.hidden = YES;
@@ -772,7 +772,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a32Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a32Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a32Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a32Cover.hidden = YES;
             self.a32Image.hidden = YES;
@@ -797,7 +797,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a33Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a33Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a33Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a33Cover.hidden = YES;
             self.a33Image.hidden = YES;
@@ -822,7 +822,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a34Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a34Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a34Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a34Cover.hidden = YES;
             self.a34Image.hidden = YES;
@@ -847,7 +847,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a41Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a41Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a41Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a41Cover.hidden = YES;
             self.a41Image.hidden = YES;
@@ -872,7 +872,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a42Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a42Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a42Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a42Cover.hidden = YES;
             self.a42Image.hidden = YES;
@@ -897,7 +897,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a43Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a43Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a43Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a43Cover.hidden = YES;
             self.a43Image.hidden = YES;
@@ -922,7 +922,7 @@ UIColor *RGB13(float r, float g, float b)
         [self.a44Image setUserInteractionEnabled:NO];
     }
     else{
-        if ( self.a44Image.tag == self.pairChecker){  // If the second tile is a match
+        if ( self.a44Image.tag == self.pairChecker){            // If the second tile is a match
             
             self.a44Cover.hidden = YES;
             self.a44Image.hidden = YES;
@@ -942,9 +942,9 @@ UIColor *RGB13(float r, float g, float b)
 #pragma mark - Generate Random Images
 // This function is called at the start of the game and every time a big reset happens, it is used to generate what images are selected and where the pairs of images will go, it works in tandem with  generatePlaceForImages as it goes through the for loop
 -(void)generateRandomImages{
-    self.flipRetentionData.counterOne = 0; // This ocunter refers to the eight images that exsist tobe put into the game
-    self.flipRetentionData.counterTwo = 0; // This counter refers to the 16 tiles that are availbe for images to be placed in
-    self.tempArray1 = [[NSMutableArray alloc] initWithCapacity:self.flipRetentionData.firstEightPlaces.count];  // copying my permanat array from before so i can remove objects and still have repeatabiliy for more rounds later on
+    self.flipRetentionData.counterOne = 0;          // This ocunter refers to the eight images that exsist tobe put into the game
+    self.flipRetentionData.counterTwo = 0;          // This counter refers to the 16 tiles that are availbe for images to be placed in
+    self.tempArray1 = [[NSMutableArray alloc] initWithCapacity:self.flipRetentionData.firstEightPlaces.count];              // copying my permanat array from before so i can remove objects and still have repeatabiliy for more rounds later on
     for (NSInteger index = 0; index < 8; index++) {
         [self.tempArray1 addObject:[self.flipRetentionData.firstEightPlaces objectAtIndex:index]];
     }
@@ -952,27 +952,27 @@ UIColor *RGB13(float r, float g, float b)
     for (NSInteger index = 0; index < 16; index++) {
         [self.tempArray2 addObject:[self.flipRetentionData.sixteenPositionTiles objectAtIndex:index]];
     }
-    for(int i = 0; i<8; i++){  // For the eight images in the selection
+    for(int i = 0; i<8; i++){           // For the eight images in the selection
         
         NSLog(@"i = %d",i);
         NSLog(@"counter one %d", self.flipRetentionData.counterOne);
         
-        [self.flipRetentionData generatePairImages];  // random variable is generated that, the possible random number decreases as the images start to be taken out of the array
+        [self.flipRetentionData generatePairImages];            // random variable is generated that, the possible random number decreases as the images start to be taken out of the array
         NSLog(@"random number one is : %d", self.flipRetentionData.randomOne);
         NSLog(@"number in array: %@", [self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]);
-        [self.flipRetentionData incrementCounterOne]; // counterOne is incremented so we dont try to reach out of the arrayand crash our app
-        if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne] isEqual: @1]){ // if statement referiing to each of the possible eight images to be picked, depending on what number is taken out fo the array a different tag will be set for tagSetter
+        [self.flipRetentionData incrementCounterOne];           // counterOne is incremented so we dont try to reach out of the arrayand crash our app
+        if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne] isEqual: @1]){            // if statement referiing to each of the possible eight images to be picked, depending on what number is taken out fo the array a different tag will be set for tagSetter
             self.tagSetter = 1;
-            [self.flipRetentionData generatePairPositions]; // Other half of the function that geenrates the grid, the next pragma mark down
-            [self generatePlaceForImage]; // sending the value that was chosen to the next function
-            //This next bit happens twice so that each image has exactly two postions it will be in, making th game have its core functiuonality
+            [self.flipRetentionData generatePairPositions];             // Other half of the function that geenrates the grid, the next pragma mark down
+            [self generatePlaceForImage];           // sending the value that was chosen to the next function
+                        //This next bit happens twice so that each image has exactly two postions it will be in, making th game have its core functiuonality
             [self.flipRetentionData incrementCounterTwo];
-            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo]; // remove the tile from the array
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];             // remove the tile from the array
             [self.flipRetentionData generatePairPositions];
             [self generatePlaceForImage];
             [self.flipRetentionData incrementCounterTwo];
-            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];  // remove the tie from the array
-            [self.tempArray1 removeObjectAtIndex:self.flipRetentionData.randomOne]; // remove the image from the array
+            [self.tempArray2 removeObjectAtIndex:self.flipRetentionData.randomTwo];             // remove the tie from the array
+            [self.tempArray1 removeObjectAtIndex:self.flipRetentionData.randomOne];             // remove the image from the array
             NSLog(@"Number 1 Picked");
         }
         else if ([[self.tempArray1 objectAtIndex:self.flipRetentionData.randomOne]  isEqual: @2]){
@@ -1076,7 +1076,7 @@ UIColor *RGB13(float r, float g, float b)
     NSLog(@"Random Place selector number is %d", self.flipRetentionData.randomTwo);
     if([[self.tempArray2 objectAtIndex:self.flipRetentionData.randomTwo]  isEqual: @1]){ // Depending on the first if statment value we are generating which tile we are going to first
         NSLog(@" picture a11");
-        if (self.tagSetter == 1){ // then all the indented if staemnts are just seeing what image was chosen in the previous function and we are now storing that imaage in that tile , this happens twice for each image
+        if (self.tagSetter == 1){           // then all the indented if staemnts are just seeing what image was chosen in the previous function and we are now storing that imaage in that tile , this happens twice for each image
             [self.a11Image setImage:[UIImage imageNamed:@"setOnePairOne"]];
             [self.a11Image setTag:1];
         }
