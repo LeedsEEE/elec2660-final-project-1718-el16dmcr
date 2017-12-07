@@ -22,12 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.opticalConundrumData = [[OpticalConundrumData alloc] init];
-    SettingsData *data = [SettingsData sharedInstance];
+    SettingsData *data = [SettingsData sharedInstance]; // Allows this game to read the data from the settings page and give the user the correct amount of time and points awarded depending on what the user set
   
-    self.navigationItem.hidesBackButton = YES;   // Hides the back button that is there by default, I want to make my own
-    self.tempArray = [[NSMutableArray alloc] init];
-    self.colourArray = [[NSMutableArray alloc] init];
-    self.colourArray = [NSMutableArray arrayWithObjects: [UIColor greenColor],
+    self.tempArray = [[NSMutableArray alloc] init]; // Allocates memory for my array, this array is for duplicating my stored array and then removing objects for each round of the game
+    self.colourArray = [[NSMutableArray alloc] init]; // Allocates memory for my main array the colour array
+    self.colourArray = [NSMutableArray arrayWithObjects: [UIColor greenColor], //Setting what colours are to be used for my game, this array will not be altered in any way it will just get copied over and over again
                         [UIColor blueColor],
                         [UIColor redColor],
                         [UIColor magentaColor],
@@ -38,20 +37,22 @@
     
     [self randomWordColourChosen]; //initial word chosen
     [self randomFontColourChosen];  //initial font colour chosen
-    [self randomCorrectButtonChosen];
-    [self randomThirdButtonChosen];
-    [self randomFourthButtonChosen];
-    [self wordDefiner];
-    [self colourDefiner];
-    [self correctButtonSelector];
+    [self randomCorrectButtonChosen]; // Generates the random number that will then go on to define which button will have the correct answer on it
+    [self randomThirdButtonChosen];  // Generates random number to select which colour will go on the third button
+    [self randomFourthButtonChosen]; //Generates a random colour to select which colour will go on the fourth button
+    [self wordDefiner]; // From the random variable previously generated it will find the correct word and display it on the label
+    [self colourDefiner]; // From a previously selected random number it will generate the font colour fo the displayed word
+    [self correctButtonSelector];  // From a previosuly geenrated random number generator it will choose which button holds the right answer
+    // Updates the label
     self.shownColourWordLabel.text = self.shownColourWord;
     self.shownColourWordLabel.textColor = self.wrongColour;
+    self.shownColourWordLabel.backgroundColor = [UIColor whiteColor];
+    // pdates score label
     self.scoreLabel.text = [NSString stringWithFormat: @"Score : %d",self.opticalConundrumData.startPoints];
-    [self.opticalConundrumData getInitialScore]; ///IMPORTANT
-    
+    [self.opticalConundrumData getInitialScore]; // Pulls in the correct data from my data file
     
     NSLog(@"%@",self.shownColourWord);
-    
+    // This segment of code was referenced and slightly changed from , it is used to tick down a timer and siplay it on a label
     self.timeTick = [data opticalConundrumTimeAvailable];
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     self.timerLabel.text = [NSString stringWithFormat:@"Time left: %d", [data opticalConundrumTimeAvailable]];
@@ -149,8 +150,7 @@
         self.correctColour = [self.tempArray objectAtIndex:self.randomTwo];
         NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
         [self.tempArray removeObjectAtIndex:self.randomTwo];
-        
-        
+    
         if (self.randomTwo == 0) {
             self.shownColourWord = @"green";
         }
@@ -161,7 +161,7 @@
             self.shownColourWord = @"red";
         }
         else if (self.randomTwo == 3) {
-            self.shownColourWord = @"magenta";
+            self.shownColourWord = @"pink";
         }
         else if (self.randomTwo == 4) {
             self.shownColourWord = @"black";
@@ -354,6 +354,13 @@
         self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.opticalConundrumData.currentScore];
         [self anyButtonPressed];
     }
+}
+
+- (IBAction)backToMainMenuPressed:(UIButton *)sender {
+    
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *nc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+    [self presentViewController:nc animated:YES completion:nil];
 }
 
 

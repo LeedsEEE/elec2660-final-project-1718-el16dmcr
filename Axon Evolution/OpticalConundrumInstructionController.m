@@ -36,7 +36,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+// This function allows the user to tap anywhere on the screen so it will take them to the game
 - (IBAction)continueToGame:(UIButton *)sender {
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrum"];

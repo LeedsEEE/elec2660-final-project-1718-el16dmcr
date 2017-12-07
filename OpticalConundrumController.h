@@ -21,6 +21,7 @@
 - (IBAction)bottomRightButtonPressed:(UIButton *)sender;
 - (IBAction)topLeftButtonPressed:(UIButton *)sender;
 - (IBAction)bottomLeftButtonPressed:(UIButton *)sender;
+- (IBAction)backToMainMenuPressed:(UIButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *topRightButton;
 @property (weak, nonatomic) IBOutlet UIButton *bottomRightButton;

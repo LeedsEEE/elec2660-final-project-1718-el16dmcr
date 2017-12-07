@@ -24,11 +24,11 @@ UIColor *RGB1(float r, float g, float b)
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     
-    
+    // Setting the colour of the background  for the screen
     CGColorRef lightblue = [RGB1(0, 256, 242) CGColor];
     
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width; //Gets screen width
+    CGFloat height = [UIScreen mainScreen].bounds.size.height; //Gets screen height
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, self.bounds);
