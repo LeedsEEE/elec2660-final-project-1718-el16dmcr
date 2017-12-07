@@ -10,6 +10,7 @@
 
 @implementation LogicalPursuit
 
+// Depending on the random number generated it will add the correct string which refers to one of the shapes
 -(NSMutableArray *)shapeSelector{
     if (self.randomOne == 0){
         self.shape = @"circle";
@@ -37,27 +38,39 @@
     }
     return self.latestPattern;
 }
+
+// Clears away the last pattern that was used
 -(NSMutableArray *)clearArray{
     [self.latestPattern removeAllObjects];
     NSLog (@"Number of elements in array = %lu", [self.latestPattern count]);
     return self.latestPattern;
 }
+
+// Generates a random number that will refernce a various shape to be lit up
 -(int)pickNextShape{
     self.randomOne = arc4random_uniform(5);
     return self.randomOne;
 }
+
+// Increments the round counter every time the user completes a round
 -(int)roundCounterPlus {
     self.roundCounter ++;
     return self.roundCounter;
 }
+
+// Sets the start lives depending on what the user selected in the settings screen
 -(int)setStartLives{
     self.currentLives = self.startLives;
     return self.currentLives;
 }
+
+// Renmoves a life
 -(int)removeLive{
     self.currentLives --;
     return self.currentLives;
 }
+
+// Checks if the user has any lives left when they get an incorrect answer
 -(BOOL)checkLives {
     if (self.currentLives == 0){
         return true;
@@ -67,10 +80,14 @@
         return false;
     }
 }
+
+// Calculates the points for the user after a correct shape was tapped
 -(int)calculatePoints{
     self.currentPoints = self.currentPoints + self.pointsPlus;
     return self.currentPoints;
 }
+
+// Initialisation of the variables for this game
 -(id)init{
     SettingsData *data = [SettingsData sharedInstance];
     self = [super init];

@@ -77,39 +77,52 @@
     [resetButtonTapped setNumberOfTapsRequired:1];
     [self.resetImage addGestureRecognizer:resetButtonTapped];
     
-}// This funcion gives the necessary labels and images a more defined look with borders after i imported Quartz
+    [self.settingsImage setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *settingsButtonTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(settingsButtonTapped)];
+    [resetButtonTapped setNumberOfTapsRequired:1];
+    [self.settingsImage addGestureRecognizer:settingsButtonTapped];
+    
+    [self.pencilImage setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *pencilImageTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pencilImageTapped)];
+    [resetButtonTapped setNumberOfTapsRequired:1];
+    [self.pencilImage addGestureRecognizer:pencilImageTapped];
+    
+}
+
+// This funcion gives the necessary labels and images a more defined look with borders after i imported Quartz
 -(void)looksSetup{
     self.highScoreLabel.layer.borderColor = RGB7(66, 125, 244).CGColor; // Creating a custom dark blue colour using RHGB values
     self.highScoreLabel.layer.borderWidth = 2.0;
     self.highScoreLabel.layer.cornerRadius = 8;
     
     self.opticalConundrumLabel.layer.borderColor =[UIColor blackColor].CGColor;
-    self.opticalConundrumLabel.layer.borderWidth = 2.0; // Sets the thickness of gthe line that surrounds the label
+    self.opticalConundrumLabel.layer.borderWidth = 1.0; // Sets the thickness of gthe line that surrounds the label
     self.opticalConundrumLabel.layer.cornerRadius = 8;  // Makes the box slightly rounded at the edges
     self.opticalConundrumLabel.backgroundColor = RGB7(161, 0, 255);
     self.opticalConundrumLabel.layer.masksToBounds = YES;  // makes the fill colour fill to the bounds of the label
     
     self.flipRetentionLabel.layer.borderColor =[UIColor blackColor].CGColor;
-    self.flipRetentionLabel.layer.borderWidth = 2.0;
+    self.flipRetentionLabel.layer.borderWidth = 1.0;
     self.flipRetentionLabel.layer.cornerRadius = 8;
     self.flipRetentionLabel.backgroundColor = RGB7(3, 196, 132);
     self.flipRetentionLabel.layer.masksToBounds = YES;
     
     self.logicalPursuitLabel.layer.borderColor =[UIColor blackColor].CGColor;
-    self.logicalPursuitLabel.layer.borderWidth = 2.0;
+    self.logicalPursuitLabel.layer.borderWidth = 1.0;
     self.logicalPursuitLabel.layer.cornerRadius = 8;
     self.logicalPursuitLabel.backgroundColor = RGB7(255, 131, 0);
     self.logicalPursuitLabel.layer.masksToBounds = YES;
     
-    [self.opticalConundrumGame.layer setBorderColor:[UIColor blackColor].CGColor];
+    /*[self.opticalConundrumGame.layer setBorderColor:[UIColor blackColor].CGColor];
     [self.opticalConundrumGame.layer setBorderWidth:(2.0)];
     
     [self.logicalPursuitGame.layer setBorderColor:[UIColor blackColor].CGColor];
     [self.logicalPursuitGame.layer setBorderWidth:(2.0)];
     
     [self.flipRetentionGame.layer setBorderColor:[UIColor blackColor].CGColor];
-    [self.flipRetentionGame.layer setBorderWidth:(2.0)];
+    [self.flipRetentionGame.layer setBorderWidth:(2.0)]; */
 }
+
 // This function just chekcs what your highscore is and then sets the appropriate brain image at the bottom of the screen
 -(void)setBrainImage{
     int totalDisplayedHighScore = [[self.userData valueForKey:@"OpticalConundrumHighScore"] intValue] + [[self.userData valueForKey:@"LogicalPursuitHighScore"] intValue] + [[self.userData valueForKey:@"FlipRetentionHighScore"] intValue];
@@ -174,9 +187,13 @@ UIColor *RGB7(float r, float g, float b)
     [self highScoreDisplay];
 }
 // This button will take you to the settings page so ou can alter the settings of the games and how you want to play them
-- (IBAction)settingsButtonPressed:(UIButton *)sender {
+-(void)settingsButtonTapped{
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"SettingsScreen"];
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+-(void)pencilImageTapped{
+    
 }
 @end

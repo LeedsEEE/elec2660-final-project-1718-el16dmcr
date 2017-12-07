@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LogicalPursuit.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface LogicalPursuitController : ViewController

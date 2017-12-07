@@ -74,7 +74,7 @@ UIColor *RGB8(float r, float g, float b)
 }
 
 #pragma mark - Colours of Labels and Buttons
-// This is what defines how my screen looks for the most part
+// This is what defines how my screen looks for the most part, see the draw view for the rest of the screen 
 -(void)setupLooks{
     self.shownColourWordLabel.layer.borderColor = RGB8(190, 0, 255).CGColor;
     self.shownColourWordLabel.layer.borderWidth = 3.0;

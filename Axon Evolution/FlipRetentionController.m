@@ -20,7 +20,7 @@
     [super viewDidLoad];
     self.flipRetentionData = [[FlipRetentionData alloc] init]; // Initialising the data from my data model
     SettingsData *data = [SettingsData sharedInstance]; // creating a shared instace of my settings page so that the gameplay will be affected by what the user set on the slider
-    
+    [self setupLooks];
     [self quickreset];
     [self initialiseImages];
     self.pairCounter = 0; // Sets this value to zero, when this counter equals 8 the game will regenrate the grid again
@@ -35,6 +35,32 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+UIColor *RGB13(float r, float g, float b)
+{
+    return [UIColor colorWithRed:r/255.0f
+                           green:g/255.0f
+                            blue:b/255.0f
+                           alpha:1.0];
+}
+
+#pragma mark - Colours of Labels and Buttons
+// This is what defines how my screen looks like for the most part, see the draw view for some other details
+-(void)setupLooks{
+    
+    self.timerLabel.textColor = [UIColor whiteColor];
+    self.timerLabel.layer.borderWidth = 3.0;
+    self.timerLabel.layer.borderColor = RGB13(0, 255, 42).CGColor;
+    self.timerLabel.layer.cornerRadius = 8.0;
+    self.scoreLabel.textColor = [UIColor whiteColor];
+    self.scoreLabel.layer.borderWidth = 3.0;
+    self.scoreLabel.layer.borderColor = RGB13(0, 255, 42).CGColor;
+    self.scoreLabel.layer.cornerRadius = 8.0;
+    self.mainMenuButton.tintColor = [UIColor whiteColor];
+    self.mainMenuButton.layer.borderWidth = 3.0;
+    self.mainMenuButton.layer.borderColor = RGB13(0, 255, 42).CGColor;
+    self.mainMenuButton.layer.cornerRadius = 8.0;
 }
 #pragma mark - Initialise Images
 // This is called as view did Load to initialsise all my images (16 of them need to be allowed to accept user interaction) the other 16 need to be set as cover images so they obscure what lies beneath them
