@@ -14,14 +14,14 @@
 
 @implementation SettingsController
 
+#pragma mark - Initilisation of Screen
 - (void)viewDidLoad {
     [super viewDidLoad];
-    SettingsData *data = [SettingsData sharedInstance];
+    SettingsData *data = [SettingsData sharedInstance];     //sharing the data from before to keep evrything updata in this view
     self.opticalConundrumTimeLimitLabel.text = [NSString stringWithFormat:@"%d", [data opticalConundrumTimeAvailable]];
     self.flipRetentionTimeLimitLabel.text = [NSString stringWithFormat:@"%d", [data flipRetentionTimeAvailable]];
     self.logicalPursuitLivesLabel.text = [NSString stringWithFormat:@"%d", [data logicalPursuitStartLives]];
     [self setupLooks];
-    
 
 }
 
@@ -83,6 +83,9 @@ UIColor *RGB19(float r, float g, float b)
     self.settingsFlipRetentionTimeLimitLabel.layer.cornerRadius = 8.0;
     
 }
+
+#pragma mark - User Interacts With Any Objects
+
 - (IBAction)backButtonPressed:(UIButton *)sender {
     
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -119,7 +122,7 @@ UIColor *RGB19(float r, float g, float b)
 - (IBAction)opticalConundrumSliderMoved:(UISlider *)sender {
     SettingsData *data = [SettingsData sharedInstance];
     NSLog(@"Slider is being moved");
-    data.opticalConundrumStartPoints = (-300*sender.value) + 100;
+    data.opticalConundrumStartPoints = (-300*sender.value) + 400;
     data.opticalConundrumPointsMinus = (25*sender.value) + 25;
     data.opticalConundrumPointsPlus = (-50*sender.value) + 100;
     data.opticalConundrumTimeAvailable = (120*sender.value) + 30;
@@ -131,7 +134,7 @@ UIColor *RGB19(float r, float g, float b)
 - (IBAction)flipRetentionSliderMoved:(UISlider *)sender {
     SettingsData *data = [SettingsData sharedInstance];
     NSLog(@"Slider is being moved");
-    data.flipRetentionStartPoints = (-300*sender.value) + 100;
+    data.flipRetentionStartPoints = (-300*sender.value) + 400;
     data.flipRetentionPointsMinus = (25*sender.value) + 25;
     data.flipRetentionPointsPlus = (-50*sender.value) + 100;
     data.flipRetentionTimeAvailable = (120*sender.value) + 30;

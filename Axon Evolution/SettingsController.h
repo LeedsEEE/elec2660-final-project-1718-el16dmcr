@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *settingsLogicalPursuitLivesLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *noteImage;
 
-
+@property float updaterOne;
+@property float updaterTwo;
 
 @end
