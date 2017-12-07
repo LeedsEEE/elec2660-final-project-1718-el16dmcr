@@ -75,7 +75,8 @@
     [self.resetImage setUserInteractionEnabled:YES];
     UITapGestureRecognizer *resetButtonTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resetButtonTapped)];
     [resetButtonTapped setNumberOfTapsRequired:1];
-    [self.logicalPursuitGame addGestureRecognizer:resetButtonTapped];
+    [self.resetImage addGestureRecognizer:resetButtonTapped];
+    
 }// This funcion gives the necessary labels and images a more defined look with borders after i imported Quartz
 -(void)looksSetup{
     self.highScoreLabel.layer.borderColor = RGB7(66, 125, 244).CGColor; // Creating a custom dark blue colour using RHGB values
@@ -159,6 +160,7 @@ UIColor *RGB7(float r, float g, float b)
 }
 // This function allows you to reset any stored data you may have
 -(void)resetButtonTapped{
+    NSLog(@"reset Button has been Pressed");
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
     self.userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];

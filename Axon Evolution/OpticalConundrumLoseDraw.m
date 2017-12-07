@@ -20,7 +20,7 @@ UIColor *RGB5(float r, float g, float b)
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    
+    // Sets the background color for the lose screen
     CGColorRef opticalConundrumPurple = [RGB5(161, 0, 255) CGColor];
     
     CGFloat width = [UIScreen mainScreen].bounds.size.width;

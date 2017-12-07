@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "OpticalConundrumData.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface OpticalConundrumController : UIViewController
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *shownColourWordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 
 - (IBAction)topRightButtonPressed:(UIButton *)sender;

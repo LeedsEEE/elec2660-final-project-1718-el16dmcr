@@ -14,18 +14,39 @@
 
 @implementation FlipRetentionController
 
+#pragma mark - Initialisation Of App
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.flipRetentionData = [[FlipRetentionData alloc] init];
-    SettingsData *data = [SettingsData sharedInstance];
+    self.flipRetentionData = [[FlipRetentionData alloc] init]; // Initialising the data from my data model
+    SettingsData *data = [SettingsData sharedInstance]; // creating a shared instace of my settings page so that the gameplay will be affected by what the user set on the slider
     
     [self quickreset];
-    
+    [self initialiseImages];
     self.pairCounter = 0;
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",self.flipRetentionData.currentScore];
     [self generateRandomImages];
+    
+    
+    NSLog(@"a11 tag is %ld", (long)self.a11Image.tag);
+    //self.pairChecker =self.a11Image.tag;
+    NSLog(@"check tag correct: %d", self.pairChecker);
+    self.timeTick = [data flipRetentionTimeAvailable];;
+    self.timerLabel.text = [NSString stringWithFormat:@"TimeRemaining : %d", self.timeTick];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+#pragma mark - Initialise Images
+// This is called as view did Load to initialsise all my images (16 of them need to be allowed to accept user interaction) the other 16 need to be set as cover images so they obscure what lies beneath them
+-(void)initialiseImages{
+    
     [self.a11Image setUserInteractionEnabled:YES];
     UITapGestureRecognizer *a11Tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(a11Tapped)];
     [a11Tapped setNumberOfTapsRequired:1];
@@ -111,20 +132,8 @@
     [self.a43Cover setImage:[UIImage imageNamed:@"coverImage"]];
     [self.a44Cover setImage:[UIImage imageNamed:@"coverImage"]];
     
-    NSLog(@"a11 tag is %ld", (long)self.a11Image.tag);
-    //self.pairChecker =self.a11Image.tag;
-    NSLog(@"check tag correct: %d", self.pairChecker);
-    self.timeTick = [data flipRetentionTimeAvailable];;
-    self.timerLabel.text = [NSString stringWithFormat:@"TimeRemaining : %d", self.timeTick];
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
-    
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+#pragma mark - Timer CountDown
 
 -(void)tick{
     if ( self.timeTick == 0){
@@ -159,6 +168,9 @@
         self.timerLabel.text = [NSString stringWithFormat:@"Time Remaining : %d", self.timeTick];
     }
 }
+
+#pragma mark - Full Reset Regenrate Grid
+
 -(void)bigReset{
     self.pairCounter = 0;
     self.userCounter = 0;
@@ -166,10 +178,16 @@
     [self generateRandomImages];
     [self imagesBack];
 }
+
+#pragma mark - Small Reset For Each Pair
+
 -(void)quickreset{
     self.userCounter = 0;
     self.firstInput = 0;
 }
+
+#pragma mark - Resetting the Grid
+// This function resets all the cover and hidden images as well as their interactions, this is called once a big Reset happens
 -(void)imagesBack{
     self.a11Cover.hidden = NO;
     self.a12Cover.hidden = NO;
@@ -231,6 +249,9 @@
     [self.a43Image setUserInteractionEnabled:YES];
     [self.a44Image setUserInteractionEnabled:YES];
 }
+
+#pragma mark - Reenable Pair Images
+// This function is used when the user gets the selection of the two cards wrong and we need to cover them up again
 -(void)reenablePairImage{
     NSLog(@"reenablePairImage working");
     if(self.firstInput == 1){
@@ -313,6 +334,9 @@
         
     }
 }
+
+#pragma mark - Hide Pair Images
+// This is for when the user gets the selection of the two cards correct, we dont reinitialise the covers, we hode the images and then we make it so that the user cant interaact with that segment until a big Reset happens.
 -(void)hidePairImage{
     NSLog(@"hide Pair Image is working");
     if(self.firstInput == 1){
@@ -395,6 +419,9 @@
         
     }
 }
+
+#pragma mark - Correct Match Was Chosen
+// This functions adds points to the users score, also hides the pair that were chosen and makes them be uninteractive now with the user, esentially making them disappear.
 -(void)CorrectMatch{
     [self.flipRetentionData correctAnswer];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
@@ -405,6 +432,9 @@
         [self bigReset];
     }
 }
+
+#pragma mark - Wrong Match Was Chosen
+// This function subtracts points from the users score and makes the images be covered back up again, they can still be interacted with as they are still in play
 -(void)incorrectMatch{
     [self.flipRetentionData wrongAnswer];  // Subtract Points
     [self reenablePairImage];
@@ -412,6 +442,9 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"Score : %d", self.flipRetentionData.currentScore];
     [self.view setUserInteractionEnabled:NO];
 }
+
+#pragma mark - Delay Function
+// This fucntion delays the user from being able to click an image after selecting a previous pair, this is to allow the user to see what card was chosen at the second half of the pair so as to prevent confusion
 -(void)a11Delay{
     self.a11Cover.hidden = NO;
     [self.view setUserInteractionEnabled:YES];
@@ -477,6 +510,8 @@
     [self.view setUserInteractionEnabled:YES];
 }
 
+#pragma mark - Any Image Tapped
+// All this code below goes through the permuations of whether the shape is the first or second one pressed, and will store a temporary variable if it is the first selection so on the second choice the code can work out whether a air was found
 -(void)a11Tapped{
     NSLog(@"a11 Tapped");
     self.a11Cover.hidden = YES;
@@ -881,6 +916,8 @@
     }
 }
 
+#pragma mark - Generate Random Images
+// This function is called at the start of the game and every time a big reset happens, it is used to generate what images are selected and where the pairs of images will go, it works in tandem with  generatePlaceForImages as it goes through the for loop
 -(void)generateRandomImages{
     self.flipRetentionData.counterOne = 0;
     self.flipRetentionData.counterTwo = 0;
@@ -1008,6 +1045,9 @@
         
     }
 }
+
+#pragma mark - Generate Place For Image
+// This fuction is called from generateRandomImages it takes two position tiles and allocates an image to them in turn until it runs out of both imagetiles and images simaltaneously
 -(void)generatePlaceForImage: (id)sender{
     NSLog(@"sender is: %@",sender);
     NSLog(@"Random Place selector number is %d", self.flipRetentionData.randomTwo);
@@ -1598,5 +1638,12 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+#pragma mark - Back To Main Menu
+// This allows the user to exit the game ealry if they so wish so they can head back to the main menu
+- (IBAction)mainMenuButtonPressed:(UIButton *)sender {
+    
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *nc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+    [self presentViewController:nc animated:YES completion:nil];
+}
 @end

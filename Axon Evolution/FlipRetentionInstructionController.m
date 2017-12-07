@@ -34,7 +34,9 @@
 }
 */
 
+// Allows the user to click anywhere on the screen and take them to the game to begin playing
 - (IBAction)continueToGame:(UIButton *)sender {
+    
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetention"];
     vc.opticalConundrumData = self.opticalConundrumData;

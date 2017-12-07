@@ -34,6 +34,7 @@
 }
 */
 
+// Allows the user to click anywhere on the screen to return to the main menu 
 - (IBAction)contineToHome:(UIButton *)sender {
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *nc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];

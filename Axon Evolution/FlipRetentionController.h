@@ -57,7 +57,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *a44Cover;
 
 
+- (IBAction)mainMenuButtonPressed:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *mainMenuButton;
+
 
 
 @property FlipRetentionData *flipRetentionData;

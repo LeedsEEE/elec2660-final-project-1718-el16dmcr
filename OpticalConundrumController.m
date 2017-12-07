@@ -16,8 +16,7 @@
 
 @implementation OpticalConundrumController
 
-
-
+#pragma mark - Initialisation of App
 // All the initial setup for this screen when it loads
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,18 +45,17 @@
     // Updates the label
     self.shownColourWordLabel.text = self.shownColourWord;
     self.shownColourWordLabel.textColor = self.wrongColour;
-    self.shownColourWordLabel.backgroundColor = [UIColor whiteColor];
-    // pdates score label
+    
+    // Updates score label
     self.scoreLabel.text = [NSString stringWithFormat: @"Score : %d",self.opticalConundrumData.startPoints];
     [self.opticalConundrumData getInitialScore]; // Pulls in the correct data from my data file
     
     NSLog(@"%@",self.shownColourWord);
-    // This segment of code was referenced and slightly changed from , it is used to tick down a timer and siplay it on a label
+    // This segment of code was referenced and slightly changed from , it is used to tick down a timer and diplay it on a label
     self.timeTick = [data opticalConundrumTimeAvailable];
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
-    self.timerLabel.text = [NSString stringWithFormat:@"Time left: %d", [data opticalConundrumTimeAvailable]];
-    self.timerLabel.backgroundColor = [UIColor blackColor];
-    self.timerLabel.textColor = [UIColor whiteColor];
+    self.timerLabel.text = [NSString stringWithFormat:@"%d", [data opticalConundrumTimeAvailable]];
+    [self setupLooks];
     NSLog(@"start points: %d", self.opticalConundrumData.startPoints);
     
 }
@@ -66,41 +64,61 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+// Function to make defining colours easier
+UIColor *RGB8(float r, float g, float b)
+{
+    return [UIColor colorWithRed:r/255.0f
+                           green:g/255.0f
+                            blue:b/255.0f
+                           alpha:1.0];
 }
-*/
+
+#pragma mark - Colours of Labels and Buttons
+// This is what defines how my screen looks for the most part
+-(void)setupLooks{
+    self.shownColourWordLabel.layer.borderColor = RGB8(190, 0, 255).CGColor;
+    self.shownColourWordLabel.layer.borderWidth = 3.0;
+    self.shownColourWordLabel.layer.cornerRadius = 8.0;
+    self.timerLabel.textColor = [UIColor whiteColor];
+    self.timerLabel.layer.borderWidth = 3.0;
+    self.timerLabel.layer.borderColor = RGB8(190, 0, 255).CGColor;
+    self.timerLabel.layer.cornerRadius = 8;
+    self.scoreLabel.textColor = [UIColor whiteColor];
+    self.scoreLabel.layer.borderColor = RGB8(190, 0, 255).CGColor;
+    self.scoreLabel.layer.borderWidth = 3.0;
+    self.scoreLabel.layer.cornerRadius = 8.0;
+    self.backButton.tintColor = [UIColor whiteColor];
+    self.backButton.layer.borderWidth = 3.0;
+    self.backButton.layer.borderColor = RGB8(190, 0, 255).CGColor;
+    self.backButton.layer.cornerRadius = 8;
+}
+
+#pragma mark - Timer function Countdown
+// This function tics down every seconds shwoing the suer how much time they have left, when it goes to zero it will shove ou to the next screen
 -(void)tick{
-    if ( self.timeTick == 0){
-        self.timeTick--;
+    if ( self.timeTick == 0){ // checks if time = 0
         NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", self.timeTick];
         self.timerLabel.text = timeRemaining;
         NSLog(@"Last highscore was : %d",self.opticalConundrumData.highScore);
-        
+        // Checks the stored data for the highscore for this game, if the user beat iut it will take them to the win screen, if not they will go to the lose screen
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
         NSMutableDictionary *userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
         int currentHighScore = [[userData valueForKey:@"OpticalConundrumHighScore"] intValue];
-        if (self.opticalConundrumData.currentScore > currentHighScore){
-            
+        if (self.opticalConundrumData.currentScore > currentHighScore){ //checking the highscores
+            //Overwrites the file if the user beat the old highscore
             int newHighScore = self.opticalConundrumData.currentScore;
             NSNumber *newHighScoreNSN = [[NSNumber alloc] initWithInt:newHighScore];
             [userData setValue:newHighScoreNSN forKey:@"OpticalConundrumHighScore"];
             [userData writeToFile:filePath atomically:YES];
+            // Shves the user to the win screen
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumWinScreen"];
             [self presentViewController:vc animated:YES completion:nil];
             
         }
         else {
-        
+            // Takes the user to the lose screen
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumLoseScreen"];
             [self presentViewController:vc animated:YES completion:nil];
@@ -108,13 +126,14 @@
         }
     }
     else {
+        // If time isnt zro yet it will decrease the counter by one and update the label
     self.timeTick--;
     NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", self.timeTick];
     self.timerLabel.text = timeRemaining;
     }
 }
 
-
+#pragma mark - Five Random Number Generators
 // Generates randomly the colour word that will be chosen
 -(int) randomWordColourChosen  {
     self.randomTwo = arc4random_uniform(7);
@@ -129,28 +148,31 @@
     self.randomThree = arc4random_uniform(3);
     return self.randomThree;
 }
+//Generates the random number for the third button colour selection
 -(int) randomThirdButtonChosen {
     self.randomFour = arc4random_uniform(5);
     return self.randomFour;
 }
+// Generates the random number for the fourth button colour selection
 -(int) randomFourthButtonChosen {
     self.randomFive = arc4random_uniform(4);
     return self.randomFive;
 }
 
+#pragma mark - Word Definer
 // Function that generates the colour word being shown
 -(NSString *) wordDefiner {
     
-    
+        // I generate a temporary array and copy my permanant colour array into it, this is so i can remove colours as i go throught the sequcne and make sure no colour gets picked and shown on the screen twice.
         self.tempArray = [[NSMutableArray alloc] initWithCapacity:self.colourArray.count];
         for (NSInteger index = 0; index < 8; index++) {
-            [self.tempArray addObject:[self.colourArray objectAtIndex:index]];
+            [self.tempArray addObject:[self.colourArray objectAtIndex:index]]; // Copying the array using a for loop
         }
-        
+        //Sets the correct colour from the array at the ide f the random number that was genrated ealrier
         self.correctColour = [self.tempArray objectAtIndex:self.randomTwo];
         NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
-        [self.tempArray removeObjectAtIndex:self.randomTwo];
-    
+        [self.tempArray removeObjectAtIndex:self.randomTwo];  // removes that colour so we will get no bugs or bad gameplay
+        // These if statements are jsut defining what the word will read depening on the colour chosen
         if (self.randomTwo == 0) {
             self.shownColourWord = @"green";
         }
@@ -175,30 +197,34 @@
         else if (self.randomTwo == 7) {
             self.shownColourWord = @"brown";
         }
-    
     return self.shownColourWord;
 }
+
+#pragma mark - ColourDefiner
 // Function that generates the font colour being shown
 -(UIColor *) colourDefiner {
     NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
-    self.shownFontColour = [self.tempArray objectAtIndex:self.randomOne];
+    self.shownFontColour = [self.tempArray objectAtIndex:self.randomOne]; //Definines the shown font colour that will be displayed
     [self.tempArray removeObjectAtIndex:self.randomOne];
-    self.wrongColour = self.shownFontColour;
+    self.wrongColour = self.shownFontColour;  //Setting the wrong colour variable so that when the user presses the button we can check
     NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
-    self.otherColour1 = [self.tempArray objectAtIndex:self.randomFour];
+    self.otherColour1 = [self.tempArray objectAtIndex:self.randomFour]; //Defining one of the other buttons colour
     [self.tempArray removeObjectAtIndex:self.randomFour];
     NSLog (@"Number of elements in array = %lu", [self.tempArray count]);
-    self.otherColour2 = [self.tempArray objectAtIndex:self.randomFive];
+    self.otherColour2 = [self.tempArray objectAtIndex:self.randomFive]; // Defining the last coloured button, the other red herring just there to be a distraction
     [self.tempArray removeObjectAtIndex:self.randomFive];
     
+    //Returns all my variables
     return self.shownFontColour;
     return self.otherColour1;
     return self.otherColour2;
     return self.wrongColour;
 }
 
+#pragma mark - Correct Button Selector
 // Function that selects the correct button
 -(void) correctButtonSelector {
+    // Depending on the random number generated from randomCorrectButtonChosen it will set which button is correct and then also randomly allocate the other buttons one of the three other colours already chosen
     if (self.randomThree == 0){
         
         self.topLeftButton.backgroundColor = self.correctColour;
@@ -280,8 +306,10 @@
             self.topLeftButton.backgroundColor = self.otherColour2;
         }
     }
-    
 }
+
+#pragma mark - Any Button Pressed Regenerate
+// Whenever any button is pressed, whether right or wrong the app must now rerandomly select all the variavles and display them on the buttons and labels, this is what this functin does.
 -(void) anyButtonPressed {
     [self randomWordColourChosen]; //initial word chosen
     [self randomFontColourChosen];  //initial font colour chosen
@@ -295,7 +323,8 @@
     self.shownColourWordLabel.textColor = self.wrongColour;
 }
 
-
+#pragma mark - Any Button Pressed
+// All the buttons below are for when the user click on one of the colours, it is to check whether they made the correct choice and how many points to add or subtract, it knows if it is correct as it uses the random number from the third random number generator to check.
 - (IBAction)topRightButtonPressed:(UIButton *)sender {
     if (self.randomThree == 1){
         NSLog(@"Correct");
@@ -356,6 +385,8 @@
     }
 }
 
+#pragma mark - Back Button Pressed
+// This is a button that takes the user back to the home screen if they dont want to finish playing the game for any reason
 - (IBAction)backToMainMenuPressed:(UIButton *)sender {
     
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
