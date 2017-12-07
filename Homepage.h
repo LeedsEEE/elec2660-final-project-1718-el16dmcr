@@ -11,7 +11,7 @@
 
 @interface Homepage : UIView
 
-
+void drawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor);
 
 
 @end

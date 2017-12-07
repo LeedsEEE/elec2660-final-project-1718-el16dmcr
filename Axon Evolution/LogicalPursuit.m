@@ -86,6 +86,16 @@
     self.currentPoints = self.currentPoints + self.pointsPlus;
     return self.currentPoints;
 }
+// Calculates how long the shapes will remain on for
+-(float)calculateFlashTime{
+    if ( self.flashTime == 0.8){            // Caps the flash time at getting no lower than 0.8 seconds
+        
+    }
+    else {
+    self.flashTime = -0.2*(self.roundCounter - 4) + 2.1;
+    }
+    return self.flashTime;
+}
 
 // Initialisation of the variables for this game
 -(id)init{

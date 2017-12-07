@@ -22,11 +22,13 @@
 @property int roundCounter;
 @property NSString *shape;
 @property int currentPoints;
+@property float flashTime;
 
 
 -(int)calculatePoints;
 -(int)pickNextShape;
 -(int)roundCounterPlus;
+-(float)calculateFlashTime;
 -(int)setStartLives;
 -(int)removeLive;
 -(BOOL)checkLives;

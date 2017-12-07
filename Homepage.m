@@ -18,7 +18,28 @@ UIColor *RGB1(float r, float g, float b)
                             blue:b/255.0f
                            alpha:1.0];
 }
-
+void drawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor)
+{
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGFloat locations[] = { 0.0, 1.0 };
+    
+    NSArray *colors = @[(__bridge id) startColor, (__bridge id) endColor];
+    
+    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef) colors, locations);
+    
+    // More coming...
+    CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
+    CGPoint endPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));
+    
+    CGContextSaveGState(context);
+    CGContextAddRect(context, rect);
+    CGContextClip(context);
+    CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
+    CGContextRestoreGState(context);
+    
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorSpace);
+}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -26,6 +47,7 @@ UIColor *RGB1(float r, float g, float b)
     
     // Setting the colour of the background  for the screen
     CGColorRef lightblue = [RGB1(0, 256, 242) CGColor];
+    CGColorRef darkBlue = [RGB1(66, 134, 244) CGColor];
     
     CGFloat width = [UIScreen mainScreen].bounds.size.width; //Gets screen width
     CGFloat height = [UIScreen mainScreen].bounds.size.height; //Gets screen height
@@ -35,6 +57,10 @@ UIColor *RGB1(float r, float g, float b)
     
     CGContextSetFillColorWithColor(context, lightblue);
     CGContextFillRect(context, CGRectMake(0, 0, width, height));
+    
+    CGRect niceEdges = CGRectMake(0, 0, width/6, height);
+    drawLinearGradient(context, niceEdges, darkBlue, lightblue);
+    
     
     
     

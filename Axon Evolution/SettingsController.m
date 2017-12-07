@@ -20,6 +20,9 @@
     self.opticalConundrumTimeLimitLabel.text = [NSString stringWithFormat:@"%d", [data opticalConundrumTimeAvailable]];
     self.flipRetentionTimeLimitLabel.text = [NSString stringWithFormat:@"%d", [data flipRetentionTimeAvailable]];
     self.logicalPursuitLivesLabel.text = [NSString stringWithFormat:@"%d", [data logicalPursuitStartLives]];
+    [self setupLooks];
+    NSLog(@"value is %d", [data opticalConundrumTimeAvailable]);
+    self.opticalConundrumSlider.value = ([data opticalConundrumTimeAvailable] - 30)/(120) ;
 
 }
 
@@ -28,16 +31,59 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+UIColor *RGB19(float r, float g, float b)
+{
+    return [UIColor colorWithRed:r/255.0f
+                           green:g/255.0f
+                            blue:b/255.0f
+                           alpha:1.0];
 }
-*/
 
+#pragma mark - Colours of Labels and Buttons
+//Seting the style of the settings page for the most part, for the rest see the drawview
+-(void)setupLooks{
+    self.mainMenuButton.tintColor = [UIColor blackColor];
+    self.mainMenuButton.layer.borderWidth = 2.0;
+    self.mainMenuButton.layer.borderColor = RGB19(66, 125, 244).CGColor;
+    self.mainMenuButton.layer.cornerRadius = 8.0;
+    self.opticalConundrumTimeLimitLabel.textColor = [UIColor blackColor];
+    self.opticalConundrumTimeLimitLabel.layer.borderWidth = 2.0;
+    self.opticalConundrumTimeLimitLabel.layer.borderColor = RGB19(66, 125, 244).CGColor;
+    self.opticalConundrumTimeLimitLabel.layer.cornerRadius = 8.0;
+    self.settingsOpticalConundrumLabel.textColor = [UIColor blackColor];
+    self.settingsOpticalConundrumLabel.layer.borderWidth = 2.0;
+    self.settingsOpticalConundrumLabel.layer.borderColor = RGB19(66, 125, 244).CGColor;
+    self.settingsOpticalConundrumLabel.layer.cornerRadius = 8.0;
+    self.settingsFlipRetentionLabel.textColor = [UIColor blackColor];
+    self.settingsFlipRetentionLabel.layer.borderWidth = 2.0;
+    self.settingsFlipRetentionLabel.layer.borderColor = RGB19(66, 125, 244).CGColor;
+    self.settingsFlipRetentionLabel.layer.cornerRadius = 8.0;
+    self.settingsLogicalPursuitLivesLabel.textColor = [UIColor blackColor];
+    self.settingsLogicalPursuitLivesLabel.layer.borderWidth = 2.0;
+    self.settingsLogicalPursuitLivesLabel.layer.borderColor = RGB19(66, 125, 244).CGColor;
+    self.settingsLogicalPursuitLivesLabel.layer.cornerRadius = 8.0;
+    self.settingsOpticalConundrumTimeLimitLabel.textColor = [UIColor blackColor];
+    self.settingsOpticalConundrumTimeLimitLabel.layer.borderWidth = 2.0;
+    self.settingsOpticalConundrumTimeLimitLabel.layer.borderColor = RGB19(66, 125, 244).CGColor;
+    self.settingsOpticalConundrumTimeLimitLabel.layer.cornerRadius = 8.0;
+    self.flipRetentionTimeLimitLabel.textColor = [UIColor blackColor];
+    self.flipRetentionTimeLimitLabel.layer.borderWidth = 2.0;
+    self.flipRetentionTimeLimitLabel.layer.borderColor = RGB19(66, 125, 244).CGColor;
+    self.flipRetentionTimeLimitLabel.layer.cornerRadius = 8.0;
+    self.settingsFlipRetentionTimeLimitLabel.textColor = [UIColor blackColor];
+    self.settingsFlipRetentionTimeLimitLabel.layer.borderWidth = 2.0;
+    self.settingsFlipRetentionTimeLimitLabel.layer.borderColor = RGB19(66, 125, 244).CGColor;
+    self.settingsFlipRetentionTimeLimitLabel.layer.cornerRadius = 8.0;
+    self.settingsLogicalPursuitLabel.textColor = [UIColor blackColor];
+    self.settingsLogicalPursuitLabel.layer.borderWidth = 2.0;
+    self.settingsLogicalPursuitLabel.layer.borderColor = RGB19(66, 125, 244).CGColor;
+    self.settingsLogicalPursuitLabel.layer.cornerRadius = 8.0;
+    self.settingsFlipRetentionTimeLimitLabel.textColor = [UIColor blackColor];
+    self.settingsFlipRetentionTimeLimitLabel.layer.borderWidth = 2.0;
+    self.settingsFlipRetentionTimeLimitLabel.layer.borderColor = RGB19(66, 125, 244).CGColor;
+    self.settingsFlipRetentionTimeLimitLabel.layer.cornerRadius = 8.0;
+    
+}
 - (IBAction)backButtonPressed:(UIButton *)sender {
     
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

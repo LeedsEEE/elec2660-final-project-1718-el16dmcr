@@ -390,37 +390,43 @@ UIColor *RGB18(float r, float g, float b)
         if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"circle"]){
             NSLog(@"light up red circle");
             [self lightCircle];
-            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];         // Delays the next function from running so that the shape is lit up for a period of times
+            [self.logicalPursuitData calculateFlashTime];
+            [NSTimer scheduledTimerWithTimeInterval:self.logicalPursuitData.flashTime target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];         // Delays the next function from running so that the shape is lit up for a period of times
             
         }
         else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"invertedSquare"]){
             NSLog(@"light up pink inverted square");
             [self lightInvertedSquare];
-            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
+            [self.logicalPursuitData calculateFlashTime];
+            [NSTimer scheduledTimerWithTimeInterval:self.logicalPursuitData.flashTime target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
         else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"rhombus"]){
             NSLog(@"light up blue rhombus");
             [self lightRhombus];
-            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
+            [self.logicalPursuitData calculateFlashTime];
+            [NSTimer scheduledTimerWithTimeInterval:self.logicalPursuitData.flashTime target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
         else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"square"]){
             NSLog(@"light up cyan square");
             [self lightSquare];
-            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
+            [self.logicalPursuitData calculateFlashTime];
+            [NSTimer scheduledTimerWithTimeInterval:self.logicalPursuitData.flashTime target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
         else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"diamond"]){
             NSLog(@"light up purple diamond");
             [self lightDiamond];
-            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
+            [self.logicalPursuitData calculateFlashTime];
+            [NSTimer scheduledTimerWithTimeInterval:self.logicalPursuitData.flashTime target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
         else if ([[self.logicalPursuitData.latestPattern objectAtIndex:self.tempCounter]  isEqualToString: @"triangle"]){
             NSLog(@"light up green triangle");
             [self lightTriangle];
-            [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
+            [self.logicalPursuitData calculateFlashTime];
+            [NSTimer scheduledTimerWithTimeInterval:self.logicalPursuitData.flashTime target:self selector:@selector(generatePattern) userInfo:nil repeats:NO];
             
         }
 }
