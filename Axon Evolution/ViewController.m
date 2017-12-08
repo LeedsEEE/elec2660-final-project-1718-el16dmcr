@@ -83,11 +83,6 @@
     [resetButtonTapped setNumberOfTapsRequired:1];
     [self.settingsImage addGestureRecognizer:settingsButtonTapped];
     
-    [self.pencilImage setUserInteractionEnabled:YES];
-    UITapGestureRecognizer *pencilImageTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pencilImageTapped)];
-    [resetButtonTapped setNumberOfTapsRequired:1];
-    [self.pencilImage addGestureRecognizer:pencilImageTapped];
-    
 }
 
 // This funcion gives the necessary labels and images a more defined look with borders after i imported Quartz

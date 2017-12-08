@@ -25,10 +25,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipRetentionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *axonEvolutionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *settingsImage;
-@property (weak, nonatomic) IBOutlet UIImageView *pencilImage;
-
-- (IBAction)settingsButtonPressed:(UIButton *)sender;
-
 
 @property OpticalConundrumData* opticalConundrumData;
 

@@ -35,11 +35,6 @@
                                     <constraint firstAttribute="width" secondItem="nED-7d-RYy" secondAttribute="height" multiplier="26:15" id="rhC-pS-w9Z"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pencil" translatesAutoresizingMaskIntoConstraints="NO" id="4oE-ka-KtE">
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="4oE-ka-KtE" secondAttribute="height" multiplier="66:67" constant="1" id="Ck4-Rf-682"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ysi-Sw-nyP">
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ysi-Sw-nyP" secondAttribute="height" multiplier="1:1" id="4Qm-Cu-XnG"/>
@@ -118,7 +113,6 @@
                             <constraint firstItem="xj5-Qq-e6F" firstAttribute="top" secondItem="Pvg-cq-ExX" secondAttribute="bottom" constant="195" id="bNo-c6-02R"/>
                             <constraint firstItem="Tnx-Ee-xYw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="cXW-IK-XIq"/>
                             <constraint firstItem="ysi-Sw-nyP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="138" id="ceF-L6-a0M"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4oE-ka-KtE" secondAttribute="trailing" id="dpN-2Y-yeC"/>
                             <constraint firstAttribute="leadingMargin" secondItem="P7B-Ls-Fuf" secondAttribute="leading" constant="16" id="eWk-7V-x2b"/>
                             <constraint firstItem="xhB-eD-uV6" firstAttribute="top" secondItem="Pvg-cq-ExX" secondAttribute="bottom" constant="259" id="ey7-gG-hhy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xj5-Qq-e6F" secondAttribute="trailing" constant="221" id="gK3-dZ-7SV"/>
@@ -126,10 +120,8 @@
                             <constraint firstItem="tdS-cQ-Q8m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="203" id="hUl-uf-1o5"/>
                             <constraint firstItem="nNF-qW-Vph" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="jE8-JX-99C"/>
                             <constraint firstItem="yWZ-vJ-gDy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lA7-Nk-ws3"/>
-                            <constraint firstItem="4oE-ka-KtE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="276" id="lyg-yR-zqE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nED-7d-RYy" secondAttribute="trailing" constant="94" id="oLM-dV-YjU"/>
                             <constraint firstItem="xMX-bb-K17" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="203" id="wdA-Ys-D4i"/>
-                            <constraint firstItem="4oE-ka-KtE" firstAttribute="top" secondItem="Pvg-cq-ExX" secondAttribute="bottom" constant="120" id="y0F-fP-yLC"/>
                             <constraint firstItem="nNF-qW-Vph" firstAttribute="top" secondItem="Pvg-cq-ExX" secondAttribute="bottom" constant="-16" id="ysM-hB-8qG"/>
                         </constraints>
                     </view>
@@ -144,8 +136,6 @@
                         <outlet property="logicalPursuitLabel" destination="tdS-cQ-Q8m" id="MiF-9w-t42"/>
                         <outlet property="opticalConundrumGame" destination="nED-7d-RYy" id="2bK-eT-oET"/>
                         <outlet property="opticalConundrumLabel" destination="eKd-1j-tSf" id="VIr-A7-Xdt"/>
-                        <outlet property="pencilImage" destination="4oE-ka-KtE" id="uem-2E-c64"/>
-                        <outlet property="playerDataImage" destination="4oE-ka-KtE" id="l8i-HV-gY1"/>
                         <outlet property="resetImage" destination="xj5-Qq-e6F" id="HKo-Eh-JeF"/>
                         <outlet property="settingsImage" destination="ysi-Sw-nyP" id="YFR-Xw-zDP"/>
                     </connections>
@@ -1316,7 +1306,6 @@
     <resources>
         <image name="FlipRetentionLose" width="840" height="78"/>
         <image name="FlipRetentionWin" width="830" height="136"/>
-        <image name="Pencil" width="468" height="467"/>
         <image name="ResetButton" width="800" height="300"/>
         <image name="SettingsIcon" width="512" height="512"/>
         <image name="axonEvolution" width="1000" height="300"/>
