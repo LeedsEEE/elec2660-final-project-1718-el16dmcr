@@ -23,6 +23,17 @@
     self.flipRetentionTimeLimitLabel.text = [NSString stringWithFormat:@"%d", [data flipRetentionTimeAvailable]];
     self.logicalPursuitLivesLabel.text = [NSString stringWithFormat:@"%d", [data logicalPursuitStartLives]];
     [self setupLooks];
+    
+    // This segment of code is just transferring the data typ so that i can update the slider values to be in the same places as where the user left them
+    int tempOne = [data opticalConundrumTimeAvailable];         // Making a temporary variable as a work around so i can update the slider value from what the user has previously set
+    NSLog(@"temp 1 is %d", tempOne);
+    float tempTwo = tempOne;
+    NSLog(@"temp 2 is %f", tempTwo);
+    self.opticalConundrumSlider.value = (tempTwo - 30) / 120;
+    int tempThree = [data flipRetentionTimeAvailable];
+    float tempFour = tempThree;
+    self.flipRetentionSlider.value = (tempFour - 30)/120;
+    
 
 }
 
