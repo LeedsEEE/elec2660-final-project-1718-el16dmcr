@@ -37,7 +37,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-UIColor *RGB13(float r, float g, float b)
+UIColor *RGB13(float r, float g, float b)            //adapted from https://stackoverflow.com/questions/13224206/how-do-i-create-a-uicolor-from-rgba
 {
     return [UIColor colorWithRed:r/255.0f
                            green:g/255.0f
@@ -154,10 +154,12 @@ UIColor *RGB13(float r, float g, float b)
 }
 #pragma mark - Timer CountDown
 // Countdown timer that goes down every second until reaching zero where it will force you to either the win or lose screen depending on whether your highscore was better than last time
+// adapted from https://stackoverflow.com/questions/10663184/implementing-a-countdown-timer-in-objective-c
 -(void)tick{
     if ( self.timeTick == 0){
         self.timerLabel.text = [NSString stringWithFormat:@"Time Remaining : %d", self.timeTick];
         // defines how to get to the text file that has been stored
+        // adapted from https://stackoverflow.com/questions/1820204/objective-c-creating-a-text-file-with-a-string
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
         NSMutableDictionary *userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
@@ -169,6 +171,7 @@ UIColor *RGB13(float r, float g, float b)
             [userData setValue:newHighScoreNSN forKey:@"FlipRetentionHighScore"];
             [userData writeToFile:filePath atomically:YES];
             // Moves you to the Win Screen
+            // adapted from https://www.youtube.com/watch?v=QhNdvCE9jVg 
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetentionWinScreen"];
             [self presentViewController:vc animated:YES completion:nil];

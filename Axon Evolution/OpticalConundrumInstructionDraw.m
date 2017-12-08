@@ -10,7 +10,7 @@
 
 @implementation OpticalConundrumInstructionDraw
 
-UIColor *RGB3(float r, float g, float b)
+UIColor *RGB3(float r, float g, float b)            //adapted from https://stackoverflow.com/questions/13224206/how-do-i-create-a-uicolor-from-rgba
 {
     return [UIColor colorWithRed:r/255.0f
                            green:g/255.0f
@@ -24,7 +24,7 @@ UIColor *RGB3(float r, float g, float b)
     // Setting the background color of the screen
     CGColorRef opticalConundrumPurple = [RGB3(161, 0, 255) CGColor];
     
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width; //adapted from https://stackoverflow.com/questions/3655104/iphone-ipad-how-to-get-screen-width-programmatically
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     
     CGContextRef context = UIGraphicsGetCurrentContext();

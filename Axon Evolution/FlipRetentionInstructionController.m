@@ -35,6 +35,7 @@
 */
 
 // Allows the user to click anywhere on the screen and take them to the game to begin playing
+// adapted from https://www.youtube.com/watch?v=QhNdvCE9jVg 
 - (IBAction)continueToGame:(UIButton *)sender {
     
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

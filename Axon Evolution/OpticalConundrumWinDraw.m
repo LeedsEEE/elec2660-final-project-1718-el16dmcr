@@ -9,7 +9,7 @@
 #import "OpticalConundrumWinDraw.h"
 
 @implementation OpticalConundrumWinDraw
-UIColor *RGB4(float r, float g, float b)
+UIColor *RGB4(float r, float g, float b)            //adapted from https://stackoverflow.com/questions/13224206/how-do-i-create-a-uicolor-from-rgba
 {
     return [UIColor colorWithRed:r/255.0f
                            green:g/255.0f
@@ -23,7 +23,7 @@ UIColor *RGB4(float r, float g, float b)
     //Sets the background color for the win screen
     CGColorRef opticalConundrumPurple = [RGB4(161, 0, 255) CGColor];
     
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;            //adapted from https://stackoverflow.com/questions/3655104/iphone-ipad-how-to-get-screen-width-programmatically
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     
     CGContextRef context = UIGraphicsGetCurrentContext();

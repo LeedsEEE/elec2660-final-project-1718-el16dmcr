@@ -24,7 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+// adapted from https://www.youtube.com/watch?v=QhNdvCE9jVg 
 - (IBAction)contineToHome:(UIButton *)sender {
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *nc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];

@@ -17,6 +17,7 @@
 #pragma mark - Initilisation of Screen
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //adapted from https://eencae.wordpress.com/ios-tutorials/other/passing-data-between-multiple-views/
     SettingsData *data = [SettingsData sharedInstance];     //sharing the data from before to keep evrything updata in this view
     self.opticalConundrumTimeLimitLabel.text = [NSString stringWithFormat:@"%d", [data opticalConundrumTimeAvailable]];
     self.flipRetentionTimeLimitLabel.text = [NSString stringWithFormat:@"%d", [data flipRetentionTimeAvailable]];
@@ -30,9 +31,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-UIColor *RGB19(float r, float g, float b)
+UIColor *RGB19(float r, float g, float b)            //adapted from https://stackoverflow.com/questions/13224206/how-do-i-create-a-uicolor-from-rgba
 {
-    return [UIColor colorWithRed:r/255.0f
+    return [UIColor colorWithRed:r/255.0f           
                            green:g/255.0f
                             blue:b/255.0f
                            alpha:1.0];
@@ -88,6 +89,7 @@ UIColor *RGB19(float r, float g, float b)
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
     
+    // adapted from https://www.youtube.com/watch?v=QhNdvCE9jVg 
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *nc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomePage"];
     [self presentViewController:nc animated:YES completion:nil];

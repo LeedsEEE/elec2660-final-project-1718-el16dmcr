@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     // This segment of code creates a file that can store the high scores of the user.
+    // adapted from https://stackoverflow.com/questions/1820204/objective-c-creating-a-text-file-with-a-string
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
     self.userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
@@ -28,8 +29,6 @@
         [self.userData setValue:@0 forKey:@"OpticalConundrumHighScore"];
         [self.userData setValue:@0 forKey:@"LogicalPursuitHighScore"];
         [self.userData setValue:@0 forKey:@"FlipRetentionHighScore"];
-        [self.userData setValue:@"" forKey:@"UserName"];
-        [self.userData setValue:@0 forKey:@"Age"];
         [self.userData writeToFile:filePath atomically:YES];
         [self.brainBannerImage setImage:[UIImage imageNamed:@"levelZeroBrainImage"]];
     }
@@ -48,7 +47,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-// Displays all the hughscores for the individual games and then totals them up and displays it in the centre of the screen
+// Displays all the highscores for the individual games and then totals them up and displays it in the centre of the screen
 -(void)highScoreDisplay{
     self.opticalConundrumLabel.text = [NSString stringWithFormat:@"HighScore: %@", [self.userData valueForKey:@"OpticalConundrumHighScore"]];
     self.logicalPursuitLabel.text = [NSString stringWithFormat:@"HighScore: %@", [self.userData valueForKey:@"LogicalPursuitHighScore"]];
@@ -131,7 +130,7 @@
     }
 }
 // This function is just used to make defining custom coours easier
-UIColor *RGB7(float r, float g, float b)
+UIColor *RGB7(float r, float g, float b)             //adapted from https://stackoverflow.com/questions/13224206/how-do-i-create-a-uicolor-from-rgba
 {
     return [UIColor colorWithRed:r/255.0f
                            green:g/255.0f
@@ -141,6 +140,7 @@ UIColor *RGB7(float r, float g, float b)
 // This function registers the user tapping the optical conundrum logo and it then takes you to the instruction screen for the game so you can read how it works
 -(void)opticalConundrumTapped{
     
+    // adapted from https://www.youtube.com/watch?v=QhNdvCE9jVg
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumInstructionScreen"];
     [self presentViewController:vc animated:YES completion:nil];
@@ -148,6 +148,7 @@ UIColor *RGB7(float r, float g, float b)
 // This function registers the user tapping the logical pursuit game icon and then takes you to the instruction screen for the game so you can read how it works
 -(void)logicalPursuitTapped{
     
+    // adapted from https://www.youtube.com/watch?v=QhNdvCE9jVg
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LogicalPursuitInstructionScreen"];
     [self presentViewController:vc animated:YES completion:nil];
@@ -155,6 +156,7 @@ UIColor *RGB7(float r, float g, float b)
 // This function registers the user tapping the flip retention game icon and then takes you to the instruction screen for the game so you can read how it works
 -(void)flipRetentionTapped{
     
+    // adapted from https://www.youtube.com/watch?v=QhNdvCE9jVg
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"FlipRetentionInstructionScreen"];
     [self presentViewController:vc animated:YES completion:nil];
@@ -177,6 +179,8 @@ UIColor *RGB7(float r, float g, float b)
 }
 // This button will take you to the settings page so ou can alter the settings of the games and how you want to play them
 -(void)settingsButtonTapped{
+    
+    // adapted from https://www.youtube.com/watch?v=QhNdvCE9jVg 
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"SettingsScreen"];
     [self presentViewController:vc animated:YES completion:nil];

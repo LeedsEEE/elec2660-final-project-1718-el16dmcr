@@ -65,7 +65,7 @@
     // Dispose of any resources that can be recreated.
 }
 // Function to make defining colours easier
-UIColor *RGB8(float r, float g, float b)
+UIColor *RGB8(float r, float g, float b)             //adapted from https://stackoverflow.com/questions/13224206/how-do-i-create-a-uicolor-from-rgba
 {
     return [UIColor colorWithRed:r/255.0f
                            green:g/255.0f
@@ -95,12 +95,14 @@ UIColor *RGB8(float r, float g, float b)
 
 #pragma mark - Timer function Countdown
 // This function tics down every seconds shwoing the suer how much time they have left, when it goes to zero it will shove ou to the next screen
+// adapted from https://stackoverflow.com/questions/10663184/implementing-a-countdown-timer-in-objective-c
 -(void)tick{
     if ( self.timeTick == 0){           // checks if time = 0
         NSString *timeRemaining = [[NSString alloc] initWithFormat:@"%d", self.timeTick];
         self.timerLabel.text = timeRemaining;
         NSLog(@"Last highscore was : %d",self.opticalConundrumData.highScore);
         // Checks the stored data for the highscore for this game, if the user beat iut it will take them to the win screen, if not they will go to the lose screen
+        // adapted from https://stackoverflow.com/questions/1820204/objective-c-creating-a-text-file-with-a-string
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
         NSMutableDictionary *userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
@@ -112,6 +114,7 @@ UIColor *RGB8(float r, float g, float b)
             [userData setValue:newHighScoreNSN forKey:@"OpticalConundrumHighScore"];
             [userData writeToFile:filePath atomically:YES];
             // Shves the user to the win screen
+            // adapted from https://www.youtube.com/watch?v=QhNdvCE9jVg 
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OpticalConundrumWinScreen"];
             [self presentViewController:vc animated:YES completion:nil];

@@ -40,7 +40,7 @@
 }
 
 // Function to make defining colours easier
-UIColor *RGB18(float r, float g, float b)
+UIColor *RGB18(float r, float g, float b)            //adapted from https://stackoverflow.com/questions/13224206/how-do-i-create-a-uicolor-from-rgba
 {
     return [UIColor colorWithRed:r/255.0f
                            green:g/255.0f
@@ -129,6 +129,7 @@ UIColor *RGB18(float r, float g, float b)
 // This function is called once all your lives are gone and it saves your highscore to the text file as long as you have beaten the previous highscore, it also takes you to the correct screen depending on your score
 -(void)saveScoreAndExit{
     // Defining where the save file is for the highscores
+    // adapted from https://stackoverflow.com/questions/1820204/objective-c-creating-a-text-file-with-a-string
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"save.txt"];
     NSMutableDictionary *userData = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
@@ -141,6 +142,7 @@ UIColor *RGB18(float r, float g, float b)
         [userData writeToFile:filePath atomically:YES];
         
         // Moves the user to the win screen for this game
+        // adapted from https://www.youtube.com/watch?v=QhNdvCE9jVg 
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LogicalPursuitWinScreen"];
         [self presentViewController:vc animated:YES completion:nil];

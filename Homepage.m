@@ -11,7 +11,7 @@
 @implementation Homepage
 // Function to make customizing colour easier
 
-UIColor *RGB1(float r, float g, float b)
+UIColor *RGB1(float r, float g, float b)            //adapted from https://stackoverflow.com/questions/13224206/how-do-i-create-a-uicolor-from-rgba
 {
     return [UIColor colorWithRed:r/255.0f
                            green:g/255.0f
@@ -27,7 +27,7 @@ UIColor *RGB1(float r, float g, float b)
     // Setting the colour of the background  for the screen
     CGColorRef lightblue = [RGB1(0, 256, 242) CGColor];
     
-    CGFloat width = [UIScreen mainScreen].bounds.size.width; //Gets screen width
+    CGFloat width = [UIScreen mainScreen].bounds.size.width; //Gets screen width adapted from https://stackoverflow.com/questions/3655104/iphone-ipad-how-to-get-screen-width-programmatically
     CGFloat height = [UIScreen mainScreen].bounds.size.height; //Gets screen height
     
     CGContextRef context = UIGraphicsGetCurrentContext();
