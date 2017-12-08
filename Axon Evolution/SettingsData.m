@@ -40,7 +40,7 @@ static SettingsData*_sharedInstance;
     self.logicalPursuitPointsPlus = 100;
     return self;
 }
-+ (SettingsData *) sharedInstance{
++ (SettingsData *) sharedInstance{          //adapted from https://eencae.wordpress.com/ios-tutorials/other/passing-data-between-multiple-views/
     if(!_sharedInstance){
         _sharedInstance = [[SettingsData alloc] init];
     }

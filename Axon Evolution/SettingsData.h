@@ -23,7 +23,7 @@
 @property int logicalPursuitStartLives;
 @property int logicalPursuitPointsPlus;
 
-+ (SettingsData *) sharedInstance;
++ (SettingsData *) sharedInstance;          //adapted from https://eencae.wordpress.com/ios-tutorials/other/passing-data-between-multiple-views/
 
 -(id)init;
 
